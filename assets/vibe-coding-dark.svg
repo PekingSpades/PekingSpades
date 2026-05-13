@@ -1,0 +1,237 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="446" viewBox="0 0 760 446" role="img" aria-label="Vibe coding stats">
+  <style>
+    .title { fill: #f0f6fc; font: 700 20px system-ui, -apple-system, Segoe UI, sans-serif; }
+    .subtitle { fill: #8b949e; font: 12px system-ui, -apple-system, Segoe UI, sans-serif; }
+    .metric { fill: #f0f6fc; font: 700 22px system-ui, -apple-system, Segoe UI, sans-serif; }
+    .label { fill: #8b949e; font: 12px system-ui, -apple-system, Segoe UI, sans-serif; }
+    .section { fill: #f0f6fc; font: 700 13px system-ui, -apple-system, Segoe UI, sans-serif; }
+    .muted { fill: #8b949e; font: 10px system-ui, -apple-system, Segoe UI, sans-serif; }
+    .level-0 { fill: #30363d; }
+    .level-1 { fill: #9be9a8; }
+    .level-2 { fill: #40c463; }
+    .level-3 { fill: #30a14e; }
+    .level-4 { fill: #216e39; }
+    .pie-claude { fill: #58a6ff; }
+    .pie-codex { fill: #f2cc60; }
+    .pie-empty { fill: #30363d; }
+    .model-name { fill: #f0f6fc; font: 600 11px system-ui, -apple-system, Segoe UI, sans-serif; }
+    .model-usage { fill: #8b949e; font: 11px system-ui, -apple-system, Segoe UI, sans-serif; }
+    .model-cost { fill: #f0f6fc; font: 600 11px system-ui, -apple-system, Segoe UI, sans-serif; }
+  </style>
+  <text x="24" y="26" class="title">Vibe Coding Stats</text>
+  <text x="24" y="46" class="subtitle">Aggregated token usage and activity across coding agents</text>
+  <text x="24" y="82" class="metric">6.6B</text><text x="24" y="104" class="label">Total</text><text x="160" y="82" class="metric">151.4M</text><text x="160" y="104" class="label">Today</text><text x="296" y="82" class="metric">708.9M</text><text x="296" y="104" class="label">7 days</text><text x="432" y="82" class="metric">1.1B</text><text x="432" y="104" class="label">30 days</text><text x="568" y="82" class="metric">116d</text><text x="568" y="104" class="label">Active</text>
+  <text x="24" y="132" class="section">Activity</text>
+  <g transform="translate(24,151)">
+    <rect x="38" y="16" width="10" height="10" rx="2" class="level-0"><title>2025-11-10: 0 tokens</title></rect>
+<rect x="38" y="29" width="10" height="10" rx="2" class="level-0"><title>2025-11-11: 0 tokens</title></rect>
+<rect x="38" y="42" width="10" height="10" rx="2" class="level-0"><title>2025-11-12: 0 tokens</title></rect>
+<rect x="38" y="55" width="10" height="10" rx="2" class="level-0"><title>2025-11-13: 0 tokens</title></rect>
+<rect x="38" y="68" width="10" height="10" rx="2" class="level-0"><title>2025-11-14: 0 tokens</title></rect>
+<rect x="38" y="81" width="10" height="10" rx="2" class="level-0"><title>2025-11-15: 0 tokens</title></rect>
+<rect x="38" y="94" width="10" height="10" rx="2" class="level-0"><title>2025-11-16: 0 tokens</title></rect>
+<rect x="51" y="16" width="10" height="10" rx="2" class="level-1"><title>2025-11-17: 64K tokens</title></rect>
+<rect x="51" y="29" width="10" height="10" rx="2" class="level-2"><title>2025-11-18: 12.7M tokens</title></rect>
+<rect x="51" y="42" width="10" height="10" rx="2" class="level-2"><title>2025-11-19: 10.4M tokens</title></rect>
+<rect x="51" y="55" width="10" height="10" rx="2" class="level-0"><title>2025-11-20: 0 tokens</title></rect>
+<rect x="51" y="68" width="10" height="10" rx="2" class="level-1"><title>2025-11-21: 361K tokens</title></rect>
+<rect x="51" y="81" width="10" height="10" rx="2" class="level-0"><title>2025-11-22: 0 tokens</title></rect>
+<rect x="51" y="94" width="10" height="10" rx="2" class="level-2"><title>2025-11-23: 6.4M tokens</title></rect>
+<rect x="64" y="16" width="10" height="10" rx="2" class="level-0"><title>2025-11-24: 0 tokens</title></rect>
+<rect x="64" y="29" width="10" height="10" rx="2" class="level-0"><title>2025-11-25: 0 tokens</title></rect>
+<rect x="64" y="42" width="10" height="10" rx="2" class="level-1"><title>2025-11-26: 609K tokens</title></rect>
+<rect x="64" y="55" width="10" height="10" rx="2" class="level-3"><title>2025-11-27: 30.4M tokens</title></rect>
+<rect x="64" y="68" width="10" height="10" rx="2" class="level-1"><title>2025-11-28: 1.8M tokens</title></rect>
+<rect x="64" y="81" width="10" height="10" rx="2" class="level-0"><title>2025-11-29: 0 tokens</title></rect>
+<rect x="64" y="94" width="10" height="10" rx="2" class="level-0"><title>2025-11-30: 0 tokens</title></rect>
+<text x="77" y="10" class="muted">Dec</text>
+<rect x="77" y="16" width="10" height="10" rx="2" class="level-0"><title>2025-12-01: 0 tokens</title></rect>
+<rect x="77" y="29" width="10" height="10" rx="2" class="level-0"><title>2025-12-02: 0 tokens</title></rect>
+<rect x="77" y="42" width="10" height="10" rx="2" class="level-0"><title>2025-12-03: 0 tokens</title></rect>
+<rect x="77" y="55" width="10" height="10" rx="2" class="level-0"><title>2025-12-04: 0 tokens</title></rect>
+<rect x="77" y="68" width="10" height="10" rx="2" class="level-0"><title>2025-12-05: 0 tokens</title></rect>
+<rect x="77" y="81" width="10" height="10" rx="2" class="level-0"><title>2025-12-06: 0 tokens</title></rect>
+<rect x="77" y="94" width="10" height="10" rx="2" class="level-0"><title>2025-12-07: 0 tokens</title></rect>
+<rect x="90" y="16" width="10" height="10" rx="2" class="level-0"><title>2025-12-08: 0 tokens</title></rect>
+<rect x="90" y="29" width="10" height="10" rx="2" class="level-2"><title>2025-12-09: 3.1M tokens</title></rect>
+<rect x="90" y="42" width="10" height="10" rx="2" class="level-3"><title>2025-12-10: 19.8M tokens</title></rect>
+<rect x="90" y="55" width="10" height="10" rx="2" class="level-1"><title>2025-12-11: 737K tokens</title></rect>
+<rect x="90" y="68" width="10" height="10" rx="2" class="level-1"><title>2025-12-12: 35.4K tokens</title></rect>
+<rect x="90" y="81" width="10" height="10" rx="2" class="level-1"><title>2025-12-13: 1.4M tokens</title></rect>
+<rect x="90" y="94" width="10" height="10" rx="2" class="level-2"><title>2025-12-14: 9M tokens</title></rect>
+<rect x="103" y="16" width="10" height="10" rx="2" class="level-3"><title>2025-12-15: 26.2M tokens</title></rect>
+<rect x="103" y="29" width="10" height="10" rx="2" class="level-2"><title>2025-12-16: 14.6M tokens</title></rect>
+<rect x="103" y="42" width="10" height="10" rx="2" class="level-3"><title>2025-12-17: 17.5M tokens</title></rect>
+<rect x="103" y="55" width="10" height="10" rx="2" class="level-1"><title>2025-12-18: 126.3K tokens</title></rect>
+<rect x="103" y="68" width="10" height="10" rx="2" class="level-2"><title>2025-12-19: 5.5M tokens</title></rect>
+<rect x="103" y="81" width="10" height="10" rx="2" class="level-1"><title>2025-12-20: 177.4K tokens</title></rect>
+<rect x="103" y="94" width="10" height="10" rx="2" class="level-1"><title>2025-12-21: 1.3M tokens</title></rect>
+<rect x="116" y="16" width="10" height="10" rx="2" class="level-0"><title>2025-12-22: 0 tokens</title></rect>
+<rect x="116" y="29" width="10" height="10" rx="2" class="level-0"><title>2025-12-23: 0 tokens</title></rect>
+<rect x="116" y="42" width="10" height="10" rx="2" class="level-3"><title>2025-12-24: 19.7M tokens</title></rect>
+<rect x="116" y="55" width="10" height="10" rx="2" class="level-3"><title>2025-12-25: 32.1M tokens</title></rect>
+<rect x="116" y="68" width="10" height="10" rx="2" class="level-1"><title>2025-12-26: 2.5M tokens</title></rect>
+<rect x="116" y="81" width="10" height="10" rx="2" class="level-0"><title>2025-12-27: 0 tokens</title></rect>
+<rect x="116" y="94" width="10" height="10" rx="2" class="level-0"><title>2025-12-28: 0 tokens</title></rect>
+<rect x="129" y="16" width="10" height="10" rx="2" class="level-2"><title>2025-12-29: 14.6M tokens</title></rect>
+<rect x="129" y="29" width="10" height="10" rx="2" class="level-3"><title>2025-12-30: 41.1M tokens</title></rect>
+<rect x="129" y="42" width="10" height="10" rx="2" class="level-1"><title>2025-12-31: 1.9M tokens</title></rect>
+<rect x="129" y="55" width="10" height="10" rx="2" class="level-0"><title>2026-01-01: 0 tokens</title></rect>
+<rect x="129" y="68" width="10" height="10" rx="2" class="level-0"><title>2026-01-02: 0 tokens</title></rect>
+<rect x="129" y="81" width="10" height="10" rx="2" class="level-0"><title>2026-01-03: 0 tokens</title></rect>
+<rect x="129" y="94" width="10" height="10" rx="2" class="level-4"><title>2026-01-04: 52.5M tokens</title></rect>
+<text x="142" y="10" class="muted">Jan</text>
+<rect x="142" y="16" width="10" height="10" rx="2" class="level-3"><title>2026-01-05: 31.5M tokens</title></rect>
+<rect x="142" y="29" width="10" height="10" rx="2" class="level-1"><title>2026-01-06: 1.3M tokens</title></rect>
+<rect x="142" y="42" width="10" height="10" rx="2" class="level-2"><title>2026-01-07: 3.4M tokens</title></rect>
+<rect x="142" y="55" width="10" height="10" rx="2" class="level-2"><title>2026-01-08: 8.8M tokens</title></rect>
+<rect x="142" y="68" width="10" height="10" rx="2" class="level-3"><title>2026-01-09: 16.9M tokens</title></rect>
+<rect x="142" y="81" width="10" height="10" rx="2" class="level-1"><title>2026-01-10: 2.7M tokens</title></rect>
+<rect x="142" y="94" width="10" height="10" rx="2" class="level-2"><title>2026-01-11: 9M tokens</title></rect>
+<rect x="155" y="16" width="10" height="10" rx="2" class="level-3"><title>2026-01-12: 23.8M tokens</title></rect>
+<rect x="155" y="29" width="10" height="10" rx="2" class="level-2"><title>2026-01-13: 10.4M tokens</title></rect>
+<rect x="155" y="42" width="10" height="10" rx="2" class="level-1"><title>2026-01-14: 825.5K tokens</title></rect>
+<rect x="155" y="55" width="10" height="10" rx="2" class="level-2"><title>2026-01-15: 3.7M tokens</title></rect>
+<rect x="155" y="68" width="10" height="10" rx="2" class="level-1"><title>2026-01-16: 228K tokens</title></rect>
+<rect x="155" y="81" width="10" height="10" rx="2" class="level-3"><title>2026-01-17: 47.2M tokens</title></rect>
+<rect x="155" y="94" width="10" height="10" rx="2" class="level-4"><title>2026-01-18: 53.9M tokens</title></rect>
+<rect x="168" y="16" width="10" height="10" rx="2" class="level-2"><title>2026-01-19: 7.7M tokens</title></rect>
+<rect x="168" y="29" width="10" height="10" rx="2" class="level-1"><title>2026-01-20: 1.5M tokens</title></rect>
+<rect x="168" y="42" width="10" height="10" rx="2" class="level-2"><title>2026-01-21: 5M tokens</title></rect>
+<rect x="168" y="55" width="10" height="10" rx="2" class="level-3"><title>2026-01-22: 42.4M tokens</title></rect>
+<rect x="168" y="68" width="10" height="10" rx="2" class="level-2"><title>2026-01-23: 5.1M tokens</title></rect>
+<rect x="168" y="81" width="10" height="10" rx="2" class="level-0"><title>2026-01-24: 0 tokens</title></rect>
+<rect x="168" y="94" width="10" height="10" rx="2" class="level-3"><title>2026-01-25: 22.1M tokens</title></rect>
+<rect x="181" y="16" width="10" height="10" rx="2" class="level-3"><title>2026-01-26: 30.6M tokens</title></rect>
+<rect x="181" y="29" width="10" height="10" rx="2" class="level-1"><title>2026-01-27: 861.4K tokens</title></rect>
+<rect x="181" y="42" width="10" height="10" rx="2" class="level-3"><title>2026-01-28: 37.3M tokens</title></rect>
+<rect x="181" y="55" width="10" height="10" rx="2" class="level-4"><title>2026-01-29: 54.6M tokens</title></rect>
+<rect x="181" y="68" width="10" height="10" rx="2" class="level-4"><title>2026-01-30: 93.3M tokens</title></rect>
+<rect x="181" y="81" width="10" height="10" rx="2" class="level-1"><title>2026-01-31: 2.7M tokens</title></rect>
+<rect x="181" y="94" width="10" height="10" rx="2" class="level-0"><title>2026-02-01: 0 tokens</title></rect>
+<text x="194" y="10" class="muted">Feb</text>
+<rect x="194" y="16" width="10" height="10" rx="2" class="level-2"><title>2026-02-02: 6.8M tokens</title></rect>
+<rect x="194" y="29" width="10" height="10" rx="2" class="level-1"><title>2026-02-03: 2.9M tokens</title></rect>
+<rect x="194" y="42" width="10" height="10" rx="2" class="level-1"><title>2026-02-04: 2.6M tokens</title></rect>
+<rect x="194" y="55" width="10" height="10" rx="2" class="level-0"><title>2026-02-05: 0 tokens</title></rect>
+<rect x="194" y="68" width="10" height="10" rx="2" class="level-1"><title>2026-02-06: 15.2K tokens</title></rect>
+<rect x="194" y="81" width="10" height="10" rx="2" class="level-1"><title>2026-02-07: 390.5K tokens</title></rect>
+<rect x="194" y="94" width="10" height="10" rx="2" class="level-2"><title>2026-02-08: 12.8M tokens</title></rect>
+<rect x="207" y="16" width="10" height="10" rx="2" class="level-2"><title>2026-02-09: 3.5M tokens</title></rect>
+<rect x="207" y="29" width="10" height="10" rx="2" class="level-0"><title>2026-02-10: 0 tokens</title></rect>
+<rect x="207" y="42" width="10" height="10" rx="2" class="level-0"><title>2026-02-11: 0 tokens</title></rect>
+<rect x="207" y="55" width="10" height="10" rx="2" class="level-0"><title>2026-02-12: 0 tokens</title></rect>
+<rect x="207" y="68" width="10" height="10" rx="2" class="level-0"><title>2026-02-13: 0 tokens</title></rect>
+<rect x="207" y="81" width="10" height="10" rx="2" class="level-0"><title>2026-02-14: 0 tokens</title></rect>
+<rect x="207" y="94" width="10" height="10" rx="2" class="level-0"><title>2026-02-15: 0 tokens</title></rect>
+<rect x="220" y="16" width="10" height="10" rx="2" class="level-0"><title>2026-02-16: 0 tokens</title></rect>
+<rect x="220" y="29" width="10" height="10" rx="2" class="level-0"><title>2026-02-17: 0 tokens</title></rect>
+<rect x="220" y="42" width="10" height="10" rx="2" class="level-0"><title>2026-02-18: 0 tokens</title></rect>
+<rect x="220" y="55" width="10" height="10" rx="2" class="level-0"><title>2026-02-19: 0 tokens</title></rect>
+<rect x="220" y="68" width="10" height="10" rx="2" class="level-0"><title>2026-02-20: 0 tokens</title></rect>
+<rect x="220" y="81" width="10" height="10" rx="2" class="level-0"><title>2026-02-21: 0 tokens</title></rect>
+<rect x="220" y="94" width="10" height="10" rx="2" class="level-0"><title>2026-02-22: 0 tokens</title></rect>
+<rect x="233" y="16" width="10" height="10" rx="2" class="level-0"><title>2026-02-23: 0 tokens</title></rect>
+<rect x="233" y="29" width="10" height="10" rx="2" class="level-0"><title>2026-02-24: 0 tokens</title></rect>
+<rect x="233" y="42" width="10" height="10" rx="2" class="level-0"><title>2026-02-25: 0 tokens</title></rect>
+<rect x="233" y="55" width="10" height="10" rx="2" class="level-0"><title>2026-02-26: 0 tokens</title></rect>
+<rect x="233" y="68" width="10" height="10" rx="2" class="level-3"><title>2026-02-27: 39.5M tokens</title></rect>
+<rect x="233" y="81" width="10" height="10" rx="2" class="level-4"><title>2026-02-28: 108.4M tokens</title></rect>
+<rect x="233" y="94" width="10" height="10" rx="2" class="level-4"><title>2026-03-01: 61.6M tokens</title></rect>
+<text x="246" y="10" class="muted">Mar</text>
+<rect x="246" y="16" width="10" height="10" rx="2" class="level-2"><title>2026-03-02: 8.9M tokens</title></rect>
+<rect x="246" y="29" width="10" height="10" rx="2" class="level-3"><title>2026-03-03: 46.8M tokens</title></rect>
+<rect x="246" y="42" width="10" height="10" rx="2" class="level-4"><title>2026-03-04: 60.2M tokens</title></rect>
+<rect x="246" y="55" width="10" height="10" rx="2" class="level-3"><title>2026-03-05: 30.8M tokens</title></rect>
+<rect x="246" y="68" width="10" height="10" rx="2" class="level-3"><title>2026-03-06: 22.1M tokens</title></rect>
+<rect x="246" y="81" width="10" height="10" rx="2" class="level-1"><title>2026-03-07: 467K tokens</title></rect>
+<rect x="246" y="94" width="10" height="10" rx="2" class="level-0"><title>2026-03-08: 0 tokens</title></rect>
+<rect x="259" y="16" width="10" height="10" rx="2" class="level-3"><title>2026-03-09: 26.9M tokens</title></rect>
+<rect x="259" y="29" width="10" height="10" rx="2" class="level-2"><title>2026-03-10: 4.6M tokens</title></rect>
+<rect x="259" y="42" width="10" height="10" rx="2" class="level-1"><title>2026-03-11: 227.2K tokens</title></rect>
+<rect x="259" y="55" width="10" height="10" rx="2" class="level-0"><title>2026-03-12: 0 tokens</title></rect>
+<rect x="259" y="68" width="10" height="10" rx="2" class="level-3"><title>2026-03-13: 23.1M tokens</title></rect>
+<rect x="259" y="81" width="10" height="10" rx="2" class="level-3"><title>2026-03-14: 35.6M tokens</title></rect>
+<rect x="259" y="94" width="10" height="10" rx="2" class="level-2"><title>2026-03-15: 4.3M tokens</title></rect>
+<rect x="272" y="16" width="10" height="10" rx="2" class="level-3"><title>2026-03-16: 21.1M tokens</title></rect>
+<rect x="272" y="29" width="10" height="10" rx="2" class="level-0"><title>2026-03-17: 0 tokens</title></rect>
+<rect x="272" y="42" width="10" height="10" rx="2" class="level-0"><title>2026-03-18: 0 tokens</title></rect>
+<rect x="272" y="55" width="10" height="10" rx="2" class="level-0"><title>2026-03-19: 0 tokens</title></rect>
+<rect x="272" y="68" width="10" height="10" rx="2" class="level-2"><title>2026-03-20: 7.6M tokens</title></rect>
+<rect x="272" y="81" width="10" height="10" rx="2" class="level-1"><title>2026-03-21: 1.8M tokens</title></rect>
+<rect x="272" y="94" width="10" height="10" rx="2" class="level-2"><title>2026-03-22: 6.6M tokens</title></rect>
+<rect x="285" y="16" width="10" height="10" rx="2" class="level-2"><title>2026-03-23: 9.5M tokens</title></rect>
+<rect x="285" y="29" width="10" height="10" rx="2" class="level-1"><title>2026-03-24: 2.3M tokens</title></rect>
+<rect x="285" y="42" width="10" height="10" rx="2" class="level-4"><title>2026-03-25: 100.5M tokens</title></rect>
+<rect x="285" y="55" width="10" height="10" rx="2" class="level-4"><title>2026-03-26: 173.4M tokens</title></rect>
+<rect x="285" y="68" width="10" height="10" rx="2" class="level-4"><title>2026-03-27: 246.8M tokens</title></rect>
+<rect x="285" y="81" width="10" height="10" rx="2" class="level-4"><title>2026-03-28: 265.1M tokens</title></rect>
+<rect x="285" y="94" width="10" height="10" rx="2" class="level-4"><title>2026-03-29: 170.8M tokens</title></rect>
+<rect x="298" y="16" width="10" height="10" rx="2" class="level-4"><title>2026-03-30: 258M tokens</title></rect>
+<rect x="298" y="29" width="10" height="10" rx="2" class="level-4"><title>2026-03-31: 347.2M tokens</title></rect>
+<rect x="298" y="42" width="10" height="10" rx="2" class="level-4"><title>2026-04-01: 422.3M tokens</title></rect>
+<rect x="298" y="55" width="10" height="10" rx="2" class="level-4"><title>2026-04-02: 278.2M tokens</title></rect>
+<rect x="298" y="68" width="10" height="10" rx="2" class="level-4"><title>2026-04-03: 281.7M tokens</title></rect>
+<rect x="298" y="81" width="10" height="10" rx="2" class="level-4"><title>2026-04-04: 346.2M tokens</title></rect>
+<rect x="298" y="94" width="10" height="10" rx="2" class="level-4"><title>2026-04-05: 244.6M tokens</title></rect>
+<text x="311" y="10" class="muted">Apr</text>
+<rect x="311" y="16" width="10" height="10" rx="2" class="level-4"><title>2026-04-06: 251.4M tokens</title></rect>
+<rect x="311" y="29" width="10" height="10" rx="2" class="level-4"><title>2026-04-07: 259.6M tokens</title></rect>
+<rect x="311" y="42" width="10" height="10" rx="2" class="level-4"><title>2026-04-08: 165.4M tokens</title></rect>
+<rect x="311" y="55" width="10" height="10" rx="2" class="level-4"><title>2026-04-09: 106.4M tokens</title></rect>
+<rect x="311" y="68" width="10" height="10" rx="2" class="level-4"><title>2026-04-10: 93.9M tokens</title></rect>
+<rect x="311" y="81" width="10" height="10" rx="2" class="level-0"><title>2026-04-11: 0 tokens</title></rect>
+<rect x="311" y="94" width="10" height="10" rx="2" class="level-2"><title>2026-04-12: 6.9M tokens</title></rect>
+<rect x="324" y="16" width="10" height="10" rx="2" class="level-3"><title>2026-04-13: 23.1M tokens</title></rect>
+<rect x="324" y="29" width="10" height="10" rx="2" class="level-1"><title>2026-04-14: 1.1M tokens</title></rect>
+<rect x="324" y="42" width="10" height="10" rx="2" class="level-2"><title>2026-04-15: 11.2M tokens</title></rect>
+<rect x="324" y="55" width="10" height="10" rx="2" class="level-0"><title>2026-04-16: 0 tokens</title></rect>
+<rect x="324" y="68" width="10" height="10" rx="2" class="level-0"><title>2026-04-17: 0 tokens</title></rect>
+<rect x="324" y="81" width="10" height="10" rx="2" class="level-0"><title>2026-04-18: 0 tokens</title></rect>
+<rect x="324" y="94" width="10" height="10" rx="2" class="level-0"><title>2026-04-19: 0 tokens</title></rect>
+<rect x="337" y="16" width="10" height="10" rx="2" class="level-0"><title>2026-04-20: 0 tokens</title></rect>
+<rect x="337" y="29" width="10" height="10" rx="2" class="level-0"><title>2026-04-21: 0 tokens</title></rect>
+<rect x="337" y="42" width="10" height="10" rx="2" class="level-0"><title>2026-04-22: 0 tokens</title></rect>
+<rect x="337" y="55" width="10" height="10" rx="2" class="level-0"><title>2026-04-23: 0 tokens</title></rect>
+<rect x="337" y="68" width="10" height="10" rx="2" class="level-0"><title>2026-04-24: 0 tokens</title></rect>
+<rect x="337" y="81" width="10" height="10" rx="2" class="level-0"><title>2026-04-25: 0 tokens</title></rect>
+<rect x="337" y="94" width="10" height="10" rx="2" class="level-3"><title>2026-04-26: 16.8M tokens</title></rect>
+<rect x="350" y="16" width="10" height="10" rx="2" class="level-4"><title>2026-04-27: 160.8M tokens</title></rect>
+<rect x="350" y="29" width="10" height="10" rx="2" class="level-4"><title>2026-04-28: 118.2M tokens</title></rect>
+<rect x="350" y="42" width="10" height="10" rx="2" class="level-3"><title>2026-04-29: 47.1M tokens</title></rect>
+<rect x="350" y="55" width="10" height="10" rx="2" class="level-4"><title>2026-04-30: 53.9M tokens</title></rect>
+<rect x="350" y="68" width="10" height="10" rx="2" class="level-3"><title>2026-05-01: 18.5M tokens</title></rect>
+<rect x="350" y="81" width="10" height="10" rx="2" class="level-0"><title>2026-05-02: 0 tokens</title></rect>
+<rect x="350" y="94" width="10" height="10" rx="2" class="level-0"><title>2026-05-03: 0 tokens</title></rect>
+<text x="363" y="10" class="muted">May</text>
+<rect x="363" y="16" width="10" height="10" rx="2" class="level-0"><title>2026-05-04: 0 tokens</title></rect>
+<rect x="363" y="29" width="10" height="10" rx="2" class="level-0"><title>2026-05-05: 0 tokens</title></rect>
+<rect x="363" y="42" width="10" height="10" rx="2" class="level-0"><title>2026-05-06: 0 tokens</title></rect>
+<rect x="363" y="55" width="10" height="10" rx="2" class="level-3"><title>2026-05-07: 17.4M tokens</title></rect>
+<rect x="363" y="68" width="10" height="10" rx="2" class="level-4"><title>2026-05-08: 102.1M tokens</title></rect>
+<rect x="363" y="81" width="10" height="10" rx="2" class="level-2"><title>2026-05-09: 10.3M tokens</title></rect>
+<rect x="363" y="94" width="10" height="10" rx="2" class="level-4"><title>2026-05-10: 138.2M tokens</title></rect>
+<text x="0" y="24" class="muted">Mon</text>
+<text x="0" y="50" class="muted">Wed</text>
+<text x="0" y="76" class="muted">Fri</text>
+  </g>
+  <g aria-label="Client mix">
+    <path d="M 642 196 L 642.000 152.000 A 44 44 0 0 1 682.667 179.201 Z" class="pie-claude"><title>Claude 19%</title></path>
+<path d="M 642 196 L 682.667 179.201 A 44 44 0 1 1 642.000 152.000 Z" class="pie-codex"><title>Codex 81%</title></path>
+    <text x="566" y="132" class="section">Client Mix</text>
+    <circle cx="568" cy="258" r="5" class="pie-claude"/>
+    <text x="580" y="262" class="label">Claude 19%</text>
+    <circle cx="662" cy="258" r="5" class="pie-codex"/>
+    <text x="674" y="262" class="label">Codex 81%</text>
+  </g>
+  <g aria-label="Top models">
+    <text x="24" y="286" class="section">Top Models</text>
+    <text x="24" y="306" class="muted">Model</text>
+    <text x="302" y="306" class="muted" text-anchor="end">Input</text>
+    <text x="438" y="306" class="muted" text-anchor="end">Output</text>
+    <text x="604" y="306" class="muted" text-anchor="end">Cache Ratio</text>
+    <text x="736" y="306" class="muted" text-anchor="end">Cost</text>
+    <text x="24" y="324" class="model-name"><title>gpt-5.4: 238M input, 16.9M output, 3.8B cache read, 0 cache write, 94.1% cache read ratio, $1.9K</title>gpt-5.4</text><text x="302" y="324" class="model-usage" text-anchor="end">238M</text><text x="438" y="324" class="model-usage" text-anchor="end">16.9M</text><text x="604" y="324" class="model-usage" text-anchor="end">94.1%</text><text x="736" y="324" class="model-cost" text-anchor="end">$1.9K</text><text x="24" y="340" class="model-name"><title>gpt-5.5: 219.2M input, 2.9M output, 456.4M cache read, 0 cache write, 67.6% cache read ratio, $1.5K</title>gpt-5.5</text><text x="302" y="340" class="model-usage" text-anchor="end">219.2M</text><text x="438" y="340" class="model-usage" text-anchor="end">2.9M</text><text x="604" y="340" class="model-usage" text-anchor="end">67.6%</text><text x="736" y="340" class="model-cost" text-anchor="end">$1.5K</text><text x="24" y="356" class="model-name"><title>claude-opus-4-6: 8.1M input, 1.5M output, 329.1M cache read, 170M cache write, 64.9% cache read ratio, $1.3K</title>claude-opus-4-6</text><text x="302" y="356" class="model-usage" text-anchor="end">8.1M</text><text x="438" y="356" class="model-usage" text-anchor="end">1.5M</text><text x="604" y="356" class="model-usage" text-anchor="end">64.9%</text><text x="736" y="356" class="model-cost" text-anchor="end">$1.3K</text><text x="24" y="372" class="model-name"><title>claude-opus-4-7: 240.2K input, 2.6M output, 310.7M cache read, 127.8M cache write, 70.8% cache read ratio, $1K</title>claude-opus-4-7</text><text x="302" y="372" class="model-usage" text-anchor="end">240.2K</text><text x="438" y="372" class="model-usage" text-anchor="end">2.6M</text><text x="604" y="372" class="model-usage" text-anchor="end">70.8%</text><text x="736" y="372" class="model-cost" text-anchor="end">$1K</text><text x="24" y="388" class="model-name"><title>gpt-5.2-codex: 18.9M input, 4.7M output, 385.2M cache read, 0 cache write, 95.3% cache read ratio, $214</title>gpt-5.2-codex</text><text x="302" y="388" class="model-usage" text-anchor="end">18.9M</text><text x="438" y="388" class="model-usage" text-anchor="end">4.7M</text><text x="604" y="388" class="model-usage" text-anchor="end">95.3%</text><text x="736" y="388" class="model-cost" text-anchor="end">$214</text><text x="24" y="404" class="model-name"><title>claude-opus-4-5: 565.2K input, 1.2M output, 165.6M cache read, 100.4M cache write, 62.1% cache read ratio, $742</title>claude-opus-4-5</text><text x="302" y="404" class="model-usage" text-anchor="end">565.2K</text><text x="438" y="404" class="model-usage" text-anchor="end">1.2M</text><text x="604" y="404" class="model-usage" text-anchor="end">62.1%</text><text x="736" y="404" class="model-cost" text-anchor="end">$742</text>
+  </g>
+  <text x="24" y="436" class="muted">Updated 2026-05-13 16:25 CST</text>
+</svg>

@@ -3,6 +3,17 @@
 [![GitHub followers](https://img.shields.io/github/followers/pekingspades?style=social)](https://github.com/pekingspades)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/pekingspades)
 
+<!-- vibe-coding:start -->
+## Vibe Coding
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/vibe-coding-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/vibe-coding-light.svg">
+    <img alt="Vibe coding stats" src="./assets/vibe-coding-light.svg">
+  </picture>
+</p>
+<!-- vibe-coding:end -->
 ## Open Source Contributions
 
 [![Total PRs](https://img.shields.io/badge/Total%20PRs-19-blue?style=for-the-badge)](https://github.com/search?q=author%3Apekingspades+-org%3Apkuhpc+-user%3Apekingspades&type=pullrequests)
