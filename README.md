@@ -1,7 +1,6 @@
 # Hi, I'm PekingSpades 👋
 
-[![GitHub followers](https://img.shields.io/github/followers/pekingspades?style=social)](https://github.com/pekingspades)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/pekingspades)
+Building interesting and meaningful projects.
 
 <!-- vibe-coding:start -->
 ## Vibe Coding
