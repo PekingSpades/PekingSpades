@@ -11,12 +11,12 @@
     .level-2 { fill: #40c463; }
     .level-3 { fill: #30a14e; }
     .level-4 { fill: #216e39; }
-    .speed-0 { fill: #ebedf0; }
-    .speed-1 { fill: #2da44e; }
-    .speed-2 { fill: #57ab5a; }
-    .speed-3 { fill: #f2cc60; }
-    .speed-4 { fill: #fb8f44; }
-    .speed-5 { fill: #cf222e; }
+    .speed-0, .weekday-speed-0 { fill: #ebedf0; }
+    .speed-1, .weekday-speed-1 { fill: #2da44e; }
+    .speed-2, .weekday-speed-2 { fill: #57ab5a; }
+    .speed-3, .weekday-speed-3 { fill: #f2cc60; }
+    .speed-4, .weekday-speed-4 { fill: #fb8f44; }
+    .speed-5, .weekday-speed-5 { fill: #cf222e; }
     .pie-claude { fill: #58a6ff; }
     .pie-codex { fill: #f2cc60; }
     .pie-empty { fill: #d0d7de; }
@@ -218,6 +218,14 @@
 <text x="0" y="24" class="muted">Mon</text>
 <text x="0" y="50" class="muted">Wed</text>
 <text x="0" y="76" class="muted">Fri</text>
+    <text x="383" y="10" class="muted">Day</text>
+<rect x="384" y="16" width="10" height="10" rx="2" class="weekday-speed-2"><title>Mondays: 0.94x model baseline latency (faster), 2.2s/1K, 100% timed coverage, 914.1M timed tokens; gpt-5.4 0.88x, gpt-5.5 0.99x, gpt-5.2-codex 1.27x</title></rect>
+<rect x="384" y="29" width="10" height="10" rx="2" class="weekday-speed-3"><title>Tuesdays: 1.05x model baseline latency (slower), 2.62s/1K, 99.9% timed coverage, 965M timed tokens; gpt-5.4 1.05x, gpt-5.5 1.44x, claude-opus-4-7 0.56x</title></rect>
+<rect x="384" y="42" width="10" height="10" rx="2" class="weekday-speed-4"><title>Wednesdays: 1.12x model baseline latency (slower), 3.09s/1K, 100% timed coverage, 1.1B timed tokens; gpt-5.4 1.21x, gpt-5.5 0.93x, gpt-5.2-codex 1.09x</title></rect>
+<rect x="384" y="55" width="10" height="10" rx="2" class="weekday-speed-3"><title>Thursdays: 1.07x model baseline latency (slower), 2.89s/1K, 99.7% timed coverage, 892.1M timed tokens; gpt-5.4 1.19x, gpt-5.5 0.73x, gpt-5.2-codex 1.16x</title></rect>
+<rect x="384" y="68" width="10" height="10" rx="2" class="weekday-speed-4"><title>Fridays: 1.14x model baseline latency (slower), 3.23s/1K, 100% timed coverage, 1.1B timed tokens; gpt-5.4 1.07x, gpt-5.5 1.64x, gpt-5.2-codex 0.49x</title></rect>
+<rect x="384" y="81" width="10" height="10" rx="2" class="weekday-speed-1"><title>Saturdays: 0.72x model baseline latency (faster), 1.8s/1K, 100% timed coverage, 992M timed tokens; gpt-5.4 0.75x, gpt-5.5 0.66x, claude-opus-4-7 0.51x</title></rect>
+<rect x="384" y="94" width="10" height="10" rx="2" class="weekday-speed-2"><title>Sundays: 0.94x model baseline latency (faster), 1.6s/1K, 98.2% timed coverage, 1.1B timed tokens; gpt-5.4 0.76x, gpt-5.5 0.67x, claude-opus-4-7 1.55x</title></rect>
     <text x="0" y="122" class="muted">Speed</text>
 <rect x="38" y="114" width="10" height="10" rx="2" class="speed-3"><title>2025-11-17 to 2025-11-23: 1.00x model baseline latency (baseline), 211ms/1K, 100% timed coverage, 29.9M timed tokens; gpt-5.1-codex 1.01x, gpt-5.1-codex-max 0.95x</title></rect>
 <rect x="51" y="114" width="10" height="10" rx="2" class="speed-2"><title>2025-11-24 to 2025-11-30: 0.89x model baseline latency (faster), 233ms/1K, 100% timed coverage, 32.8M timed tokens; gpt-5.1-codex-max 0.89x</title></rect>
@@ -264,6 +272,6 @@
     <text x="736" y="272" class="muted" text-anchor="end">Cost</text>
     <text x="24" y="290" class="model-name"><title>gpt-5.5: 276.2M input, 5.1M output, 1.1B cache read, 0 cache write, 80.2% cache read ratio, $2.2K</title>gpt-5.5</text><text x="302" y="290" class="model-usage" text-anchor="end">276.2M</text><text x="438" y="290" class="model-usage" text-anchor="end">5.1M</text><text x="604" y="290" class="model-usage" text-anchor="end">80.2%</text><text x="736" y="290" class="model-cost" text-anchor="end">$2.2K</text><text x="24" y="306" class="model-name"><title>gpt-5.4: 238M input, 16.9M output, 3.8B cache read, 0 cache write, 94.1% cache read ratio, $1.9K</title>gpt-5.4</text><text x="302" y="306" class="model-usage" text-anchor="end">238M</text><text x="438" y="306" class="model-usage" text-anchor="end">16.9M</text><text x="604" y="306" class="model-usage" text-anchor="end">94.1%</text><text x="736" y="306" class="model-cost" text-anchor="end">$1.9K</text><text x="24" y="322" class="model-name"><title>gpt-5.4-pro: 52.7M input, 401K output, 0 cache read, 0 cache write, 0% cache read ratio, $1.7K</title>gpt-5.4-pro</text><text x="302" y="322" class="model-usage" text-anchor="end">52.7M</text><text x="438" y="322" class="model-usage" text-anchor="end">401K</text><text x="604" y="322" class="model-usage" text-anchor="end">0%</text><text x="736" y="322" class="model-cost" text-anchor="end">$1.7K</text><text x="24" y="338" class="model-name"><title>claude-opus-4-7: 123K input, 1.7M output, 444.6M cache read, 97.3M cache write, 82% cache read ratio, $873</title>claude-opus-4-7</text><text x="302" y="338" class="model-usage" text-anchor="end">123K</text><text x="438" y="338" class="model-usage" text-anchor="end">1.7M</text><text x="604" y="338" class="model-usage" text-anchor="end">82%</text><text x="736" y="338" class="model-cost" text-anchor="end">$873</text><text x="24" y="354" class="model-name"><title>claude-opus-4-6: 1.4M input, 1.5M output, 150M cache read, 64.4M cache write, 69.5% cache read ratio, $522</title>claude-opus-4-6</text><text x="302" y="354" class="model-usage" text-anchor="end">1.4M</text><text x="438" y="354" class="model-usage" text-anchor="end">1.5M</text><text x="604" y="354" class="model-usage" text-anchor="end">69.5%</text><text x="736" y="354" class="model-cost" text-anchor="end">$522</text><text x="24" y="370" class="model-name"><title>claude-opus-4-5: 149.2K input, 1.1M output, 70.4M cache read, 42.1M cache write, 62.5% cache read ratio, $327</title>claude-opus-4-5</text><text x="302" y="370" class="model-usage" text-anchor="end">149.2K</text><text x="438" y="370" class="model-usage" text-anchor="end">1.1M</text><text x="604" y="370" class="model-usage" text-anchor="end">62.5%</text><text x="736" y="370" class="model-cost" text-anchor="end">$327</text><text x="24" y="386" class="model-usage"><title>13 additional models: 34.2M input, 8.1M output, 684.1M cache read, 1.8M cache write, 95% cache read ratio, $352</title>+13 models</text><text x="302" y="386" class="model-usage" text-anchor="end">34.2M</text><text x="438" y="386" class="model-usage" text-anchor="end">8.1M</text><text x="604" y="386" class="model-usage" text-anchor="end">95%</text><text x="736" y="386" class="model-cost" text-anchor="end">$352</text>
   </g>
-  <text x="24" y="418" class="muted">Since 2025-11-17 · Updated 2026-05-17 19:38 CST</text>
+  <text x="24" y="418" class="muted">Since 2025-11-17 · Updated 2026-05-17 23:32 CST</text>
   <text x="736" y="418" class="muted" text-anchor="end">Powered by tokscale</text>
 </svg>
