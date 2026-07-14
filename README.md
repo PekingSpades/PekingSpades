@@ -3,8 +3,6 @@
 Building interesting and meaningful projects.
 
 <!-- vibe-coding:start -->
-## Vibe Coding
-
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./assets/vibe-coding-dark.svg">
