@@ -1,278 +1,466 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="760" height="428" viewBox="0 0 760 428" role="img" aria-label="Vibe coding stats">
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="630" viewBox="0 0 840 630" role="img" aria-label="Vibe coding stats: 61.7B tokens across 176 active days, $51.2K total cost">
   <style>
-    .title { fill: #f0f6fc; font: 700 20px system-ui, -apple-system, Segoe UI, sans-serif; }
-    .subtitle { fill: #8b949e; font: 12px system-ui, -apple-system, Segoe UI, sans-serif; }
-    .metric { fill: #f0f6fc; font: 700 22px system-ui, -apple-system, Segoe UI, sans-serif; }
-    .label { fill: #8b949e; font: 12px system-ui, -apple-system, Segoe UI, sans-serif; }
-    .section { fill: #f0f6fc; font: 700 13px system-ui, -apple-system, Segoe UI, sans-serif; }
-    .muted { fill: #8b949e; font: 10px system-ui, -apple-system, Segoe UI, sans-serif; }
-    .level-0 { fill: #30363d; }
-    .level-1 { fill: #9be9a8; }
-    .level-2 { fill: #40c463; }
-    .level-3 { fill: #30a14e; }
-    .level-4 { fill: #216e39; }
-    .speed-0, .weekday-speed-0 { fill: #30363d; }
-    .speed-1, .weekday-speed-1 { fill: #2da44e; }
-    .speed-2, .weekday-speed-2 { fill: #57ab5a; }
-    .speed-3, .weekday-speed-3 { fill: #f2cc60; }
-    .speed-4, .weekday-speed-4 { fill: #fb8f44; }
-    .speed-5, .weekday-speed-5 { fill: #cf222e; }
-    .pie-claude { fill: #58a6ff; }
-    .pie-codex { fill: #f2cc60; }
-    .pie-empty { fill: #30363d; }
-    .model-name { fill: #f0f6fc; font: 600 11px system-ui, -apple-system, Segoe UI, sans-serif; }
-    .model-usage { fill: #8b949e; font: 11px system-ui, -apple-system, Segoe UI, sans-serif; }
-    .model-cost { fill: #f0f6fc; font: 600 11px system-ui, -apple-system, Segoe UI, sans-serif; }
-    .signature { fill: #f0f6fc; font: 700 11px system-ui, -apple-system, Segoe UI, sans-serif; }
+    @font-face { font-family: 'JBMono'; font-style: normal; font-weight: 500; src: url(data:font/woff2;base64,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) format('woff2'); }
+    @font-face { font-family: 'JBMono'; font-style: normal; font-weight: 700; src: url(data:font/woff2;base64,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) format('woff2'); }
+    text { font-family: 'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif; }
+    .title { fill: #E6EDF3; font-family: 'JBMono', 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace; font-size: 20px; font-weight: 700; letter-spacing: 1.4px; }
+    .subtitle { fill: #8B949E; font-family: 'JBMono', 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace; font-size: 12px; font-weight: 500; }
+    .hero { font-family: 'JBMono', 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace; font-size: 40px; font-weight: 700; }
+    .hero-label { fill: #8B949E; font-size: 12px; letter-spacing: 0.8px; }
+    .tile-label { fill: #8B949E; font-size: 12px; font-weight: 500; letter-spacing: 0.8px; }
+    .stat-value { fill: #E6EDF3; font-family: 'JBMono', 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace; font-size: 24px; font-weight: 700; }
+    .panel { fill: #161B22; stroke: rgba(240,246,252,0.10); stroke-width: 1; }
+    .panel-label { fill: #8B949E; font-size: 13px; font-weight: 600; letter-spacing: 0.8px; }
+    .axis { fill: #848D97; font-size: 12px; }
+    .peak { fill: #E6EDF3; font-family: 'JBMono', 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace; font-size: 13px; font-weight: 500; }
+    .peak-pill { fill: #161B22; opacity: 0.88; }
+    .debut { fill: #E6EDF3; font-family: 'JBMono', 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace; font-size: 11px; font-weight: 500; }
+    .debut-pill { fill: #161B22; stroke: rgba(240,246,252,0.10); stroke-width: 1; }
+    .debut-pin { stroke: #8B949E; stroke-width: 1.5; opacity: 0.9; fill: none; }
+    .debut-dot { fill: #8B949E; }
+    .t0 { fill: #161B22; stroke: #21262D; stroke-width: 0.5; opacity: 0.6; }
+    .t1 { fill: #0D419D; }
+    .r1 { fill: #0B3784; }
+    .l1 { fill: #092E6E; }
+    .t2 { fill: #1F6FEB; }
+    .r2 { fill: #1A5DC5; }
+    .l2 { fill: #164EA4; }
+    .t3 { fill: #388BFD; }
+    .r3 { fill: #2F75D5; }
+    .l3 { fill: #2761B1; }
+    .t4 { fill: #58A6FF; }
+    .r4 { fill: #4A8BD6; }
+    .l4 { fill: #3E74B2; }
+    .t5 { fill: #96CDFF; }
+    .r5 { fill: #7EACD6; }
+    .l5 { fill: #6990B2; }
+    .chip-claude { fill: #C4633F; }
+    .chip-codex { fill: #0FA3B1; }
+    .micon, .subicon { fill: #8B949E; }
+    .model-name { fill: #E6EDF3; font-family: 'JBMono', 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace; font-size: 15px; font-weight: 500; }
+    .model-num { fill: #8B949E; font-family: 'JBMono', 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace; font-size: 14px; font-weight: 500; }
+    .model-cost { fill: #E6EDF3; font-family: 'JBMono', 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace; font-size: 14px; font-weight: 700; }
+    .cost-bar { fill: #58A6FF; opacity: 0.85; }
+    .footer { fill: #8B949E; font-size: 13px; font-variant-numeric: tabular-nums; }
+    .signature { fill: #E6EDF3; font-size: 14px; font-weight: 700; }
+
+    .tile, .mrow, .panel-in { animation: fadeUp 500ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+    .terrain-in { animation: fadeIn 500ms ease-out 300ms both; }
+    .cb { transform-box: fill-box; transform-origin: 50% 100%; animation: rise 600ms cubic-bezier(0.2, 0.9, 0.3, 1) both; }
+    .fd { animation: fadeIn 600ms ease-out both; }
+    .cost-bar { transform-box: fill-box; transform-origin: 0% 50%; animation: growX 500ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+    .sheen { animation: sweep 1100ms ease-in-out 2600ms both; }
+    .beacon { animation: fadeIn 500ms ease-out 2200ms both; }
+    .dbt { animation: fadeIn 400ms ease-out both; }
+    .beam { opacity: 0.35; animation: pulse 4.5s ease-in-out 2400ms infinite; }
+    .mrh { animation-delay: 1400ms; }
+    .p-c { animation-delay: 540ms; }
+    .ti0 { animation-delay: 200ms; }
+    .ti1 { animation-delay: 320ms; }
+    .w0 { animation-delay: 400ms; }
+    .w1 { animation-delay: 434ms; }
+    .w2 { animation-delay: 468ms; }
+    .w3 { animation-delay: 502ms; }
+    .w4 { animation-delay: 536ms; }
+    .w5 { animation-delay: 570ms; }
+    .w6 { animation-delay: 604ms; }
+    .w7 { animation-delay: 638ms; }
+    .w8 { animation-delay: 672ms; }
+    .w9 { animation-delay: 706ms; }
+    .w10 { animation-delay: 740ms; }
+    .w11 { animation-delay: 774ms; }
+    .w12 { animation-delay: 808ms; }
+    .w13 { animation-delay: 842ms; }
+    .w14 { animation-delay: 876ms; }
+    .w15 { animation-delay: 910ms; }
+    .w16 { animation-delay: 944ms; }
+    .w17 { animation-delay: 978ms; }
+    .w18 { animation-delay: 1012ms; }
+    .w19 { animation-delay: 1046ms; }
+    .w20 { animation-delay: 1080ms; }
+    .w21 { animation-delay: 1114ms; }
+    .w22 { animation-delay: 1148ms; }
+    .w23 { animation-delay: 1182ms; }
+    .w24 { animation-delay: 1216ms; }
+    .w25 { animation-delay: 1250ms; }
+    .w26 { animation-delay: 1284ms; }
+    .w27 { animation-delay: 1318ms; }
+    .w28 { animation-delay: 1352ms; }
+    .w29 { animation-delay: 1386ms; }
+    .w30 { animation-delay: 1420ms; }
+    .w31 { animation-delay: 1454ms; }
+    .w32 { animation-delay: 1488ms; }
+    .w33 { animation-delay: 1522ms; }
+    .w34 { animation-delay: 1556ms; }
+    .w35 { animation-delay: 1590ms; }
+    .w36 { animation-delay: 1624ms; }
+    .w37 { animation-delay: 1658ms; }
+    .w38 { animation-delay: 1692ms; }
+    .w39 { animation-delay: 1726ms; }
+    .w40 { animation-delay: 1760ms; }
+    .w41 { animation-delay: 1794ms; }
+    .w42 { animation-delay: 1828ms; }
+    .w43 { animation-delay: 1862ms; }
+    .w44 { animation-delay: 1896ms; }
+    .w45 { animation-delay: 1930ms; }
+    .w46 { animation-delay: 1964ms; }
+    .w47 { animation-delay: 1998ms; }
+    .w48 { animation-delay: 2032ms; }
+    .w49 { animation-delay: 2066ms; }
+    .w50 { animation-delay: 2100ms; }
+    .w51 { animation-delay: 2134ms; }
+    .mr0 { animation-delay: 1500ms; }
+    .mr1 { animation-delay: 1580ms; }
+    .mr2 { animation-delay: 1660ms; }
+    .mr3 { animation-delay: 1740ms; }
+    .mr4 { animation-delay: 1820ms; }
+    .cbar0 { animation-delay: 1600ms; }
+    .cbar1 { animation-delay: 1680ms; }
+    .cbar2 { animation-delay: 1760ms; }
+    .cbar3 { animation-delay: 1840ms; }
+    .cbar4 { animation-delay: 1920ms; }
+    .db0 { animation-delay: 1900ms; }
+    .db1 { animation-delay: 2010ms; }
+    .db2 { animation-delay: 2120ms; }
+    .db3 { animation-delay: 2230ms; }
+    .db4 { animation-delay: 2340ms; }
+    .db5 { animation-delay: 2450ms; }
+    .db6 { animation-delay: 2560ms; }
+    .db7 { animation-delay: 2670ms; }
+    .db8 { animation-delay: 2780ms; }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeIn { from { opacity: 0; } }
+    @keyframes rise { 0% { opacity: 0; transform: scaleY(0); } 30% { opacity: 1; } 100% { opacity: 1; transform: scaleY(1); } }
+    @keyframes growX { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+    @keyframes sweep { from { transform: translateX(-380px); } to { transform: translateX(360px); } }
+    @keyframes pulse { 0%, 100% { opacity: 0.35; } 50% { opacity: 0.9; } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
   </style>
-    <text x="24" y="30" class="metric">56.1B</text><text x="24" y="52" class="label">Total</text><text x="160" y="30" class="metric">3.7B</text><text x="160" y="52" class="label">7 days</text><text x="296" y="30" class="metric">20.3B</text><text x="296" y="52" class="label">30 days</text><text x="432" y="30" class="metric">275.8K</text><text x="432" y="52" class="label">Messages</text><text x="568" y="30" class="metric">171d</text><text x="568" y="52" class="label">Active</text>
-  <text x="24" y="80" class="section">Activity</text>
-  <g transform="translate(24,99)">
-    <rect x="38" y="16" width="10" height="10" rx="2" class="level-1"><title>2026-01-12: 7.9M tokens</title></rect>
-<rect x="38" y="29" width="10" height="10" rx="2" class="level-1"><title>2026-01-13: 2.9M tokens</title></rect>
-<rect x="38" y="42" width="10" height="10" rx="2" class="level-1"><title>2026-01-14: 276.5K tokens</title></rect>
-<rect x="38" y="55" width="10" height="10" rx="2" class="level-1"><title>2026-01-15: 896.4K tokens</title></rect>
-<rect x="38" y="68" width="10" height="10" rx="2" class="level-1"><title>2026-01-16: 228K tokens</title></rect>
-<rect x="38" y="81" width="10" height="10" rx="2" class="level-2"><title>2026-01-17: 46.1M tokens</title></rect>
-<rect x="38" y="94" width="10" height="10" rx="2" class="level-2"><title>2026-01-18: 53.6M tokens</title></rect>
-<rect x="51" y="16" width="10" height="10" rx="2" class="level-2"><title>2026-01-19: 29.4M tokens</title></rect>
-<rect x="51" y="29" width="10" height="10" rx="2" class="level-2"><title>2026-01-20: 58.9M tokens</title></rect>
-<rect x="51" y="42" width="10" height="10" rx="2" class="level-2"><title>2026-01-21: 52M tokens</title></rect>
-<rect x="51" y="55" width="10" height="10" rx="2" class="level-2"><title>2026-01-22: 42.4M tokens</title></rect>
-<rect x="51" y="68" width="10" height="10" rx="2" class="level-1"><title>2026-01-23: 5.1M tokens</title></rect>
-<rect x="51" y="81" width="10" height="10" rx="2" class="level-0"><title>2026-01-24: 0 tokens</title></rect>
-<rect x="51" y="94" width="10" height="10" rx="2" class="level-2"><title>2026-01-25: 22.1M tokens</title></rect>
-<rect x="64" y="16" width="10" height="10" rx="2" class="level-2"><title>2026-01-26: 30.6M tokens</title></rect>
-<rect x="64" y="29" width="10" height="10" rx="2" class="level-1"><title>2026-01-27: 861.4K tokens</title></rect>
-<rect x="64" y="42" width="10" height="10" rx="2" class="level-2"><title>2026-01-28: 37.3M tokens</title></rect>
-<rect x="64" y="55" width="10" height="10" rx="2" class="level-2"><title>2026-01-29: 54.6M tokens</title></rect>
-<rect x="64" y="68" width="10" height="10" rx="2" class="level-2"><title>2026-01-30: 93.3M tokens</title></rect>
-<rect x="64" y="81" width="10" height="10" rx="2" class="level-1"><title>2026-01-31: 2.7M tokens</title></rect>
-<rect x="64" y="94" width="10" height="10" rx="2" class="level-0"><title>2026-02-01: 0 tokens</title></rect>
-<text x="77" y="10" class="muted">Feb</text>
-<rect x="77" y="16" width="10" height="10" rx="2" class="level-1"><title>2026-02-02: 6.6M tokens</title></rect>
-<rect x="77" y="29" width="10" height="10" rx="2" class="level-1"><title>2026-02-03: 2.9M tokens</title></rect>
-<rect x="77" y="42" width="10" height="10" rx="2" class="level-1"><title>2026-02-04: 2.6M tokens</title></rect>
-<rect x="77" y="55" width="10" height="10" rx="2" class="level-0"><title>2026-02-05: 0 tokens</title></rect>
-<rect x="77" y="68" width="10" height="10" rx="2" class="level-1"><title>2026-02-06: 15.2K tokens</title></rect>
-<rect x="77" y="81" width="10" height="10" rx="2" class="level-1"><title>2026-02-07: 390.5K tokens</title></rect>
-<rect x="77" y="94" width="10" height="10" rx="2" class="level-1"><title>2026-02-08: 12.8M tokens</title></rect>
-<rect x="90" y="16" width="10" height="10" rx="2" class="level-1"><title>2026-02-09: 749.7K tokens</title></rect>
-<rect x="90" y="29" width="10" height="10" rx="2" class="level-0"><title>2026-02-10: 0 tokens</title></rect>
-<rect x="90" y="42" width="10" height="10" rx="2" class="level-0"><title>2026-02-11: 0 tokens</title></rect>
-<rect x="90" y="55" width="10" height="10" rx="2" class="level-0"><title>2026-02-12: 0 tokens</title></rect>
-<rect x="90" y="68" width="10" height="10" rx="2" class="level-0"><title>2026-02-13: 0 tokens</title></rect>
-<rect x="90" y="81" width="10" height="10" rx="2" class="level-0"><title>2026-02-14: 0 tokens</title></rect>
-<rect x="90" y="94" width="10" height="10" rx="2" class="level-0"><title>2026-02-15: 0 tokens</title></rect>
-<rect x="103" y="16" width="10" height="10" rx="2" class="level-0"><title>2026-02-16: 0 tokens</title></rect>
-<rect x="103" y="29" width="10" height="10" rx="2" class="level-0"><title>2026-02-17: 0 tokens</title></rect>
-<rect x="103" y="42" width="10" height="10" rx="2" class="level-0"><title>2026-02-18: 0 tokens</title></rect>
-<rect x="103" y="55" width="10" height="10" rx="2" class="level-0"><title>2026-02-19: 0 tokens</title></rect>
-<rect x="103" y="68" width="10" height="10" rx="2" class="level-0"><title>2026-02-20: 0 tokens</title></rect>
-<rect x="103" y="81" width="10" height="10" rx="2" class="level-0"><title>2026-02-21: 0 tokens</title></rect>
-<rect x="103" y="94" width="10" height="10" rx="2" class="level-0"><title>2026-02-22: 0 tokens</title></rect>
-<rect x="116" y="16" width="10" height="10" rx="2" class="level-0"><title>2026-02-23: 0 tokens</title></rect>
-<rect x="116" y="29" width="10" height="10" rx="2" class="level-0"><title>2026-02-24: 0 tokens</title></rect>
-<rect x="116" y="42" width="10" height="10" rx="2" class="level-0"><title>2026-02-25: 0 tokens</title></rect>
-<rect x="116" y="55" width="10" height="10" rx="2" class="level-0"><title>2026-02-26: 0 tokens</title></rect>
-<rect x="116" y="68" width="10" height="10" rx="2" class="level-2"><title>2026-02-27: 14.5M tokens</title></rect>
-<rect x="116" y="81" width="10" height="10" rx="2" class="level-2"><title>2026-02-28: 39.6M tokens</title></rect>
-<rect x="116" y="94" width="10" height="10" rx="2" class="level-2"><title>2026-03-01: 20.6M tokens</title></rect>
-<text x="129" y="10" class="muted">Mar</text>
-<rect x="129" y="16" width="10" height="10" rx="2" class="level-1"><title>2026-03-02: 4.3M tokens</title></rect>
-<rect x="129" y="29" width="10" height="10" rx="2" class="level-2"><title>2026-03-03: 20.7M tokens</title></rect>
-<rect x="129" y="42" width="10" height="10" rx="2" class="level-2"><title>2026-03-04: 25.5M tokens</title></rect>
-<rect x="129" y="55" width="10" height="10" rx="2" class="level-2"><title>2026-03-05: 18.2M tokens</title></rect>
-<rect x="129" y="68" width="10" height="10" rx="2" class="level-1"><title>2026-03-06: 10.9M tokens</title></rect>
-<rect x="129" y="81" width="10" height="10" rx="2" class="level-1"><title>2026-03-07: 318.2K tokens</title></rect>
-<rect x="129" y="94" width="10" height="10" rx="2" class="level-0"><title>2026-03-08: 0 tokens</title></rect>
-<rect x="142" y="16" width="10" height="10" rx="2" class="level-1"><title>2026-03-09: 11.5M tokens</title></rect>
-<rect x="142" y="29" width="10" height="10" rx="2" class="level-1"><title>2026-03-10: 2.7M tokens</title></rect>
-<rect x="142" y="42" width="10" height="10" rx="2" class="level-1"><title>2026-03-11: 227.7K tokens</title></rect>
-<rect x="142" y="55" width="10" height="10" rx="2" class="level-0"><title>2026-03-12: 0 tokens</title></rect>
-<rect x="142" y="68" width="10" height="10" rx="2" class="level-2"><title>2026-03-13: 13.9M tokens</title></rect>
-<rect x="142" y="81" width="10" height="10" rx="2" class="level-2"><title>2026-03-14: 20.9M tokens</title></rect>
-<rect x="142" y="94" width="10" height="10" rx="2" class="level-1"><title>2026-03-15: 2.3M tokens</title></rect>
-<rect x="155" y="16" width="10" height="10" rx="2" class="level-1"><title>2026-03-16: 12.4M tokens</title></rect>
-<rect x="155" y="29" width="10" height="10" rx="2" class="level-0"><title>2026-03-17: 0 tokens</title></rect>
-<rect x="155" y="42" width="10" height="10" rx="2" class="level-0"><title>2026-03-18: 0 tokens</title></rect>
-<rect x="155" y="55" width="10" height="10" rx="2" class="level-0"><title>2026-03-19: 0 tokens</title></rect>
-<rect x="155" y="68" width="10" height="10" rx="2" class="level-1"><title>2026-03-20: 7.6M tokens</title></rect>
-<rect x="155" y="81" width="10" height="10" rx="2" class="level-1"><title>2026-03-21: 1.2M tokens</title></rect>
-<rect x="155" y="94" width="10" height="10" rx="2" class="level-1"><title>2026-03-22: 4.2M tokens</title></rect>
-<rect x="168" y="16" width="10" height="10" rx="2" class="level-1"><title>2026-03-23: 9.4M tokens</title></rect>
-<rect x="168" y="29" width="10" height="10" rx="2" class="level-1"><title>2026-03-24: 1.1M tokens</title></rect>
-<rect x="168" y="42" width="10" height="10" rx="2" class="level-2"><title>2026-03-25: 100.2M tokens</title></rect>
-<rect x="168" y="55" width="10" height="10" rx="2" class="level-3"><title>2026-03-26: 173.4M tokens</title></rect>
-<rect x="168" y="68" width="10" height="10" rx="2" class="level-3"><title>2026-03-27: 246.8M tokens</title></rect>
-<rect x="168" y="81" width="10" height="10" rx="2" class="level-3"><title>2026-03-28: 265.1M tokens</title></rect>
-<rect x="168" y="94" width="10" height="10" rx="2" class="level-3"><title>2026-03-29: 170.8M tokens</title></rect>
-<rect x="181" y="16" width="10" height="10" rx="2" class="level-3"><title>2026-03-30: 258M tokens</title></rect>
-<rect x="181" y="29" width="10" height="10" rx="2" class="level-3"><title>2026-03-31: 347.2M tokens</title></rect>
-<rect x="181" y="42" width="10" height="10" rx="2" class="level-3"><title>2026-04-01: 422.3M tokens</title></rect>
-<rect x="181" y="55" width="10" height="10" rx="2" class="level-3"><title>2026-04-02: 278.2M tokens</title></rect>
-<rect x="181" y="68" width="10" height="10" rx="2" class="level-3"><title>2026-04-03: 281.7M tokens</title></rect>
-<rect x="181" y="81" width="10" height="10" rx="2" class="level-3"><title>2026-04-04: 346.2M tokens</title></rect>
-<rect x="181" y="94" width="10" height="10" rx="2" class="level-3"><title>2026-04-05: 244.6M tokens</title></rect>
-<text x="194" y="10" class="muted">Apr</text>
-<rect x="194" y="16" width="10" height="10" rx="2" class="level-3"><title>2026-04-06: 251.4M tokens</title></rect>
-<rect x="194" y="29" width="10" height="10" rx="2" class="level-3"><title>2026-04-07: 257.5M tokens</title></rect>
-<rect x="194" y="42" width="10" height="10" rx="2" class="level-3"><title>2026-04-08: 165.4M tokens</title></rect>
-<rect x="194" y="55" width="10" height="10" rx="2" class="level-3"><title>2026-04-09: 106.4M tokens</title></rect>
-<rect x="194" y="68" width="10" height="10" rx="2" class="level-2"><title>2026-04-10: 93.9M tokens</title></rect>
-<rect x="194" y="81" width="10" height="10" rx="2" class="level-0"><title>2026-04-11: 0 tokens</title></rect>
-<rect x="194" y="94" width="10" height="10" rx="2" class="level-1"><title>2026-04-12: 6.9M tokens</title></rect>
-<rect x="207" y="16" width="10" height="10" rx="2" class="level-2"><title>2026-04-13: 23.1M tokens</title></rect>
-<rect x="207" y="29" width="10" height="10" rx="2" class="level-1"><title>2026-04-14: 1.1M tokens</title></rect>
-<rect x="207" y="42" width="10" height="10" rx="2" class="level-1"><title>2026-04-15: 11.2M tokens</title></rect>
-<rect x="207" y="55" width="10" height="10" rx="2" class="level-0"><title>2026-04-16: 0 tokens</title></rect>
-<rect x="207" y="68" width="10" height="10" rx="2" class="level-0"><title>2026-04-17: 0 tokens</title></rect>
-<rect x="207" y="81" width="10" height="10" rx="2" class="level-0"><title>2026-04-18: 0 tokens</title></rect>
-<rect x="207" y="94" width="10" height="10" rx="2" class="level-0"><title>2026-04-19: 0 tokens</title></rect>
-<rect x="220" y="16" width="10" height="10" rx="2" class="level-0"><title>2026-04-20: 0 tokens</title></rect>
-<rect x="220" y="29" width="10" height="10" rx="2" class="level-0"><title>2026-04-21: 0 tokens</title></rect>
-<rect x="220" y="42" width="10" height="10" rx="2" class="level-0"><title>2026-04-22: 0 tokens</title></rect>
-<rect x="220" y="55" width="10" height="10" rx="2" class="level-0"><title>2026-04-23: 0 tokens</title></rect>
-<rect x="220" y="68" width="10" height="10" rx="2" class="level-0"><title>2026-04-24: 0 tokens</title></rect>
-<rect x="220" y="81" width="10" height="10" rx="2" class="level-0"><title>2026-04-25: 0 tokens</title></rect>
-<rect x="220" y="94" width="10" height="10" rx="2" class="level-2"><title>2026-04-26: 16.8M tokens</title></rect>
-<rect x="233" y="16" width="10" height="10" rx="2" class="level-3"><title>2026-04-27: 160.8M tokens</title></rect>
-<rect x="233" y="29" width="10" height="10" rx="2" class="level-3"><title>2026-04-28: 118.2M tokens</title></rect>
-<rect x="233" y="42" width="10" height="10" rx="2" class="level-2"><title>2026-04-29: 47.1M tokens</title></rect>
-<rect x="233" y="55" width="10" height="10" rx="2" class="level-2"><title>2026-04-30: 53.9M tokens</title></rect>
-<rect x="233" y="68" width="10" height="10" rx="2" class="level-1"><title>2026-05-01: 13.7M tokens</title></rect>
-<rect x="233" y="81" width="10" height="10" rx="2" class="level-0"><title>2026-05-02: 0 tokens</title></rect>
-<rect x="233" y="94" width="10" height="10" rx="2" class="level-0"><title>2026-05-03: 0 tokens</title></rect>
-<text x="246" y="10" class="muted">May</text>
-<rect x="246" y="16" width="10" height="10" rx="2" class="level-0"><title>2026-05-04: 0 tokens</title></rect>
-<rect x="246" y="29" width="10" height="10" rx="2" class="level-0"><title>2026-05-05: 0 tokens</title></rect>
-<rect x="246" y="42" width="10" height="10" rx="2" class="level-0"><title>2026-05-06: 0 tokens</title></rect>
-<rect x="246" y="55" width="10" height="10" rx="2" class="level-1"><title>2026-05-07: 13.4M tokens</title></rect>
-<rect x="246" y="68" width="10" height="10" rx="2" class="level-2"><title>2026-05-08: 102.1M tokens</title></rect>
-<rect x="246" y="81" width="10" height="10" rx="2" class="level-1"><title>2026-05-09: 9.9M tokens</title></rect>
-<rect x="246" y="94" width="10" height="10" rx="2" class="level-2"><title>2026-05-10: 98.3M tokens</title></rect>
-<rect x="259" y="16" width="10" height="10" rx="2" class="level-2"><title>2026-05-11: 62.7M tokens</title></rect>
-<rect x="259" y="29" width="10" height="10" rx="2" class="level-2"><title>2026-05-12: 101.7M tokens</title></rect>
-<rect x="259" y="42" width="10" height="10" rx="2" class="level-3"><title>2026-05-13: 204.8M tokens</title></rect>
-<rect x="259" y="55" width="10" height="10" rx="2" class="level-2"><title>2026-05-14: 87M tokens</title></rect>
-<rect x="259" y="68" width="10" height="10" rx="2" class="level-3"><title>2026-05-15: 193M tokens</title></rect>
-<rect x="259" y="81" width="10" height="10" rx="2" class="level-3"><title>2026-05-16: 251.3M tokens</title></rect>
-<rect x="259" y="94" width="10" height="10" rx="2" class="level-3"><title>2026-05-17: 486.8M tokens</title></rect>
-<rect x="272" y="16" width="10" height="10" rx="2" class="level-3"><title>2026-05-18: 310.6M tokens</title></rect>
-<rect x="272" y="29" width="10" height="10" rx="2" class="level-3"><title>2026-05-19: 187.4M tokens</title></rect>
-<rect x="272" y="42" width="10" height="10" rx="2" class="level-3"><title>2026-05-20: 153.4M tokens</title></rect>
-<rect x="272" y="55" width="10" height="10" rx="2" class="level-3"><title>2026-05-21: 341.1M tokens</title></rect>
-<rect x="272" y="68" width="10" height="10" rx="2" class="level-4"><title>2026-05-22: 1.9B tokens</title></rect>
-<rect x="272" y="81" width="10" height="10" rx="2" class="level-4"><title>2026-05-23: 2.9B tokens</title></rect>
-<rect x="272" y="94" width="10" height="10" rx="2" class="level-4"><title>2026-05-24: 959.5M tokens</title></rect>
-<rect x="285" y="16" width="10" height="10" rx="2" class="level-4"><title>2026-05-25: 1.2B tokens</title></rect>
-<rect x="285" y="29" width="10" height="10" rx="2" class="level-4"><title>2026-05-26: 3.1B tokens</title></rect>
-<rect x="285" y="42" width="10" height="10" rx="2" class="level-4"><title>2026-05-27: 2.2B tokens</title></rect>
-<rect x="285" y="55" width="10" height="10" rx="2" class="level-3"><title>2026-05-28: 499.4M tokens</title></rect>
-<rect x="285" y="68" width="10" height="10" rx="2" class="level-4"><title>2026-05-29: 921.1M tokens</title></rect>
-<rect x="285" y="81" width="10" height="10" rx="2" class="level-4"><title>2026-05-30: 1.6B tokens</title></rect>
-<rect x="285" y="94" width="10" height="10" rx="2" class="level-4"><title>2026-05-31: 1B tokens</title></rect>
-<text x="298" y="10" class="muted">Jun</text>
-<rect x="298" y="16" width="10" height="10" rx="2" class="level-4"><title>2026-06-01: 2.4B tokens</title></rect>
-<rect x="298" y="29" width="10" height="10" rx="2" class="level-4"><title>2026-06-02: 2B tokens</title></rect>
-<rect x="298" y="42" width="10" height="10" rx="2" class="level-4"><title>2026-06-03: 907.9M tokens</title></rect>
-<rect x="298" y="55" width="10" height="10" rx="2" class="level-4"><title>2026-06-04: 1.2B tokens</title></rect>
-<rect x="298" y="68" width="10" height="10" rx="2" class="level-4"><title>2026-06-05: 1B tokens</title></rect>
-<rect x="298" y="81" width="10" height="10" rx="2" class="level-4"><title>2026-06-06: 1.1B tokens</title></rect>
-<rect x="298" y="94" width="10" height="10" rx="2" class="level-4"><title>2026-06-07: 687.1M tokens</title></rect>
-<rect x="311" y="16" width="10" height="10" rx="2" class="level-4"><title>2026-06-08: 2B tokens</title></rect>
-<rect x="311" y="29" width="10" height="10" rx="2" class="level-4"><title>2026-06-09: 1.7B tokens</title></rect>
-<rect x="311" y="42" width="10" height="10" rx="2" class="level-4"><title>2026-06-10: 1.1B tokens</title></rect>
-<rect x="311" y="55" width="10" height="10" rx="2" class="level-4"><title>2026-06-11: 983.1M tokens</title></rect>
-<rect x="311" y="68" width="10" height="10" rx="2" class="level-4"><title>2026-06-12: 1.2B tokens</title></rect>
-<rect x="311" y="81" width="10" height="10" rx="2" class="level-4"><title>2026-06-13: 1.1B tokens</title></rect>
-<rect x="311" y="94" width="10" height="10" rx="2" class="level-4"><title>2026-06-14: 1.1B tokens</title></rect>
-<rect x="324" y="16" width="10" height="10" rx="2" class="level-4"><title>2026-06-15: 978.5M tokens</title></rect>
-<rect x="324" y="29" width="10" height="10" rx="2" class="level-4"><title>2026-06-16: 966.9M tokens</title></rect>
-<rect x="324" y="42" width="10" height="10" rx="2" class="level-4"><title>2026-06-17: 1.7B tokens</title></rect>
-<rect x="324" y="55" width="10" height="10" rx="2" class="level-4"><title>2026-06-18: 951M tokens</title></rect>
-<rect x="324" y="68" width="10" height="10" rx="2" class="level-3"><title>2026-06-19: 515.1M tokens</title></rect>
-<rect x="324" y="81" width="10" height="10" rx="2" class="level-4"><title>2026-06-20: 676.1M tokens</title></rect>
-<rect x="324" y="94" width="10" height="10" rx="2" class="level-4"><title>2026-06-21: 604.1M tokens</title></rect>
-<rect x="337" y="16" width="10" height="10" rx="2" class="level-3"><title>2026-06-22: 449.8M tokens</title></rect>
-<rect x="337" y="29" width="10" height="10" rx="2" class="level-3"><title>2026-06-23: 543.8M tokens</title></rect>
-<rect x="337" y="42" width="10" height="10" rx="2" class="level-3"><title>2026-06-24: 181.1M tokens</title></rect>
-<rect x="337" y="55" width="10" height="10" rx="2" class="level-3"><title>2026-06-25: 552.3M tokens</title></rect>
-<rect x="337" y="68" width="10" height="10" rx="2" class="level-2"><title>2026-06-26: 49M tokens</title></rect>
-<rect x="337" y="81" width="10" height="10" rx="2" class="level-3"><title>2026-06-27: 276.3M tokens</title></rect>
-<rect x="337" y="94" width="10" height="10" rx="2" class="level-0"><title>2026-06-28: 0 tokens</title></rect>
-<rect x="350" y="16" width="10" height="10" rx="2" class="level-2"><title>2026-06-29: 70.5M tokens</title></rect>
-<rect x="350" y="29" width="10" height="10" rx="2" class="level-2"><title>2026-06-30: 105.4M tokens</title></rect>
-<rect x="350" y="42" width="10" height="10" rx="2" class="level-4"><title>2026-07-01: 803.2M tokens</title></rect>
-<rect x="350" y="55" width="10" height="10" rx="2" class="level-3"><title>2026-07-02: 505.8M tokens</title></rect>
-<rect x="350" y="68" width="10" height="10" rx="2" class="level-4"><title>2026-07-03: 674.9M tokens</title></rect>
-<rect x="350" y="81" width="10" height="10" rx="2" class="level-4"><title>2026-07-04: 784.7M tokens</title></rect>
-<rect x="350" y="94" width="10" height="10" rx="2" class="level-4"><title>2026-07-05: 629.5M tokens</title></rect>
-<text x="363" y="10" class="muted">Jul</text>
-<rect x="363" y="16" width="10" height="10" rx="2" class="level-4"><title>2026-07-06: 670.7M tokens</title></rect>
-<rect x="363" y="29" width="10" height="10" rx="2" class="level-3"><title>2026-07-07: 340.1M tokens</title></rect>
-<rect x="363" y="42" width="10" height="10" rx="2" class="level-2"><title>2026-07-08: 79.6M tokens</title></rect>
-<rect x="363" y="55" width="10" height="10" rx="2" class="level-0"><title>2026-07-09: 0 tokens</title></rect>
-<rect x="363" y="68" width="10" height="10" rx="2" class="level-0"><title>2026-07-10: 0 tokens</title></rect>
-<rect x="363" y="81" width="10" height="10" rx="2" class="level-0"><title>2026-07-11: 0 tokens</title></rect>
-<rect x="363" y="94" width="10" height="10" rx="2" class="level-0"><title>2026-07-12: 0 tokens</title></rect>
-<text x="0" y="24" class="muted">Mon</text>
-<text x="0" y="50" class="muted">Wed</text>
-<text x="0" y="76" class="muted">Fri</text>
-    <text x="383" y="10" class="muted">Day</text>
-<rect x="384" y="16" width="10" height="10" rx="2" class="weekday-speed-3"><title>Mondays: 0.97x model baseline latency (faster), 921ms/1K, 99.9% timed coverage, 9B timed tokens; claude-opus-4-8 0.94x, gpt-5.4 0.66x, gpt-5.5 1.11x</title></rect>
-<rect x="384" y="29" width="10" height="10" rx="2" class="weekday-speed-2"><title>Tuesdays: 0.87x model baseline latency (faster), 788ms/1K, 99.5% timed coverage, 9.8B timed tokens; claude-opus-4-8 0.79x, claude-opus-4-7 1.03x, gpt-5.4 0.85x</title></rect>
-<rect x="384" y="42" width="10" height="10" rx="2" class="weekday-speed-4"><title>Wednesdays: 1.13x model baseline latency (slower), 693ms/1K, 99.7% timed coverage, 8.2B timed tokens; claude-opus-4-8 1.28x, claude-opus-4-7 0.73x, gpt-5.4 1.48x</title></rect>
-<rect x="384" y="55" width="10" height="10" rx="2" class="weekday-speed-4"><title>Thursdays: 1.15x model baseline latency (slower), 866ms/1K, 99.6% timed coverage, 5.9B timed tokens; claude-opus-4-8 1.05x, gpt-5.4 1.44x, gpt-5.5 1.18x</title></rect>
-<rect x="384" y="68" width="10" height="10" rx="2" class="weekday-speed-4"><title>Fridays: 1.19x model baseline latency (slower), 911ms/1K, 99.6% timed coverage, 7.3B timed tokens; claude-opus-4-8 1.17x, claude-opus-4-7 0.99x, gpt-5.5 1.63x</title></rect>
-<rect x="384" y="81" width="10" height="10" rx="2" class="weekday-speed-1"><title>Saturdays: 0.78x model baseline latency (faster), 637ms/1K, 99.7% timed coverage, 9.3B timed tokens; claude-opus-4-8 0.81x, claude-opus-4-7 0.65x, gpt-5.5 0.81x</title></rect>
-<rect x="384" y="94" width="10" height="10" rx="2" class="weekday-speed-3"><title>Sundays: 1.03x model baseline latency (slower), 816ms/1K, 99.8% timed coverage, 6.1B timed tokens; claude-opus-4-8 0.90x, gpt-5.5 1.01x, claude-opus-4-7 1.41x</title></rect>
-    <text x="0" y="122" class="muted">Speed</text>
-<rect x="38" y="114" width="10" height="10" rx="2" class="speed-3"><title>2026-01-12 to 2026-01-18: 1.03x model baseline latency (slower), 287ms/1K, 99.5% timed coverage, 111.4M timed tokens; gpt-5.2-codex 0.97x, claude-opus-4-5 1.50x, gpt-5.1-codex-mini 1.03x</title></rect>
-<rect x="51" y="114" width="10" height="10" rx="2" class="speed-4"><title>2026-01-19 to 2026-01-25: 1.24x model baseline latency (slower), 355ms/1K, 100% timed coverage, 209.9M timed tokens; gpt-5.2-codex 1.24x, claude-opus-4-5 1.35x, gpt-5.1-codex-mini 0.95x</title></rect>
-<rect x="64" y="114" width="10" height="10" rx="2" class="speed-1"><title>2026-01-26 to 2026-02-01: 0.74x model baseline latency (faster), 210ms/1K, 100% timed coverage, 219.4M timed tokens; gpt-5.2-codex 0.74x</title></rect>
-<rect x="77" y="114" width="10" height="10" rx="2" class="speed-2"><title>2026-02-02 to 2026-02-08: 0.82x model baseline latency (faster), 388ms/1K, 100% timed coverage, 25.3M timed tokens; gpt-5.3-codex 0.03x, gpt-5.2-codex 1.65x, claude-opus-4-5 0.89x</title></rect>
-<rect x="90" y="114" width="10" height="10" rx="2" class="speed-5"><title>2026-02-09 to 2026-02-15: 2.01x model baseline latency (slower), 423ms/1K, 88.5% timed coverage, 663.4K timed tokens; claude-opus-4-6 2.01x</title></rect>
-<rect x="103" y="114" width="10" height="10" rx="2" class="speed-0"><title>2026-02-16 to 2026-02-22: no timed model data</title></rect>
-<rect x="116" y="114" width="10" height="10" rx="2" class="speed-4"><title>2026-02-23 to 2026-03-01: 1.27x model baseline latency (slower), 266ms/1K, 96.3% timed coverage, 71.9M timed tokens; claude-opus-4-6 1.27x</title></rect>
-<rect x="129" y="114" width="10" height="10" rx="2" class="speed-3"><title>2026-03-02 to 2026-03-08: 1.01x model baseline latency (slower), 212ms/1K, 97.2% timed coverage, 77.7M timed tokens; claude-opus-4-6 1.01x</title></rect>
-<rect x="142" y="114" width="10" height="10" rx="2" class="speed-2"><title>2026-03-09 to 2026-03-15: 0.81x model baseline latency (faster), 306ms/1K, 98.6% timed coverage, 50.8M timed tokens; claude-opus-4-6 0.85x, gpt-5.4 0.54x</title></rect>
-<rect x="155" y="114" width="10" height="10" rx="2" class="speed-1"><title>2026-03-16 to 2026-03-22: 0.59x model baseline latency (faster), 550ms/1K, 99.8% timed coverage, 25.4M timed tokens; claude-opus-4-6 0.53x, gpt-5.4 0.73x</title></rect>
-<rect x="168" y="114" width="10" height="10" rx="2" class="speed-3"><title>2026-03-23 to 2026-03-29: 1.02x model baseline latency (slower), 2.21s/1K, 100% timed coverage, 966.8M timed tokens; gpt-5.4 1.02x, claude-opus-4-6 0.68x</title></rect>
-<rect x="181" y="114" width="10" height="10" rx="2" class="speed-5"><title>2026-03-30 to 2026-04-05: 1.46x model baseline latency (slower), 3.15s/1K, 100% timed coverage, 2.2B timed tokens; gpt-5.4 1.46x</title></rect>
-<rect x="194" y="114" width="10" height="10" rx="2" class="speed-5"><title>2026-04-06 to 2026-04-12: 1.69x model baseline latency (slower), 3.64s/1K, 100% timed coverage, 881.6M timed tokens; gpt-5.4 1.70x, gpt-5.3-codex-spa... 1.00x, claude-opus-4-6 0.80x</title></rect>
-<rect x="207" y="114" width="10" height="10" rx="2" class="speed-1"><title>2026-04-13 to 2026-04-19: 0.59x model baseline latency (faster), 1.28s/1K, 100% timed coverage, 35.5M timed tokens; gpt-5.4 0.59x</title></rect>
-<rect x="220" y="114" width="10" height="10" rx="2" class="speed-5"><title>2026-04-20 to 2026-04-26: 1.38x model baseline latency (slower), 3.79s/1K, 100% timed coverage, 16.8M timed tokens; gpt-5.5 1.51x, gpt-5.3-codex 0.16x, gpt-5.4 1.49x</title></rect>
-<rect x="233" y="114" width="10" height="10" rx="2" class="speed-5"><title>2026-04-27 to 2026-05-03: 1.41x model baseline latency (slower), 3.7s/1K, 100% timed coverage, 393.7M timed tokens; gpt-5.5 1.38x, claude-opus-4-7 3.21x, gpt-5.4 2.02x</title></rect>
-<rect x="246" y="114" width="10" height="10" rx="2" class="speed-4"><title>2026-05-04 to 2026-05-10: 1.26x model baseline latency (slower), 2.12s/1K, 99.9% timed coverage, 223.6M timed tokens; gpt-5.5 0.95x, claude-opus-4-7 2.65x</title></rect>
-<rect x="259" y="114" width="10" height="10" rx="2" class="speed-5"><title>2026-05-11 to 2026-05-17: 1.65x model baseline latency (slower), 2.3s/1K, 100% timed coverage, 1.4B timed tokens; gpt-5.5 1.28x, claude-opus-4-7 2.15x, gpt-5.4-pro 0.91x</title></rect>
-<rect x="272" y="114" width="10" height="10" rx="2" class="speed-3"><title>2026-05-18 to 2026-05-24: 1.07x model baseline latency (slower), 1.08s/1K, 99.9% timed coverage, 6.7B timed tokens; claude-opus-4-7 0.93x, gpt-5.5 1.44x, gpt-5.4 5.12x</title></rect>
-<rect x="285" y="114" width="10" height="10" rx="2" class="speed-1"><title>2026-05-25 to 2026-05-31: 0.80x model baseline latency (faster), 207ms/1K, 99.9% timed coverage, 10.5B timed tokens; claude-opus-4-7 0.94x, claude-opus-4-8 0.64x, gpt-5.5 0.46x</title></rect>
-<rect x="298" y="114" width="10" height="10" rx="2" class="speed-1"><title>2026-06-01 to 2026-06-07: 0.70x model baseline latency (faster), 201ms/1K, 99.8% timed coverage, 9.4B timed tokens; claude-opus-4-8 0.72x, gpt-5.5 0.56x, gpt-5.4 0.81x</title></rect>
-<rect x="311" y="114" width="10" height="10" rx="2" class="speed-2"><title>2026-06-08 to 2026-06-14: 0.81x model baseline latency (faster), 1.07s/1K, 99.2% timed coverage, 9.2B timed tokens; gpt-5.4 0.53x, claude-opus-4-8 1.00x, gpt-5.5 1.00x</title></rect>
-<rect x="324" y="114" width="10" height="10" rx="2" class="speed-5"><title>2026-06-15 to 2026-06-21: 1.47x model baseline latency (slower), 808ms/1K, 99.4% timed coverage, 6.4B timed tokens; claude-opus-4-8 1.59x, gpt-5.5 1.08x</title></rect>
-<rect x="337" y="114" width="10" height="10" rx="2" class="speed-2"><title>2026-06-22 to 2026-06-28: 0.91x model baseline latency (faster), 70ms/1K, 99.8% timed coverage, 2B timed tokens; claude-opus-4-8 0.91x</title></rect>
-<rect x="350" y="114" width="10" height="10" rx="2" class="speed-4"><title>2026-06-29 to 2026-07-05: 1.15x model baseline latency (slower), 89ms/1K, 99.7% timed coverage, 3.6B timed tokens; claude-opus-4-8 1.15x</title></rect>
-<rect x="363" y="114" width="10" height="10" rx="2" class="speed-4"><title>2026-07-06 to 2026-07-12: 1.10x model baseline latency (slower), 85ms/1K, 99.7% timed coverage, 1.1B timed tokens; claude-opus-4-8 1.10x</title></rect>
+  <defs>
+    <linearGradient id="heroGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#58A6FF"/>
+      <stop offset="1" stop-color="#A5D6FF"/>
+    </linearGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#A5D6FF" stop-opacity="0"/>
+      <stop offset="1" stop-color="#A5D6FF" stop-opacity="0.8"/>
+    </linearGradient>
+    <linearGradient id="gradeRamp" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0D419D"/>
+      <stop offset="0.25" stop-color="#1F6FEB"/>
+      <stop offset="0.5" stop-color="#388BFD"/>
+      <stop offset="0.75" stop-color="#58A6FF"/>
+      <stop offset="1" stop-color="#96CDFF"/>
+    </linearGradient>
+    <linearGradient id="topGlow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.08"/>
+      <stop offset="0.35" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sheenGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#FFFFFF" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <mask id="heroMask" maskUnits="userSpaceOnUse" x="500" y="14" width="330" height="54">
+      <text x="816" y="54" class="hero" text-anchor="end" fill="#FFFFFF">61.7B tokens</text>
+    </mask>
+  </defs>
+
+  <text x="24" y="50" class="title">VIBE CODING STATS</text>
+  <g class="chip-claude" transform="translate(24,60) scale(0.5417)"><path d="M4.709 15.955l4.72-2.647.08-.23-.08-.128H9.2l-.79-.048-2.698-.073-2.339-.097-2.266-.122-.571-.121L0 11.784l.055-.352.48-.321.686.06 1.52.103 2.278.158 1.652.097 2.449.255h.389l.055-.157-.134-.098-.103-.097-2.358-1.596-2.552-1.688-1.336-.972-.724-.491-.364-.462-.158-1.008.656-.722.881.06.225.061.893.686 1.908 1.476 2.491 1.833.365.304.145-.103.019-.073-.164-.274-1.355-2.446-1.446-2.49-.644-1.032-.17-.619a2.97 2.97 0 01-.104-.729L6.283.134 6.696 0l.996.134.42.364.62 1.414 1.002 2.229 1.555 3.03.456.898.243.832.091.255h.158V9.01l.128-1.706.237-2.095.23-2.695.08-.76.376-.91.747-.492.584.28.48.685-.067.444-.286 1.851-.559 2.903-.364 1.942h.212l.243-.242.985-1.306 1.652-2.064.73-.82.85-.904.547-.431h1.033l.76 1.129-.34 1.166-1.064 1.347-.881 1.142-1.264 1.7-.79 1.36.073.11.188-.02 2.856-.606 1.543-.28 1.841-.315.833.388.091.395-.328.807-1.969.486-2.309.462-3.439.813-.042.03.049.061 1.549.146.662.036h1.622l3.02.225.79.522.474.638-.079.485-1.215.62-1.64-.389-3.829-.91-1.312-.329h-.182v.11l1.093 1.068 2.006 1.81 2.509 2.33.127.578-.322.455-.34-.049-2.205-1.657-.851-.747-1.926-1.62h-.128v.17l.444.649 2.345 3.521.122 1.08-.17.353-.608.213-.668-.122-1.374-1.925-1.415-2.167-1.143-1.943-.14.08-.674 7.254-.316.37-.729.28-.607-.461-.322-.747.322-1.476.389-1.924.315-1.53.286-1.9.17-.632-.012-.042-.14.018-1.434 1.967-2.18 2.945-1.726 1.845-.414.164-.717-.37.067-.662.401-.589 2.388-3.036 1.44-1.882.93-1.086-.006-.158h-.055L4.132 18.56l-1.13.146-.487-.456.061-.746.231-.243 1.908-1.312-.006.006z"></path></g>
+  <text x="43" y="71" class="subtitle">CLAUDE CODE</text>
+  <text x="132" y="71" class="subtitle">×</text>
+  <g class="chip-codex" transform="translate(148,60) scale(0.5417)"><path clip-rule="evenodd" d="M8.086.457a6.105 6.105 0 013.046-.415c1.333.153 2.521.72 3.564 1.7a.117.117 0 00.107.029c1.408-.346 2.762-.224 4.061.366l.063.03.154.076c1.357.703 2.33 1.77 2.918 3.198.278.679.418 1.388.421 2.126a5.655 5.655 0 01-.18 1.631.167.167 0 00.04.155 5.982 5.982 0 011.578 2.891c.385 1.901-.01 3.615-1.183 5.14l-.182.22a6.063 6.063 0 01-2.934 1.851.162.162 0 00-.108.102c-.255.736-.511 1.364-.987 1.992-1.199 1.582-2.962 2.462-4.948 2.451-1.583-.008-2.986-.587-4.21-1.736a.145.145 0 00-.14-.032c-.518.167-1.04.191-1.604.185a5.924 5.924 0 01-2.595-.622 6.058 6.058 0 01-2.146-1.781c-.203-.269-.404-.522-.551-.821a7.74 7.74 0 01-.495-1.283 6.11 6.11 0 01-.017-3.064.166.166 0 00.008-.074.115.115 0 00-.037-.064 5.958 5.958 0 01-1.38-2.202 5.196 5.196 0 01-.333-1.589 6.915 6.915 0 01.188-2.132c.45-1.484 1.309-2.648 2.577-3.493.282-.188.55-.334.802-.438.286-.12.573-.22.861-.304a.129.129 0 00.087-.087A6.016 6.016 0 015.635 2.31C6.315 1.464 7.132.846 8.086.457zm-.804 7.85a.848.848 0 00-1.473.842l1.694 2.965-1.688 2.848a.849.849 0 001.46.864l1.94-3.272a.849.849 0 00.007-.854l-1.94-3.393zm5.446 6.24a.849.849 0 000 1.695h4.848a.849.849 0 000-1.696h-4.848z"></path></g>
+  <text x="166" y="71" class="subtitle">CODEX CLI · @PekingSpades</text>
+  <text x="816" y="54" class="hero" text-anchor="end" fill="url(#heroGrad)">61.7B tokens</text>
+  <switch><text x="816" y="74" class="hero-label" text-anchor="end" systemLanguage="zh,zh-CN,zh-Hans,zh-TW,zh-HK,zh-Hant,zh-SG">累计用量</text><text x="816" y="74" class="hero-label" text-anchor="end">ALL-TIME TOTAL</text></switch>
+  <g mask="url(#heroMask)">
+    <rect x="500" y="16" width="150" height="52" fill="url(#sheenGrad)" transform="translate(360,0)" class="sheen"/>
   </g>
-  <g aria-label="Client mix">
-    <path d="M 642 144 L 642.000 100.000 A 44 44 0 1 1 601.052 160.103 Z" class="pie-claude"><title>Claude 69%</title></path>
-<path d="M 642 144 L 601.052 160.103 A 44 44 0 0 1 642.000 100.000 Z" class="pie-codex"><title>Codex 31%</title></path>
-    <text x="566" y="80" class="section">Client Mix</text>
-    <circle cx="568" cy="206" r="5" class="pie-claude"/>
-    <text x="580" y="210" class="label">Claude 69%</text>
-    <circle cx="662" cy="206" r="5" class="pie-codex"/>
-    <text x="674" y="210" class="label">Codex 31%</text>
+
+  <g class="terrain-in">
+    <switch><text x="207.4" y="212.5" class="axis" text-anchor="end" systemLanguage="zh,zh-CN,zh-Hans,zh-TW,zh-HK,zh-Hant,zh-SG">12月</text><text x="207.4" y="212.5" class="axis" text-anchor="end">Dec</text></switch>
+    <switch><text x="263.6" y="245" class="axis" text-anchor="end" systemLanguage="zh,zh-CN,zh-Hans,zh-TW,zh-HK,zh-Hant,zh-SG">1月</text><text x="263.6" y="245" class="axis" text-anchor="end">Jan</text></switch>
+    <switch><text x="308.7" y="271" class="axis" text-anchor="end" systemLanguage="zh,zh-CN,zh-Hans,zh-TW,zh-HK,zh-Hant,zh-SG">2月</text><text x="308.7" y="271" class="axis" text-anchor="end">Feb</text></switch>
+    <switch><text x="353.7" y="297" class="axis" text-anchor="end" systemLanguage="zh,zh-CN,zh-Hans,zh-TW,zh-HK,zh-Hant,zh-SG">3月</text><text x="353.7" y="297" class="axis" text-anchor="end">Mar</text></switch>
+    <switch><text x="410" y="329.5" class="axis" text-anchor="end" systemLanguage="zh,zh-CN,zh-Hans,zh-TW,zh-HK,zh-Hant,zh-SG">4月</text><text x="410" y="329.5" class="axis" text-anchor="end">Apr</text></switch>
+    <switch><text x="455" y="355.5" class="axis" text-anchor="end" systemLanguage="zh,zh-CN,zh-Hans,zh-TW,zh-HK,zh-Hant,zh-SG">5月</text><text x="455" y="355.5" class="axis" text-anchor="end">May</text></switch>
+    <switch><text x="500.1" y="381.5" class="axis" text-anchor="end" systemLanguage="zh,zh-CN,zh-Hans,zh-TW,zh-HK,zh-Hant,zh-SG">6月</text><text x="500.1" y="381.5" class="axis" text-anchor="end">Jun</text></switch>
+    <switch><text x="556.4" y="414" class="axis" text-anchor="end" systemLanguage="zh,zh-CN,zh-Hans,zh-TW,zh-HK,zh-Hant,zh-SG">7月</text><text x="556.4" y="414" class="axis" text-anchor="end">Jul</text></switch>
+    <g class="cb w0"><polygon points="262.4,128.5 271.9,134 262.4,139.5 252.9,134" class="t1"/><polygon points="271.9,134 271.9,140 262.4,145.5 262.4,139.5" class="r1"/><polygon points="262.4,139.5 262.4,145.5 252.9,140 252.9,134" class="l1"/></g>
+    <g class="cb w0"><polygon points="251.1,119.1 260.7,124.6 251.1,130.1 241.6,124.6" class="t2"/><polygon points="260.7,124.6 260.7,146.5 251.1,152 251.1,130.1" class="r2"/><polygon points="251.1,130.1 251.1,152 241.6,146.5 241.6,124.6" class="l2"/></g>
+    <g class="fd w1"><polygon points="273.6,141 283.2,146.5 273.6,152 264.1,146.5" class="t0"/></g>
+    <g class="cb w0"><polygon points="239.9,126.3 249.4,131.8 239.9,137.3 230.3,131.8" class="t2"/><polygon points="249.4,131.8 249.4,153 239.9,158.5 239.9,137.3" class="r2"/><polygon points="239.9,137.3 239.9,158.5 230.3,153 230.3,131.8" class="l2"/></g>
+    <g class="fd w1"><polygon points="262.4,147.5 271.9,153 262.4,158.5 252.9,153" class="t0"/></g>
+    <g class="fd w2"><polygon points="284.9,147.5 294.4,153 284.9,158.5 275.4,153" class="t0"/></g>
+    <g class="fd w0"><polygon points="228.6,154 238.1,159.5 228.6,165 219.1,159.5" class="t0"/></g>
+    <g class="cb w1"><polygon points="251.1,142.1 260.7,147.6 251.1,153.1 241.6,147.6" class="t1"/><polygon points="260.7,147.6 260.7,159.5 251.1,165 251.1,153.1" class="r1"/><polygon points="251.1,153.1 251.1,165 241.6,159.5 241.6,147.6" class="l1"/></g>
+    <g class="fd w2"><polygon points="273.6,154 283.2,159.5 273.6,165 264.1,159.5" class="t0"/></g>
+    <g class="fd w3"><polygon points="296.2,154 305.7,159.5 296.2,165 286.6,159.5" class="t0"/></g>
+    <g class="cb w0"><polygon points="217.4,150.3 226.9,155.8 217.4,161.3 207.8,155.8" class="t1"/><polygon points="226.9,155.8 226.9,166 217.4,171.5 217.4,161.3" class="r1"/><polygon points="217.4,161.3 217.4,171.5 207.8,166 207.8,155.8" class="l1"/></g>
+    <g class="cb w1"><polygon points="239.9,135.7 249.4,141.2 239.9,146.7 230.3,141.2" class="t3"/><polygon points="249.4,141.2 249.4,166 239.9,171.5 239.9,146.7" class="r3"/><polygon points="239.9,146.7 239.9,171.5 230.3,166 230.3,141.2" class="l3"/></g>
+    <g class="fd w2"><polygon points="262.4,160.5 271.9,166 262.4,171.5 252.9,166" class="t0"/></g>
+    <g class="cb w3"><polygon points="284.9,143.3 294.4,148.8 284.9,154.3 275.4,148.8" class="t1"/><polygon points="294.4,148.8 294.4,166 284.9,171.5 284.9,154.3" class="r1"/><polygon points="284.9,154.3 284.9,171.5 275.4,166 275.4,148.8" class="l1"/></g>
+    <g class="cb w4"><polygon points="307.4,136.2 316.9,141.7 307.4,147.2 297.9,141.7" class="t3"/><polygon points="316.9,141.7 316.9,166 307.4,171.5 307.4,147.2" class="r3"/><polygon points="307.4,147.2 307.4,171.5 297.9,166 297.9,141.7" class="l3"/></g>
+    <g class="fd w0"><polygon points="206.1,167 215.6,172.5 206.1,178 196.6,172.5" class="t0"/></g>
+    <g class="cb w1"><polygon points="228.6,151.5 238.1,157 228.6,162.5 219.1,157" class="t1"/><polygon points="238.1,157 238.1,172.5 228.6,178 228.6,162.5" class="r1"/><polygon points="228.6,162.5 228.6,178 219.1,172.5 219.1,157" class="l1"/></g>
+    <g class="fd w2"><polygon points="251.1,167 260.7,172.5 251.1,178 241.6,172.5" class="t0"/></g>
+    <g class="cb w3"><polygon points="273.6,143.6 283.2,149.1 273.6,154.6 264.1,149.1" class="t2"/><polygon points="283.2,149.1 283.2,172.5 273.6,178 273.6,154.6" class="r2"/><polygon points="273.6,154.6 273.6,178 264.1,172.5 264.1,149.1" class="l2"/></g>
+    <g class="cb w4"><polygon points="296.2,144.6 305.7,150.1 296.2,155.6 286.6,150.1" class="t2"/><polygon points="305.7,150.1 305.7,172.5 296.2,178 296.2,155.6" class="r2"/><polygon points="296.2,155.6 296.2,178 286.6,172.5 286.6,150.1" class="l2"/></g>
+    <g class="fd w5"><polygon points="318.7,167 328.2,172.5 318.7,178 309.1,172.5" class="t0"/></g>
+    <g class="cb w0"><polygon points="194.8,153.9 204.4,159.4 194.8,164.9 185.3,159.4" class="t2"/><polygon points="204.4,159.4 204.4,179 194.8,184.5 194.8,164.9" class="r2"/><polygon points="194.8,164.9 194.8,184.5 185.3,179 185.3,159.4" class="l2"/></g>
+    <g class="fd w1"><polygon points="217.4,173.5 226.9,179 217.4,184.5 207.8,179" class="t0"/></g>
+    <g class="fd w2"><polygon points="239.9,173.5 249.4,179 239.9,184.5 230.3,179" class="t0"/></g>
+    <g class="cb w3"><polygon points="262.4,160.9 271.9,166.4 262.4,171.9 252.9,166.4" class="t1"/><polygon points="271.9,166.4 271.9,179 262.4,184.5 262.4,171.9" class="r1"/><polygon points="262.4,171.9 262.4,184.5 252.9,179 252.9,166.4" class="l1"/></g>
+    <g class="cb w4"><polygon points="284.9,150.5 294.4,156 284.9,161.5 275.4,156" class="t2"/><polygon points="294.4,156 294.4,179 284.9,184.5 284.9,161.5" class="r2"/><polygon points="284.9,161.5 284.9,184.5 275.4,179 275.4,156" class="l2"/></g>
+    <g class="fd w5"><polygon points="307.4,173.5 316.9,179 307.4,184.5 297.9,179" class="t0"/></g>
+    <g class="cb w6"><polygon points="329.9,153.6 339.5,159.1 329.9,164.6 320.4,159.1" class="t2"/><polygon points="339.5,159.1 339.5,179 329.9,184.5 329.9,164.6" class="r2"/><polygon points="329.9,164.6 329.9,184.5 320.4,179 320.4,159.1" class="l2"/></g>
+    <g class="fd w1"><polygon points="206.1,180 215.6,185.5 206.1,191 196.6,185.5" class="t0"/></g>
+    <g class="fd w2"><polygon points="228.6,180 238.1,185.5 228.6,191 219.1,185.5" class="t0"/></g>
+    <g class="cb w3"><polygon points="251.1,174 260.7,179.5 251.1,185 241.6,179.5" class="t1"/><polygon points="260.7,179.5 260.7,185.5 251.1,191 251.1,185" class="r1"/><polygon points="251.1,185 251.1,191 241.6,185.5 241.6,179.5" class="l1"/></g>
+    <g class="cb w4"><polygon points="273.6,173.2 283.2,178.7 273.6,184.2 264.1,178.7" class="t1"/><polygon points="283.2,178.7 283.2,185.5 273.6,191 273.6,184.2" class="r1"/><polygon points="273.6,184.2 273.6,191 264.1,185.5 264.1,178.7" class="l1"/></g>
+    <g class="cb w5"><polygon points="296.2,159.2 305.7,164.7 296.2,170.2 286.6,164.7" class="t2"/><polygon points="305.7,164.7 305.7,185.5 296.2,191 296.2,170.2" class="r2"/><polygon points="296.2,170.2 296.2,191 286.6,185.5 286.6,164.7" class="l2"/></g>
+    <g class="cb w6"><polygon points="318.7,156.6 328.2,162.1 318.7,167.6 309.1,162.1" class="t2"/><polygon points="328.2,162.1 328.2,185.5 318.7,191 318.7,167.6" class="r2"/><polygon points="318.7,167.6 318.7,191 309.1,185.5 309.1,162.1" class="l2"/></g>
+    <g class="cb w7"><polygon points="341.2,157.8 350.7,163.3 341.2,168.8 331.7,163.3" class="t2"/><polygon points="350.7,163.3 350.7,185.5 341.2,191 341.2,168.8" class="r2"/><polygon points="341.2,168.8 341.2,191 331.7,185.5 331.7,163.3" class="l2"/></g>
+    <g class="fd w2"><polygon points="217.4,186.5 226.9,192 217.4,197.5 207.8,192" class="t0"/></g>
+    <g class="cb w3"><polygon points="239.9,171.8 249.4,177.3 239.9,182.8 230.3,177.3" class="t1"/><polygon points="249.4,177.3 249.4,192 239.9,197.5 239.9,182.8" class="r1"/><polygon points="239.9,182.8 239.9,197.5 230.3,192 230.3,177.3" class="l1"/></g>
+    <g class="cb w4"><polygon points="262.4,167.4 271.9,172.9 262.4,178.4 252.9,172.9" class="t2"/><polygon points="271.9,172.9 271.9,192 262.4,197.5 262.4,178.4" class="r2"/><polygon points="262.4,178.4 262.4,197.5 252.9,192 252.9,172.9" class="l2"/></g>
+    <g class="cb w5"><polygon points="284.9,164.1 294.4,169.6 284.9,175.1 275.4,169.6" class="t2"/><polygon points="294.4,169.6 294.4,192 284.9,197.5 284.9,175.1" class="r2"/><polygon points="284.9,175.1 284.9,197.5 275.4,192 275.4,169.6" class="l2"/></g>
+    <g class="cb w6"><polygon points="307.4,174 316.9,179.5 307.4,185 297.9,179.5" class="t1"/><polygon points="316.9,179.5 316.9,192 307.4,197.5 307.4,185" class="r1"/><polygon points="307.4,185 307.4,197.5 297.9,192 297.9,179.5" class="l1"/></g>
+    <g class="cb w7"><polygon points="329.9,174.4 339.5,179.9 329.9,185.4 320.4,179.9" class="t1"/><polygon points="339.5,179.9 339.5,192 329.9,197.5 329.9,185.4" class="r1"/><polygon points="329.9,185.4 329.9,197.5 320.4,192 320.4,179.9" class="l1"/></g>
+    <g class="cb w8"><polygon points="352.5,166.1 362,171.6 352.5,177.1 342.9,171.6" class="t2"/><polygon points="362,171.6 362,192 352.5,197.5 352.5,177.1" class="r2"/><polygon points="352.5,177.1 352.5,197.5 342.9,192 342.9,171.6" class="l2"/></g>
+    <g class="cb w3"><polygon points="228.6,172.2 238.1,177.7 228.6,183.2 219.1,177.7" class="t2"/><polygon points="238.1,177.7 238.1,198.5 228.6,204 228.6,183.2" class="r2"/><polygon points="228.6,183.2 228.6,204 219.1,198.5 219.1,177.7" class="l2"/></g>
+    <g class="cb w4"><polygon points="251.1,185.1 260.7,190.6 251.1,196.1 241.6,190.6" class="t1"/><polygon points="260.7,190.6 260.7,198.5 251.1,204 251.1,196.1" class="r1"/><polygon points="251.1,196.1 251.1,204 241.6,198.5 241.6,190.6" class="l1"/></g>
+    <g class="cb w5"><polygon points="273.6,178.7 283.2,184.2 273.6,189.7 264.1,184.2" class="t1"/><polygon points="283.2,184.2 283.2,198.5 273.6,204 273.6,189.7" class="r1"/><polygon points="273.6,189.7 273.6,204 264.1,198.5 264.1,184.2" class="l1"/></g>
+    <g class="fd w6"><polygon points="296.2,193 305.7,198.5 296.2,204 286.6,198.5" class="t0"/></g>
+    <g class="cb w7"><polygon points="318.7,178.8 328.2,184.3 318.7,189.8 309.1,184.3" class="t1"/><polygon points="328.2,184.3 328.2,198.5 318.7,204 318.7,189.8" class="r1"/><polygon points="318.7,189.8 318.7,204 309.1,198.5 309.1,184.3" class="l1"/></g>
+    <g class="cb w8"><polygon points="341.2,176 350.7,181.5 341.2,187 331.7,181.5" class="t1"/><polygon points="350.7,181.5 350.7,198.5 341.2,204 341.2,187" class="r1"/><polygon points="341.2,187 341.2,204 331.7,198.5 331.7,181.5" class="l1"/></g>
+    <g class="cb w9"><polygon points="363.7,168.3 373.2,173.8 363.7,179.3 354.2,173.8" class="t3"/><polygon points="373.2,173.8 373.2,198.5 363.7,204 363.7,179.3" class="r3"/><polygon points="363.7,179.3 363.7,204 354.2,198.5 354.2,173.8" class="l3"/></g>
+    <g class="cb w4"><polygon points="239.9,185.2 249.4,190.7 239.9,196.2 230.3,190.7" class="t1"/><polygon points="249.4,190.7 249.4,205 239.9,210.5 239.9,196.2" class="r1"/><polygon points="239.9,196.2 239.9,210.5 230.3,205 230.3,190.7" class="l1"/></g>
+    <g class="fd w5"><polygon points="262.4,199.5 271.9,205 262.4,210.5 252.9,205" class="t0"/></g>
+    <g class="fd w6"><polygon points="284.9,199.5 294.4,205 284.9,210.5 275.4,205" class="t0"/></g>
+    <g class="cb w7"><polygon points="307.4,180.8 316.9,186.3 307.4,191.8 297.9,186.3" class="t2"/><polygon points="316.9,186.3 316.9,205 307.4,210.5 307.4,191.8" class="r2"/><polygon points="307.4,191.8 307.4,210.5 297.9,205 297.9,186.3" class="l2"/></g>
+    <g class="cb w8"><polygon points="329.9,190.2 339.5,195.7 329.9,201.2 320.4,195.7" class="t1"/><polygon points="339.5,195.7 339.5,205 329.9,210.5 329.9,201.2" class="r1"/><polygon points="329.9,201.2 329.9,210.5 320.4,205 320.4,195.7" class="l1"/></g>
+    <g class="cb w9"><polygon points="352.5,172.6 362,178.1 352.5,183.6 342.9,178.1" class="t3"/><polygon points="362,178.1 362,205 352.5,210.5 352.5,183.6" class="r3"/><polygon points="352.5,183.6 352.5,210.5 342.9,205 342.9,178.1" class="l3"/></g>
+    <g class="cb w10"><polygon points="375,174.7 384.5,180.2 375,185.7 365.4,180.2" class="t3"/><polygon points="384.5,180.2 384.5,205 375,210.5 375,185.7" class="r3"/><polygon points="375,185.7 375,210.5 365.4,205 365.4,180.2" class="l3"/></g>
+    <g class="fd w5"><polygon points="251.1,206 260.7,211.5 251.1,217 241.6,211.5" class="t0"/></g>
+    <g class="fd w6"><polygon points="273.6,206 283.2,211.5 273.6,217 264.1,211.5" class="t0"/></g>
+    <g class="cb w7"><polygon points="296.2,186.1 305.7,191.6 296.2,197.1 286.6,191.6" class="t2"/><polygon points="305.7,191.6 305.7,211.5 296.2,217 296.2,197.1" class="r2"/><polygon points="296.2,197.1 296.2,217 286.6,211.5 286.6,191.6" class="l2"/></g>
+    <g class="cb w8"><polygon points="318.7,192.8 328.2,198.3 318.7,203.8 309.1,198.3" class="t1"/><polygon points="328.2,198.3 328.2,211.5 318.7,217 318.7,203.8" class="r1"/><polygon points="318.7,203.8 318.7,217 309.1,211.5 309.1,198.3" class="l1"/></g>
+    <g class="cb w9"><polygon points="341.2,179.5 350.7,185 341.2,190.5 331.7,185" class="t3"/><polygon points="350.7,185 350.7,211.5 341.2,217 341.2,190.5" class="r3"/><polygon points="341.2,190.5 341.2,217 331.7,211.5 331.7,185" class="l3"/></g>
+    <g class="cb w10"><polygon points="363.7,192.9 373.2,198.4 363.7,203.9 354.2,198.4" class="t1"/><polygon points="373.2,198.4 373.2,211.5 363.7,217 363.7,203.9" class="r1"/><polygon points="363.7,203.9 363.7,217 354.2,211.5 354.2,198.4" class="l1"/></g>
+    <g class="cb w11"><polygon points="386.2,186.3 395.8,191.8 386.2,197.3 376.7,191.8" class="t2"/><polygon points="395.8,191.8 395.8,211.5 386.2,217 386.2,197.3" class="r2"/><polygon points="386.2,197.3 386.2,217 376.7,211.5 376.7,191.8" class="l2"/></g>
+    <g class="cb w6"><polygon points="262.4,188.9 271.9,194.4 262.4,199.9 252.9,194.4" class="t3"/><polygon points="271.9,194.4 271.9,218 262.4,223.5 262.4,199.9" class="r3"/><polygon points="262.4,199.9 262.4,223.5 252.9,218 252.9,194.4" class="l3"/></g>
+    <g class="cb w7"><polygon points="284.9,199.6 294.4,205.1 284.9,210.6 275.4,205.1" class="t1"/><polygon points="294.4,205.1 294.4,218 284.9,223.5 284.9,210.6" class="r1"/><polygon points="284.9,210.6 284.9,223.5 275.4,218 275.4,205.1" class="l1"/></g>
+    <g class="cb w8"><polygon points="307.4,203.8 316.9,209.3 307.4,214.8 297.9,209.3" class="t1"/><polygon points="316.9,209.3 316.9,218 307.4,223.5 307.4,214.8" class="r1"/><polygon points="307.4,214.8 307.4,223.5 297.9,218 297.9,209.3" class="l1"/></g>
+    <g class="cb w9"><polygon points="329.9,186.6 339.5,192.1 329.9,197.6 320.4,192.1" class="t3"/><polygon points="339.5,192.1 339.5,218 329.9,223.5 329.9,197.6" class="r3"/><polygon points="329.9,197.6 329.9,223.5 320.4,218 320.4,192.1" class="l3"/></g>
+    <g class="cb w10"><polygon points="352.5,187.1 362,192.6 352.5,198.1 342.9,192.6" class="t3"/><polygon points="362,192.6 362,218 352.5,223.5 352.5,198.1" class="r3"/><polygon points="352.5,198.1 352.5,223.5 342.9,218 342.9,192.6" class="l3"/></g>
+    <g class="cb w11"><polygon points="375,195.5 384.5,201 375,206.5 365.4,201" class="t1"/><polygon points="384.5,201 384.5,218 375,223.5 375,206.5" class="r1"/><polygon points="375,206.5 375,223.5 365.4,218 365.4,201" class="l1"/></g>
+    <g class="cb w12"><polygon points="397.5,199.9 407,205.4 397.5,210.9 388,205.4" class="t1"/><polygon points="407,205.4 407,218 397.5,223.5 397.5,210.9" class="r1"/><polygon points="397.5,210.9 397.5,223.5 388,218 388,205.4" class="l1"/></g>
+    <g class="cb w7"><polygon points="273.6,200.9 283.2,206.4 273.6,211.9 264.1,206.4" class="t1"/><polygon points="283.2,206.4 283.2,224.5 273.6,230 273.6,211.9" class="r1"/><polygon points="273.6,211.9 273.6,230 264.1,224.5 264.1,206.4" class="l1"/></g>
+    <g class="cb w8"><polygon points="296.2,192.9 305.7,198.4 296.2,203.9 286.6,198.4" class="t3"/><polygon points="305.7,198.4 305.7,224.5 296.2,230 296.2,203.9" class="r3"/><polygon points="296.2,203.9 296.2,230 286.6,224.5 286.6,198.4" class="l3"/></g>
+    <g class="cb w9"><polygon points="318.7,200.1 328.2,205.6 318.7,211.1 309.1,205.6" class="t2"/><polygon points="328.2,205.6 328.2,224.5 318.7,230 318.7,211.1" class="r2"/><polygon points="318.7,211.1 318.7,230 309.1,224.5 309.1,205.6" class="l2"/></g>
+    <g class="cb w10"><polygon points="341.2,192.3 350.7,197.8 341.2,203.3 331.7,197.8" class="t3"/><polygon points="350.7,197.8 350.7,224.5 341.2,230 341.2,203.3" class="r3"/><polygon points="341.2,203.3 341.2,230 331.7,224.5 331.7,197.8" class="l3"/></g>
+    <g class="cb w11"><polygon points="363.7,202.3 373.2,207.8 363.7,213.3 354.2,207.8" class="t1"/><polygon points="373.2,207.8 373.2,224.5 363.7,230 363.7,213.3" class="r1"/><polygon points="363.7,213.3 363.7,230 354.2,224.5 354.2,207.8" class="l1"/></g>
+    <g class="fd w12"><polygon points="386.2,219 395.8,224.5 386.2,230 376.7,224.5" class="t0"/></g>
+    <g class="fd w13"><polygon points="408.7,219 418.3,224.5 408.7,230 399.2,224.5" class="t0"/></g>
+    <g class="cb w8"><polygon points="284.9,198.9 294.4,204.4 284.9,209.9 275.4,204.4" class="t3"/><polygon points="294.4,204.4 294.4,231 284.9,236.5 284.9,209.9" class="r3"/><polygon points="284.9,209.9 284.9,236.5 275.4,231 275.4,204.4" class="l3"/></g>
+    <g class="fd w9"><polygon points="307.4,225.5 316.9,231 307.4,236.5 297.9,231" class="t0"/></g>
+    <g class="cb w10"><polygon points="329.9,197 339.5,202.5 329.9,208 320.4,202.5" class="t3"/><polygon points="339.5,202.5 339.5,231 329.9,236.5 329.9,208" class="r3"/><polygon points="329.9,208 329.9,236.5 320.4,231 320.4,202.5" class="l3"/></g>
+    <g class="fd w11"><polygon points="352.5,225.5 362,231 352.5,236.5 342.9,231" class="t0"/></g>
+    <g class="fd w12"><polygon points="375,225.5 384.5,231 375,236.5 365.4,231" class="t0"/></g>
+    <g class="fd w13"><polygon points="397.5,225.5 407,231 397.5,236.5 388,231" class="t0"/></g>
+    <g class="fd w14"><polygon points="420,225.5 429.5,231 420,236.5 410.5,231" class="t0"/></g>
+    <g class="cb w9"><polygon points="296.2,208.3 305.7,213.8 296.2,219.3 286.6,213.8" class="t3"/><polygon points="305.7,213.8 305.7,237.5 296.2,243 296.2,219.3" class="r3"/><polygon points="296.2,219.3 296.2,243 286.6,237.5 286.6,213.8" class="l3"/></g>
+    <g class="cb w10"><polygon points="318.7,215.1 328.2,220.6 318.7,226.1 309.1,220.6" class="t1"/><polygon points="328.2,220.6 328.2,237.5 318.7,243 318.7,226.1" class="r1"/><polygon points="318.7,226.1 318.7,243 309.1,237.5 309.1,220.6" class="l1"/></g>
+    <g class="cb w11"><polygon points="341.2,226 350.7,231.5 341.2,237 331.7,231.5" class="t1"/><polygon points="350.7,231.5 350.7,237.5 341.2,243 341.2,237" class="r1"/><polygon points="341.2,237 341.2,243 331.7,237.5 331.7,231.5" class="l1"/></g>
+    <g class="fd w12"><polygon points="363.7,232 373.2,237.5 363.7,243 354.2,237.5" class="t0"/></g>
+    <g class="fd w13"><polygon points="386.2,232 395.8,237.5 386.2,243 376.7,237.5" class="t0"/></g>
+    <g class="fd w14"><polygon points="408.7,232 418.3,237.5 408.7,243 399.2,237.5" class="t0"/></g>
+    <g class="cb w15"><polygon points="431.3,213.7 440.8,219.2 431.3,224.7 421.7,219.2" class="t2"/><polygon points="440.8,219.2 440.8,237.5 431.3,243 431.3,224.7" class="r2"/><polygon points="431.3,224.7 431.3,243 421.7,237.5 421.7,219.2" class="l2"/></g>
+    <g class="fd w10"><polygon points="307.4,238.5 316.9,244 307.4,249.5 297.9,244" class="t0"/></g>
+    <g class="cb w11"><polygon points="329.9,228 339.5,233.5 329.9,239 320.4,233.5" class="t1"/><polygon points="339.5,233.5 339.5,244 329.9,249.5 329.9,239" class="r1"/><polygon points="329.9,239 329.9,249.5 320.4,244 320.4,233.5" class="l1"/></g>
+    <g class="fd w12"><polygon points="352.5,238.5 362,244 352.5,249.5 342.9,244" class="t0"/></g>
+    <g class="fd w13"><polygon points="375,238.5 384.5,244 375,249.5 365.4,244" class="t0"/></g>
+    <g class="fd w14"><polygon points="397.5,238.5 407,244 397.5,249.5 388,244" class="t0"/></g>
+    <g class="cb w15"><polygon points="420,215 429.5,220.5 420,226 410.5,220.5" class="t3"/><polygon points="429.5,220.5 429.5,244 420,249.5 420,226" class="r3"/><polygon points="420,226 420,249.5 410.5,244 410.5,220.5" class="l3"/></g>
+    <g class="cb w16"><polygon points="442.5,216.9 452,222.4 442.5,227.9 433,222.4" class="t2"/><polygon points="452,222.4 452,244 442.5,249.5 442.5,227.9" class="r2"/><polygon points="442.5,227.9 442.5,249.5 433,244 433,222.4" class="l2"/></g>
+    <g class="cb w11"><polygon points="318.7,223.1 328.2,228.6 318.7,234.1 309.1,228.6" class="t2"/><polygon points="328.2,228.6 328.2,250.5 318.7,256 318.7,234.1" class="r2"/><polygon points="318.7,234.1 318.7,256 309.1,250.5 309.1,228.6" class="l2"/></g>
+    <g class="fd w12"><polygon points="341.2,245 350.7,250.5 341.2,256 331.7,250.5" class="t0"/></g>
+    <g class="fd w13"><polygon points="363.7,245 373.2,250.5 363.7,256 354.2,250.5" class="t0"/></g>
+    <g class="fd w14"><polygon points="386.2,245 395.8,250.5 386.2,256 376.7,250.5" class="t0"/></g>
+    <g class="cb w15"><polygon points="408.7,220.8 418.3,226.3 408.7,231.8 399.2,226.3" class="t3"/><polygon points="418.3,226.3 418.3,250.5 408.7,256 408.7,231.8" class="r3"/><polygon points="408.7,231.8 408.7,256 399.2,250.5 399.2,226.3" class="l3"/></g>
+    <g class="cb w16"><polygon points="431.3,228.2 440.8,233.7 431.3,239.2 421.7,233.7" class="t1"/><polygon points="440.8,233.7 440.8,250.5 431.3,256 431.3,239.2" class="r1"/><polygon points="431.3,239.2 431.3,256 421.7,250.5 421.7,233.7" class="l1"/></g>
+    <g class="cb w17"><polygon points="453.8,223.2 463.3,228.7 453.8,234.2 444.2,228.7" class="t2"/><polygon points="463.3,228.7 463.3,250.5 453.8,256 453.8,234.2" class="r2"/><polygon points="453.8,234.2 453.8,256 444.2,250.5 444.2,228.7" class="l2"/></g>
+    <g class="fd w12"><polygon points="329.9,251.5 339.5,257 329.9,262.5 320.4,257" class="t0"/></g>
+    <g class="fd w13"><polygon points="352.5,251.5 362,257 352.5,262.5 342.9,257" class="t0"/></g>
+    <g class="cb w14"><polygon points="375,229.2 384.5,234.7 375,240.2 365.4,234.7" class="t2"/><polygon points="384.5,234.7 384.5,257 375,262.5 375,240.2" class="r2"/><polygon points="375,240.2 375,262.5 365.4,257 365.4,234.7" class="l2"/></g>
+    <g class="cb w15"><polygon points="397.5,228.4 407,233.9 397.5,239.4 388,233.9" class="t2"/><polygon points="407,233.9 407,257 397.5,262.5 397.5,239.4" class="r2"/><polygon points="397.5,239.4 397.5,262.5 388,257 388,233.9" class="l2"/></g>
+    <g class="cb w16"><polygon points="420,242.8 429.5,248.3 420,253.8 410.5,248.3" class="t1"/><polygon points="429.5,248.3 429.5,257 420,262.5 420,253.8" class="r1"/><polygon points="420,253.8 420,262.5 410.5,257 410.5,248.3" class="l1"/></g>
+    <g class="fd w17"><polygon points="442.5,251.5 452,257 442.5,262.5 433,257" class="t0"/></g>
+    <g class="cb w18"><polygon points="465,230.6 474.6,236.1 465,241.6 455.5,236.1" class="t2"/><polygon points="474.6,236.1 474.6,257 465,262.5 465,241.6" class="r2"/><polygon points="465,241.6 465,262.5 455.5,257 455.5,236.1" class="l2"/></g>
+    <g class="fd w13"><polygon points="341.2,258 350.7,263.5 341.2,269 331.7,263.5" class="t0"/></g>
+    <g class="cb w14"><polygon points="363.7,232.4 373.2,237.9 363.7,243.4 354.2,237.9" class="t3"/><polygon points="373.2,237.9 373.2,263.5 363.7,269 363.7,243.4" class="r3"/><polygon points="363.7,243.4 363.7,269 354.2,263.5 354.2,237.9" class="l3"/></g>
+    <g class="cb w15"><polygon points="386.2,236.6 395.8,242.1 386.2,247.6 376.7,242.1" class="t2"/><polygon points="395.8,242.1 395.8,263.5 386.2,269 386.2,247.6" class="r2"/><polygon points="386.2,247.6 386.2,269 376.7,263.5 376.7,242.1" class="l2"/></g>
+    <g class="fd w16"><polygon points="408.7,258 418.3,263.5 408.7,269 399.2,263.5" class="t0"/></g>
+    <g class="fd w17"><polygon points="431.3,258 440.8,263.5 431.3,269 421.7,263.5" class="t0"/></g>
+    <g class="cb w18"><polygon points="453.8,244 463.3,249.5 453.8,255 444.2,249.5" class="t1"/><polygon points="463.3,249.5 463.3,263.5 453.8,269 453.8,255" class="r1"/><polygon points="453.8,255 453.8,269 444.2,263.5 444.2,249.5" class="l1"/></g>
+    <g class="cb w19"><polygon points="476.3,226.2 485.8,231.7 476.3,237.2 466.8,231.7" class="t4"/><polygon points="485.8,231.7 485.8,263.5 476.3,269 476.3,237.2" class="r4"/><polygon points="476.3,237.2 476.3,269 466.8,263.5 466.8,231.7" class="l4"/></g>
+    <g class="cb w14"><polygon points="352.5,241 362,246.5 352.5,252 342.9,246.5" class="t3"/><polygon points="362,246.5 362,270 352.5,275.5 352.5,252" class="r3"/><polygon points="352.5,252 352.5,275.5 342.9,270 342.9,246.5" class="l3"/></g>
+    <g class="cb w15"><polygon points="375,254.7 384.5,260.2 375,265.7 365.4,260.2" class="t1"/><polygon points="384.5,260.2 384.5,270 375,275.5 375,265.7" class="r1"/><polygon points="375,265.7 375,275.5 365.4,270 365.4,260.2" class="l1"/></g>
+    <g class="cb w16"><polygon points="397.5,242.3 407,247.8 397.5,253.3 388,247.8" class="t2"/><polygon points="407,247.8 407,270 397.5,275.5 397.5,253.3" class="r2"/><polygon points="397.5,253.3 397.5,275.5 388,270 388,247.8" class="l2"/></g>
+    <g class="fd w17"><polygon points="420,264.5 429.5,270 420,275.5 410.5,270" class="t0"/></g>
+    <g class="cb w18"><polygon points="442.5,235.8 452,241.3 442.5,246.8 433,241.3" class="t3"/><polygon points="452,241.3 452,270 442.5,275.5 442.5,246.8" class="r3"/><polygon points="442.5,246.8 442.5,275.5 433,270 433,241.3" class="l3"/></g>
+    <g class="cb w19"><polygon points="465,231.7 474.6,237.2 465,242.7 455.5,237.2" class="t4"/><polygon points="474.6,237.2 474.6,270 465,275.5 465,242.7" class="r4"/><polygon points="465,242.7 465,275.5 455.5,270 455.5,237.2" class="l4"/></g>
+    <g class="cb w20"><polygon points="487.5,232.8 497.1,238.3 487.5,243.8 478,238.3" class="t4"/><polygon points="497.1,238.3 497.1,270 487.5,275.5 487.5,243.8" class="r4"/><polygon points="487.5,243.8 487.5,275.5 478,270 478,238.3" class="l4"/></g>
+    <g class="fd w15"><polygon points="363.7,271 373.2,276.5 363.7,282 354.2,276.5" class="t0"/></g>
+    <g class="cb w16"><polygon points="386.2,247.5 395.8,253 386.2,258.5 376.7,253" class="t3"/><polygon points="395.8,253 395.8,276.5 386.2,282 386.2,258.5" class="r3"/><polygon points="386.2,258.5 386.2,282 376.7,276.5 376.7,253" class="l3"/></g>
+    <g class="cb w17"><polygon points="408.7,250.8 418.3,256.3 408.7,261.8 399.2,256.3" class="t2"/><polygon points="418.3,256.3 418.3,276.5 408.7,282 408.7,261.8" class="r2"/><polygon points="408.7,261.8 408.7,282 399.2,276.5 399.2,256.3" class="l2"/></g>
+    <g class="cb w18"><polygon points="431.3,240.5 440.8,246 431.3,251.5 421.7,246" class="t4"/><polygon points="440.8,246 440.8,276.5 431.3,282 431.3,251.5" class="r4"/><polygon points="431.3,251.5 431.3,282 421.7,276.5 421.7,246" class="l4"/></g>
+    <g class="cb w19"><polygon points="453.8,237.6 463.3,243.1 453.8,248.6 444.2,243.1" class="t4"/><polygon points="463.3,243.1 463.3,276.5 453.8,282 453.8,248.6" class="r4"/><polygon points="453.8,248.6 453.8,282 444.2,276.5 444.2,243.1" class="l4"/></g>
+    <g class="cb w20"><polygon points="476.3,239.2 485.8,244.7 476.3,250.2 466.8,244.7" class="t4"/><polygon points="485.8,244.7 485.8,276.5 476.3,282 476.3,250.2" class="r4"/><polygon points="476.3,250.2 476.3,282 466.8,276.5 466.8,244.7" class="l4"/></g>
+    <g class="cb w21"><polygon points="498.8,247.1 508.3,252.6 498.8,258.1 489.3,252.6" class="t3"/><polygon points="508.3,252.6 508.3,276.5 498.8,282 498.8,258.1" class="r3"/><polygon points="498.8,258.1 498.8,282 489.3,276.5 489.3,252.6" class="l3"/></g>
+    <g class="cb w16"><polygon points="375,261.2 384.5,266.7 375,272.2 365.4,266.7" class="t1"/><polygon points="384.5,266.7 384.5,283 375,288.5 375,272.2" class="r1"/><polygon points="375,272.2 375,288.5 365.4,283 365.4,266.7" class="l1"/></g>
+    <g class="cb w17"><polygon points="397.5,263.2 407,268.7 397.5,274.2 388,268.7" class="t1"/><polygon points="407,268.7 407,283 397.5,288.5 397.5,274.2" class="r1"/><polygon points="397.5,274.2 397.5,288.5 388,283 388,268.7" class="l1"/></g>
+    <g class="cb w18"><polygon points="420,245.9 429.5,251.4 420,256.9 410.5,251.4" class="t4"/><polygon points="429.5,251.4 429.5,283 420,288.5 420,256.9" class="r4"/><polygon points="420,256.9 420,288.5 410.5,283 410.5,251.4" class="l4"/></g>
+    <g class="cb w19"><polygon points="442.5,245.5 452,251 442.5,256.5 433,251" class="t4"/><polygon points="452,251 452,283 442.5,288.5 442.5,256.5" class="r4"/><polygon points="442.5,256.5 442.5,288.5 433,283 433,251" class="l4"/></g>
+    <g class="cb w20"><polygon points="465,247.2 474.6,252.7 465,258.2 455.5,252.7" class="t4"/><polygon points="474.6,252.7 474.6,283 465,288.5 465,258.2" class="r4"/><polygon points="465,258.2 465,288.5 455.5,283 455.5,252.7" class="l4"/></g>
+    <g class="cb w21"><polygon points="487.5,263.5 497.1,269 487.5,274.5 478,269" class="t1"/><polygon points="497.1,269 497.1,283 487.5,288.5 487.5,274.5" class="r1"/><polygon points="487.5,274.5 487.5,288.5 478,283 478,269" class="l1"/></g>
+    <g class="fd w22"><polygon points="510.1,277.5 519.6,283 510.1,288.5 500.5,283" class="t0"/></g>
+    <g class="cb w17"><polygon points="386.2,265.7 395.8,271.2 386.2,276.7 376.7,271.2" class="t2"/><polygon points="395.8,271.2 395.8,289.5 386.2,295 386.2,276.7" class="r2"/><polygon points="386.2,276.7 386.2,295 376.7,289.5 376.7,271.2" class="l2"/></g>
+    <g class="cb w18"><polygon points="408.7,252.1 418.3,257.6 408.7,263.1 399.2,257.6" class="t4"/><polygon points="418.3,257.6 418.3,289.5 408.7,295 408.7,263.1" class="r4"/><polygon points="408.7,263.1 408.7,295 399.2,289.5 399.2,257.6" class="l4"/></g>
+    <g class="cb w19"><polygon points="431.3,251.9 440.8,257.4 431.3,262.9 421.7,257.4" class="t4"/><polygon points="440.8,257.4 440.8,289.5 431.3,295 431.3,262.9" class="r4"/><polygon points="431.3,262.9 431.3,295 421.7,289.5 421.7,257.4" class="l4"/></g>
+    <g class="cb w20"><polygon points="453.8,255.1 463.3,260.6 453.8,266.1 444.2,260.6" class="t3"/><polygon points="463.3,260.6 463.3,289.5 453.8,295 453.8,266.1" class="r3"/><polygon points="453.8,266.1 453.8,295 444.2,289.5 444.2,260.6" class="l3"/></g>
+    <g class="cb w21"><polygon points="476.3,262.5 485.8,268 476.3,273.5 466.8,268" class="t2"/><polygon points="485.8,268 485.8,289.5 476.3,295 476.3,273.5" class="r2"/><polygon points="476.3,273.5 476.3,295 466.8,289.5 466.8,268" class="l2"/></g>
+    <g class="fd w22"><polygon points="498.8,284 508.3,289.5 498.8,295 489.3,289.5" class="t0"/></g>
+    <g class="cb w23"><polygon points="521.3,253.8 530.9,259.3 521.3,264.8 511.8,259.3" class="t4"/><polygon points="530.9,259.3 530.9,289.5 521.3,295 521.3,264.8" class="r4"/><polygon points="521.3,264.8 521.3,295 511.8,289.5 511.8,259.3" class="l4"/></g>
+    <g class="cb w18"><polygon points="397.5,260.1 407,265.6 397.5,271.1 388,265.6" class="t4"/><polygon points="407,265.6 407,296 397.5,301.5 397.5,271.1" class="r4"/><polygon points="397.5,271.1 397.5,301.5 388,296 388,265.6" class="l4"/></g>
+    <g class="cb w19"><polygon points="420,257.7 429.5,263.2 420,268.7 410.5,263.2" class="t4"/><polygon points="429.5,263.2 429.5,296 420,301.5 420,268.7" class="r4"/><polygon points="420,268.7 420,301.5 410.5,296 410.5,263.2" class="l4"/></g>
+    <g class="cb w20"><polygon points="442.5,262 452,267.5 442.5,273 433,267.5" class="t3"/><polygon points="452,267.5 452,296 442.5,301.5 442.5,273" class="r3"/><polygon points="442.5,273 442.5,301.5 433,296 433,267.5" class="l3"/></g>
+    <g class="fd w21"><polygon points="465,290.5 474.6,296 465,301.5 455.5,296" class="t0"/></g>
+    <g class="fd w22"><polygon points="487.5,290.5 497.1,296 487.5,301.5 478,296" class="t0"/></g>
+    <g class="cb w23"><polygon points="510.1,261.3 519.6,266.8 510.1,272.3 500.5,266.8" class="t3"/><polygon points="519.6,266.8 519.6,296 510.1,301.5 510.1,272.3" class="r3"/><polygon points="510.1,272.3 510.1,301.5 500.5,296 500.5,266.8" class="l3"/></g>
+    <g class="fd w24"><polygon points="532.6,290.5 542.1,296 532.6,301.5 523.1,296" class="t0"/></g>
+    <g class="cb w19"><polygon points="408.7,265.4 418.3,270.9 408.7,276.4 399.2,270.9" class="t4"/><polygon points="418.3,270.9 418.3,302.5 408.7,308 408.7,276.4" class="r4"/><polygon points="408.7,276.4 408.7,308 399.2,302.5 399.2,270.9" class="l4"/></g>
+    <g class="fd w20"><polygon points="431.3,297 440.8,302.5 431.3,308 421.7,302.5" class="t0"/></g>
+    <g class="fd w21"><polygon points="453.8,297 463.3,302.5 453.8,308 444.2,302.5" class="t0"/></g>
+    <g class="fd w22"><polygon points="476.3,297 485.8,302.5 476.3,308 466.8,302.5" class="t0"/></g>
+    <g class="cb w23"><polygon points="498.8,270.8 508.3,276.3 498.8,281.8 489.3,276.3" class="t3"/><polygon points="508.3,276.3 508.3,302.5 498.8,308 498.8,281.8" class="r3"/><polygon points="498.8,281.8 498.8,308 489.3,302.5 489.3,276.3" class="l3"/></g>
+    <g class="fd w24"><polygon points="521.3,297 530.9,302.5 521.3,308 511.8,302.5" class="t0"/></g>
+    <g class="cb w25"><polygon points="543.8,269.9 553.4,275.4 543.8,280.9 534.3,275.4" class="t3"/><polygon points="553.4,275.4 553.4,302.5 543.8,308 543.8,280.9" class="r3"/><polygon points="543.8,280.9 543.8,308 534.3,302.5 534.3,275.4" class="l3"/></g>
+    <g class="cb w20"><polygon points="420,283.6 429.5,289.1 420,294.6 410.5,289.1" class="t2"/><polygon points="429.5,289.1 429.5,309 420,314.5 420,294.6" class="r2"/><polygon points="420,294.6 420,314.5 410.5,309 410.5,289.1" class="l2"/></g>
+    <g class="fd w21"><polygon points="442.5,303.5 452,309 442.5,314.5 433,309" class="t0"/></g>
+    <g class="fd w22"><polygon points="465,303.5 474.6,309 465,314.5 455.5,309" class="t0"/></g>
+    <g class="cb w23"><polygon points="487.5,276.8 497.1,282.3 487.5,287.8 478,282.3" class="t3"/><polygon points="497.1,282.3 497.1,309 487.5,314.5 487.5,287.8" class="r3"/><polygon points="487.5,287.8 487.5,314.5 478,309 478,282.3" class="l3"/></g>
+    <g class="fd w24"><polygon points="510.1,303.5 519.6,309 510.1,314.5 500.5,309" class="t0"/></g>
+    <g class="cb w25"><polygon points="532.6,274.8 542.1,280.3 532.6,285.8 523.1,280.3" class="t3"/><polygon points="542.1,280.3 542.1,309 532.6,314.5 532.6,285.8" class="r3"/><polygon points="532.6,285.8 532.6,314.5 523.1,309 523.1,280.3" class="l3"/></g>
+    <g class="cb w26"><polygon points="555.1,271.1 564.6,276.6 555.1,282.1 545.6,276.6" class="t4"/><polygon points="564.6,276.6 564.6,309 555.1,314.5 555.1,282.1" class="r4"/><polygon points="555.1,282.1 555.1,314.5 545.6,309 545.6,276.6" class="l4"/></g>
+    <g class="fd w21"><polygon points="431.3,310 440.8,315.5 431.3,321 421.7,315.5" class="t0"/></g>
+    <g class="fd w22"><polygon points="453.8,310 463.3,315.5 453.8,321 444.2,315.5" class="t0"/></g>
+    <g class="cb w23"><polygon points="476.3,287.9 485.8,293.4 476.3,298.9 466.8,293.4" class="t2"/><polygon points="485.8,293.4 485.8,315.5 476.3,321 476.3,298.9" class="r2"/><polygon points="476.3,298.9 476.3,321 466.8,315.5 466.8,293.4" class="l2"/></g>
+    <g class="cb w24"><polygon points="498.8,287.9 508.3,293.4 498.8,298.9 489.3,293.4" class="t2"/><polygon points="508.3,293.4 508.3,315.5 498.8,321 498.8,298.9" class="r2"/><polygon points="498.8,298.9 498.8,321 489.3,315.5 489.3,293.4" class="l2"/></g>
+    <g class="cb w25"><polygon points="521.3,279 530.9,284.5 521.3,290 511.8,284.5" class="t4"/><polygon points="530.9,284.5 530.9,315.5 521.3,321 521.3,290" class="r4"/><polygon points="521.3,290 521.3,321 511.8,315.5 511.8,284.5" class="l4"/></g>
+    <g class="cb w26"><polygon points="543.8,279.3 553.4,284.8 543.8,290.3 534.3,284.8" class="t4"/><polygon points="553.4,284.8 553.4,315.5 543.8,321 543.8,290.3" class="r4"/><polygon points="543.8,290.3 543.8,321 534.3,315.5 534.3,284.8" class="l4"/></g>
+    <g class="cb w27"><polygon points="566.4,273.2 575.9,278.7 566.4,284.2 556.8,278.7" class="t5"/><polygon points="575.9,278.7 575.9,315.5 566.4,321 566.4,284.2" class="r5"/><polygon points="566.4,284.2 566.4,321 556.8,315.5 556.8,278.7" class="l5"/></g>
+    <g class="cb w22"><polygon points="442.5,293.7 452,299.2 442.5,304.7 433,299.2" class="t2"/><polygon points="452,299.2 452,322 442.5,327.5 442.5,304.7" class="r2"/><polygon points="442.5,304.7 442.5,327.5 433,322 433,299.2" class="l2"/></g>
+    <g class="fd w23"><polygon points="465,316.5 474.6,322 465,327.5 455.5,322" class="t0"/></g>
+    <g class="cb w24"><polygon points="487.5,287.8 497.1,293.3 487.5,298.8 478,293.3" class="t3"/><polygon points="497.1,293.3 497.1,322 487.5,327.5 487.5,298.8" class="r3"/><polygon points="487.5,298.8 487.5,327.5 478,322 478,293.3" class="l3"/></g>
+    <g class="cb w25"><polygon points="510.1,288.3 519.6,293.8 510.1,299.3 500.5,293.8" class="t3"/><polygon points="519.6,293.8 519.6,322 510.1,327.5 510.1,299.3" class="r3"/><polygon points="510.1,299.3 510.1,327.5 500.5,322 500.5,293.8" class="l3"/></g>
+    <g class="cb w26"><polygon points="532.6,286.4 542.1,291.9 532.6,297.4 523.1,291.9" class="t3"/><polygon points="542.1,291.9 542.1,322 532.6,327.5 532.6,297.4" class="r3"/><polygon points="532.6,297.4 532.6,327.5 523.1,322 523.1,291.9" class="l3"/></g>
+    <g class="cb w27"><polygon points="555.1,276.5 564.6,282 555.1,287.5 545.6,282" class="t5"/><polygon points="564.6,282 564.6,322 555.1,327.5 555.1,287.5" class="r5"/><polygon points="555.1,287.5 555.1,327.5 545.6,322 545.6,282" class="l5"/></g>
+    <g class="cb w28"><polygon points="577.6,277.3 587.1,282.8 577.6,288.3 568.1,282.8" class="t5"/><polygon points="587.1,282.8 587.1,322 577.6,327.5 577.6,288.3" class="r5"/><polygon points="577.6,288.3 577.6,327.5 568.1,322 568.1,282.8" class="l5"/></g>
+    <g class="fd w23"><polygon points="453.8,323 463.3,328.5 453.8,334 444.2,328.5" class="t0"/></g>
+    <g class="cb w24"><polygon points="476.3,301.9 485.8,307.4 476.3,312.9 466.8,307.4" class="t2"/><polygon points="485.8,307.4 485.8,328.5 476.3,334 476.3,312.9" class="r2"/><polygon points="476.3,312.9 476.3,334 466.8,328.5 466.8,307.4" class="l2"/></g>
+    <g class="cb w25"><polygon points="498.8,292.2 508.3,297.7 498.8,303.2 489.3,297.7" class="t4"/><polygon points="508.3,297.7 508.3,328.5 498.8,334 498.8,303.2" class="r4"/><polygon points="498.8,303.2 498.8,334 489.3,328.5 489.3,297.7" class="l4"/></g>
+    <g class="cb w26"><polygon points="521.3,290.3 530.9,295.8 521.3,301.3 511.8,295.8" class="t4"/><polygon points="530.9,295.8 530.9,328.5 521.3,334 521.3,301.3" class="r4"/><polygon points="521.3,301.3 521.3,334 511.8,328.5 511.8,295.8" class="l4"/></g>
+    <g class="cb w27"><polygon points="543.8,284.2 553.4,289.7 543.8,295.2 534.3,289.7" class="t5"/><polygon points="553.4,289.7 553.4,328.5 543.8,334 543.8,295.2" class="r5"/><polygon points="543.8,295.2 543.8,334 534.3,328.5 534.3,289.7" class="l5"/></g>
+    <g class="cb w28"><polygon points="566.4,284.5 575.9,290 566.4,295.5 556.8,290" class="t5"/><polygon points="575.9,290 575.9,328.5 566.4,334 566.4,295.5" class="r5"/><polygon points="566.4,295.5 566.4,334 556.8,328.5 556.8,290" class="l5"/></g>
+    <g class="cb w29"><polygon points="588.9,284.4 598.4,289.9 588.9,295.4 579.3,289.9" class="t5"/><polygon points="598.4,289.9 598.4,328.5 588.9,334 588.9,295.4" class="r5"/><polygon points="588.9,295.4 588.9,334 579.3,328.5 579.3,289.9" class="l5"/></g>
+    <g class="cb w24"><polygon points="465,300.9 474.6,306.4 465,311.9 455.5,306.4" class="t3"/><polygon points="474.6,306.4 474.6,335 465,340.5 465,311.9" class="r3"/><polygon points="465,311.9 465,340.5 455.5,335 455.5,306.4" class="l3"/></g>
+    <g class="cb w25"><polygon points="487.5,297.8 497.1,303.3 487.5,308.8 478,303.3" class="t4"/><polygon points="497.1,303.3 497.1,335 487.5,340.5 487.5,308.8" class="r4"/><polygon points="487.5,308.8 487.5,340.5 478,335 478,303.3" class="l4"/></g>
+    <g class="cb w26"><polygon points="510.1,291.2 519.6,296.7 510.1,302.2 500.5,296.7" class="t5"/><polygon points="519.6,296.7 519.6,335 510.1,340.5 510.1,302.2" class="r5"/><polygon points="510.1,302.2 510.1,340.5 500.5,335 500.5,296.7" class="l5"/></g>
+    <g class="cb w27"><polygon points="532.6,295.5 542.1,301 532.6,306.5 523.1,301" class="t4"/><polygon points="542.1,301 542.1,335 532.6,340.5 532.6,306.5" class="r4"/><polygon points="532.6,306.5 532.6,340.5 523.1,335 523.1,301" class="l4"/></g>
+    <g class="cb w28"><polygon points="555.1,293.6 564.6,299.1 555.1,304.6 545.6,299.1" class="t5"/><polygon points="564.6,299.1 564.6,335 555.1,340.5 555.1,304.6" class="r5"/><polygon points="555.1,304.6 555.1,340.5 545.6,335 545.6,299.1" class="l5"/></g>
+    <g class="cb w29"><polygon points="577.6,291.6 587.1,297.1 577.6,302.6 568.1,297.1" class="t5"/><polygon points="587.1,297.1 587.1,335 577.6,340.5 577.6,302.6" class="r5"/><polygon points="577.6,302.6 577.6,340.5 568.1,335 568.1,297.1" class="l5"/></g>
+    <g class="cb w30"><polygon points="600.1,293.3 609.7,298.8 600.1,304.3 590.6,298.8" class="t5"/><polygon points="609.7,298.8 609.7,335 600.1,340.5 600.1,304.3" class="r5"/><polygon points="600.1,304.3 600.1,340.5 590.6,335 590.6,298.8" class="l5"/></g>
+    <g class="cb w25"><polygon points="476.3,302.1 485.8,307.6 476.3,313.1 466.8,307.6" class="t4"/><polygon points="485.8,307.6 485.8,341.5 476.3,347 476.3,313.1" class="r4"/><polygon points="476.3,313.1 476.3,347 466.8,341.5 466.8,307.6" class="l4"/></g>
+    <g class="cb w26"><polygon points="498.8,296.3 508.3,301.8 498.8,307.3 489.3,301.8" class="t5"/><polygon points="508.3,301.8 508.3,341.5 498.8,347 498.8,307.3" class="r5"/><polygon points="498.8,307.3 498.8,347 489.3,341.5 489.3,301.8" class="l5"/></g>
+    <g class="cb w27"><polygon points="521.3,300 530.9,305.5 521.3,311 511.8,305.5" class="t5"/><polygon points="530.9,305.5 530.9,341.5 521.3,347 521.3,311" class="r5"/><polygon points="521.3,311 521.3,347 511.8,341.5 511.8,305.5" class="l5"/></g>
+    <g class="cb w28"><polygon points="543.8,299 553.4,304.5 543.8,310 534.3,304.5" class="t5"/><polygon points="553.4,304.5 553.4,341.5 543.8,347 543.8,310" class="r5"/><polygon points="543.8,310 543.8,347 534.3,341.5 534.3,304.5" class="l5"/></g>
+    <g class="cb w29"><polygon points="566.4,299.3 575.9,304.8 566.4,310.3 556.8,304.8" class="t5"/><polygon points="575.9,304.8 575.9,341.5 566.4,347 566.4,310.3" class="r5"/><polygon points="566.4,310.3 566.4,347 556.8,341.5 556.8,304.8" class="l5"/></g>
+    <g class="cb w30"><polygon points="588.9,299.9 598.4,305.4 588.9,310.9 579.3,305.4" class="t5"/><polygon points="598.4,305.4 598.4,341.5 588.9,347 588.9,310.9" class="r5"/><polygon points="588.9,310.9 588.9,347 579.3,341.5 579.3,305.4" class="l5"/></g>
+    <g class="cb w31"><polygon points="611.4,302.4 620.9,307.9 611.4,313.4 601.9,307.9" class="t4"/><polygon points="620.9,307.9 620.9,341.5 611.4,347 611.4,313.4" class="r4"/><polygon points="611.4,313.4 611.4,347 601.9,341.5 601.9,307.9" class="l4"/></g>
+    <g class="cb w26"><polygon points="487.5,306.4 497.1,311.9 487.5,317.4 478,311.9" class="t5"/><polygon points="497.1,311.9 497.1,348 487.5,353.5 487.5,317.4" class="r5"/><polygon points="487.5,317.4 487.5,353.5 478,348 478,311.9" class="l5"/></g>
+    <g class="cb w27"><polygon points="510.1,304.7 519.6,310.2 510.1,315.7 500.5,310.2" class="t5"/><polygon points="519.6,310.2 519.6,348 510.1,353.5 510.1,315.7" class="r5"/><polygon points="510.1,315.7 510.1,353.5 500.5,348 500.5,310.2" class="l5"/></g>
+    <g class="cb w28"><polygon points="532.6,306.2 542.1,311.7 532.6,317.2 523.1,311.7" class="t5"/><polygon points="542.1,311.7 542.1,348 532.6,353.5 532.6,317.2" class="r5"/><polygon points="532.6,317.2 532.6,353.5 523.1,348 523.1,311.7" class="l5"/></g>
+    <g class="cb w29"><polygon points="555.1,306.3 564.6,311.8 555.1,317.3 545.6,311.8" class="t5"/><polygon points="564.6,311.8 564.6,348 555.1,353.5 555.1,317.3" class="r5"/><polygon points="555.1,317.3 555.1,353.5 545.6,348 545.6,311.8" class="l5"/></g>
+    <g class="cb w30"><polygon points="577.6,304.5 587.1,310 577.6,315.5 568.1,310" class="t5"/><polygon points="587.1,310 587.1,348 577.6,353.5 577.6,315.5" class="r5"/><polygon points="577.6,315.5 577.6,353.5 568.1,348 568.1,310" class="l5"/></g>
+    <g class="cb w31"><polygon points="600.1,308.3 609.7,313.8 600.1,319.3 590.6,313.8" class="t4"/><polygon points="609.7,313.8 609.7,348 600.1,353.5 600.1,319.3" class="r4"/><polygon points="600.1,319.3 600.1,353.5 590.6,348 590.6,313.8" class="l4"/></g>
+    <g class="cb w32"><polygon points="622.6,315 632.2,320.5 622.6,326 613.1,320.5" class="t3"/><polygon points="632.2,320.5 632.2,348 622.6,353.5 622.6,326" class="r3"/><polygon points="622.6,326 622.6,353.5 613.1,348 613.1,320.5" class="l3"/></g>
+    <g class="cb w27"><polygon points="498.8,312.8 508.3,318.3 498.8,323.8 489.3,318.3" class="t5"/><polygon points="508.3,318.3 508.3,354.5 498.8,360 498.8,323.8" class="r5"/><polygon points="498.8,323.8 498.8,360 489.3,354.5 489.3,318.3" class="l5"/></g>
+    <g class="cb w28"><polygon points="521.3,312.5 530.9,318 521.3,323.5 511.8,318" class="t5"/><polygon points="530.9,318 530.9,354.5 521.3,360 521.3,323.5" class="r5"/><polygon points="521.3,323.5 521.3,360 511.8,354.5 511.8,318" class="l5"/></g>
+    <g class="cb w29"><polygon points="543.8,312.1 553.4,317.6 543.8,323.1 534.3,317.6" class="t5"/><polygon points="553.4,317.6 553.4,354.5 543.8,360 543.8,323.1" class="r5"/><polygon points="543.8,323.1 543.8,360 534.3,354.5 534.3,317.6" class="l5"/></g>
+    <g class="cb w30"><polygon points="566.4,312.9 575.9,318.4 566.4,323.9 556.8,318.4" class="t5"/><polygon points="575.9,318.4 575.9,354.5 566.4,360 566.4,323.9" class="r5"/><polygon points="566.4,323.9 566.4,360 556.8,354.5 556.8,318.4" class="l5"/></g>
+    <g class="cb w31"><polygon points="588.9,318.4 598.4,323.9 588.9,329.4 579.3,323.9" class="t4"/><polygon points="598.4,323.9 598.4,354.5 588.9,360 588.9,329.4" class="r4"/><polygon points="588.9,329.4 588.9,360 579.3,354.5 579.3,323.9" class="l4"/></g>
+    <g class="cb w32"><polygon points="611.4,320.1 620.9,325.6 611.4,331.1 601.9,325.6" class="t3"/><polygon points="620.9,325.6 620.9,354.5 611.4,360 611.4,331.1" class="r3"/><polygon points="611.4,331.1 611.4,360 601.9,354.5 601.9,325.6" class="l3"/></g>
+    <g class="cb w33"><polygon points="633.9,314.1 643.4,319.6 633.9,325.1 624.4,319.6" class="t4"/><polygon points="643.4,319.6 643.4,354.5 633.9,360 633.9,325.1" class="r4"/><polygon points="633.9,325.1 633.9,360 624.4,354.5 624.4,319.6" class="l4"/></g>
+    <g class="cb w28"><polygon points="510.1,320.5 519.6,326 510.1,331.5 500.5,326" class="t5"/><polygon points="519.6,326 519.6,361 510.1,366.5 510.1,331.5" class="r5"/><polygon points="510.1,331.5 510.1,366.5 500.5,361 500.5,326" class="l5"/></g>
+    <g class="cb w29"><polygon points="532.6,319.1 542.1,324.6 532.6,330.1 523.1,324.6" class="t5"/><polygon points="542.1,324.6 542.1,361 532.6,366.5 532.6,330.1" class="r5"/><polygon points="532.6,330.1 532.6,366.5 523.1,361 523.1,324.6" class="l5"/></g>
+    <g class="cb w30"><polygon points="555.1,321.4 564.6,326.9 555.1,332.4 545.6,326.9" class="t4"/><polygon points="564.6,326.9 564.6,361 555.1,366.5 555.1,332.4" class="r4"/><polygon points="555.1,332.4 555.1,366.5 545.6,361 545.6,326.9" class="l4"/></g>
+    <g class="cb w31"><polygon points="577.6,321.2 587.1,326.7 577.6,332.2 568.1,326.7" class="t4"/><polygon points="587.1,326.7 587.1,361 577.6,366.5 577.6,332.2" class="r4"/><polygon points="577.6,332.2 577.6,366.5 568.1,361 568.1,326.7" class="l4"/></g>
+    <g class="cb w32"><polygon points="600.1,320 609.7,325.5 600.1,331 590.6,325.5" class="t5"/><polygon points="609.7,325.5 609.7,361 600.1,366.5 600.1,331" class="r5"/><polygon points="600.1,331 600.1,366.5 590.6,361 590.6,325.5" class="l5"/></g>
+    <g class="cb w33"><polygon points="622.6,322.8 632.2,328.3 622.6,333.8 613.1,328.3" class="t4"/><polygon points="632.2,328.3 632.2,361 622.6,366.5 622.6,333.8" class="r4"/><polygon points="622.6,333.8 622.6,366.5 613.1,361 613.1,328.3" class="l4"/></g>
+    <g class="cb w34"><polygon points="645.2,319.2 654.7,324.7 645.2,330.2 635.6,324.7" class="t5"/><polygon points="654.7,324.7 654.7,361 645.2,366.5 645.2,330.2" class="r5"/><polygon points="645.2,330.2 645.2,366.5 635.6,361 635.6,324.7" class="l5"/></g>
+    <g class="cb w29"><polygon points="521.3,325.3 530.9,330.8 521.3,336.3 511.8,330.8" class="t5"/><polygon points="530.9,330.8 530.9,367.5 521.3,373 521.3,336.3" class="r5"/><polygon points="521.3,336.3 521.3,373 511.8,367.5 511.8,330.8" class="l5"/></g>
+    <g class="cb w30"><polygon points="543.8,327 553.4,332.5 543.8,338 534.3,332.5" class="t5"/><polygon points="553.4,332.5 553.4,367.5 543.8,373 543.8,338" class="r5"/><polygon points="543.8,338 543.8,373 534.3,367.5 534.3,332.5" class="l5"/></g>
+    <g class="cb w31"><polygon points="566.4,335.7 575.9,341.2 566.4,346.7 556.8,341.2" class="t3"/><polygon points="575.9,341.2 575.9,367.5 566.4,373 566.4,346.7" class="r3"/><polygon points="566.4,346.7 566.4,373 556.8,367.5 556.8,341.2" class="l3"/></g>
+    <g class="cb w32"><polygon points="588.9,328 598.4,333.5 588.9,339 579.3,333.5" class="t4"/><polygon points="598.4,333.5 598.4,367.5 588.9,373 588.9,339" class="r4"/><polygon points="588.9,339 588.9,373 579.3,367.5 579.3,333.5" class="l4"/></g>
+    <g class="cb w33"><polygon points="611.4,327 620.9,332.5 611.4,338 601.9,332.5" class="t5"/><polygon points="620.9,332.5 620.9,367.5 611.4,373 611.4,338" class="r5"/><polygon points="611.4,338 611.4,373 601.9,367.5 601.9,332.5" class="l5"/></g>
+    <g class="cb w30"><polygon points="532.6,333.9 542.1,339.4 532.6,344.9 523.1,339.4" class="t4"/><polygon points="542.1,339.4 542.1,374 532.6,379.5 532.6,344.9" class="r4"/><polygon points="532.6,344.9 532.6,379.5 523.1,374 523.1,339.4" class="l4"/></g>
+    <g class="cb w31"><polygon points="555.1,336.5 564.6,342 555.1,347.5 545.6,342" class="t4"/><polygon points="564.6,342 564.6,374 555.1,379.5 555.1,347.5" class="r4"/><polygon points="555.1,347.5 555.1,379.5 545.6,374 545.6,342" class="l4"/></g>
+    <g class="cb w32"><polygon points="577.6,333.6 587.1,339.1 577.6,344.6 568.1,339.1" class="t5"/><polygon points="587.1,339.1 587.1,374 577.6,379.5 577.6,344.6" class="r5"/><polygon points="577.6,344.6 577.6,379.5 568.1,374 568.1,339.1" class="l5"/></g>
+    <g class="cb w33"><polygon points="600.1,331.1 609.7,336.6 600.1,342.1 590.6,336.6" class="t5"/><polygon points="609.7,336.6 609.7,374 600.1,379.5 600.1,342.1" class="r5"/><polygon points="600.1,342.1 600.1,379.5 590.6,374 590.6,336.6" class="l5"/></g>
+    <g class="fd w31"><polygon points="543.8,375 553.4,380.5 543.8,386 534.3,380.5" class="t0"/></g>
+    <g class="cb w32"><polygon points="566.4,339.6 575.9,345.1 566.4,350.6 556.8,345.1" class="t5"/><polygon points="575.9,345.1 575.9,380.5 566.4,386 566.4,350.6" class="r5"/><polygon points="566.4,350.6 566.4,386 556.8,380.5 556.8,345.1" class="l5"/></g>
+    <g class="cb w33"><polygon points="588.9,340.6 598.4,346.1 588.9,351.6 579.3,346.1" class="t4"/><polygon points="598.4,346.1 598.4,380.5 588.9,386 588.9,351.6" class="r4"/><polygon points="588.9,351.6 588.9,386 579.3,380.5 579.3,346.1" class="l4"/></g>
+    <g class="cb w32"><polygon points="555.1,346.8 564.6,352.3 555.1,357.8 545.6,352.3" class="t4"/><polygon points="564.6,352.3 564.6,387 555.1,392.5 555.1,357.8" class="r4"/><polygon points="555.1,357.8 555.1,392.5 545.6,387 545.6,352.3" class="l4"/></g>
+    <g class="cb w33"><polygon points="577.6,345.2 587.1,350.7 577.6,356.2 568.1,350.7" class="t5"/><polygon points="587.1,350.7 587.1,387 577.6,392.5 577.6,356.2" class="r5"/><polygon points="577.6,356.2 577.6,392.5 568.1,387 568.1,350.7" class="l5"/></g>
+    <g class="cb w33"><polygon points="566.4,352.2 575.9,357.7 566.4,363.2 556.8,357.7" class="t5"/><polygon points="575.9,357.7 575.9,393.5 566.4,399 566.4,363.2" class="r5"/><polygon points="566.4,363.2 566.4,399 556.8,393.5 556.8,357.7" class="l5"/></g>
+    <g class="dbt db0"><line x1="600.1" y1="331.1" x2="600.1" y2="321.1" class="debut-pin"/><circle cx="600.1" cy="331.1" r="2" class="debut-dot"/></g>
+    <g class="dbt db1"><line x1="521.3" y1="300" x2="521.3" y2="290" class="debut-pin"/><circle cx="521.3" cy="300" r="2" class="debut-dot"/></g>
+    <g class="dbt db2"><line x1="442.5" y1="293.7" x2="442.5" y2="267" class="debut-pin"/><circle cx="442.5" cy="293.7" r="2" class="debut-dot"/></g>
+    <g class="dbt db3"><line x1="476.3" y1="287.9" x2="476.3" y2="244" class="debut-pin"/><circle cx="476.3" cy="287.9" r="2" class="debut-dot"/></g>
+    <g class="dbt db4"><line x1="521.3" y1="279" x2="545.3" y2="267" class="debut-pin"/><circle cx="521.3" cy="279" r="2" class="debut-dot"/></g>
+    <g class="dbt db5"><line x1="386.2" y1="247.5" x2="386.2" y2="237.5" class="debut-pin"/><circle cx="386.2" cy="247.5" r="2" class="debut-dot"/></g>
+    <g class="dbt db6"><line x1="397.5" y1="199.9" x2="397.5" y2="189.9" class="debut-pin"/><circle cx="397.5" cy="199.9" r="2" class="debut-dot"/></g>
+    <g class="dbt db7"><line x1="296.2" y1="159.2" x2="296.2" y2="149.2" class="debut-pin"/><circle cx="296.2" cy="159.2" r="2" class="debut-dot"/></g>
+    <g class="beacon"><rect x="554.1" y="216.5" width="2" height="60" fill="url(#beam)" class="beam"/><switch><g systemLanguage="zh,zh-CN,zh-Hans,zh-TW,zh-HK,zh-Hant,zh-SG"><rect x="496.1" y="196.5" width="118" height="21" rx="10.5" class="peak-pill"/><text x="555.1" y="211.5" class="peak" text-anchor="middle">3.1B · 5月26日</text></g><g><rect x="497.4" y="196.5" width="115.4" height="21" rx="10.5" class="peak-pill"/><text x="555.1" y="211.5" class="peak" text-anchor="middle">3.1B · MAY 26</text></g></switch></g>
+    <g class="dbt db0"><rect x="561.5" y="302.1" width="77.2" height="19" rx="9.5" class="debut-pill"/><g class="micon" transform="translate(568.5,305.6) scale(0.5000)"><path d="M13.827 3.52h3.603L24 20h-3.603l-6.57-16.48zm-7.258 0h3.767L16.906 20h-3.674l-1.343-3.461H5.017l-1.344 3.46H0L6.57 3.522zm4.132 9.959L8.453 7.687 6.205 13.48H10.7z"></path></g><text x="586.5" y="315.6" class="debut">fable-5</text></g>
+    <g class="dbt db1"><rect x="479.4" y="271" width="83.8" height="19" rx="9.5" class="debut-pill"/><g class="micon" transform="translate(486.4,274.5) scale(0.5000)"><path d="M13.827 3.52h3.603L24 20h-3.603l-6.57-16.48zm-7.258 0h3.767L16.906 20h-3.674l-1.343-3.461H5.017l-1.344 3.46H0L6.57 3.522zm4.132 9.959L8.453 7.687 6.205 13.48H10.7z"></path></g><text x="504.4" y="284.5" class="debut">opus-4-8</text></g>
+    <g class="dbt db2"><rect x="403.9" y="248" width="77.2" height="19" rx="9.5" class="debut-pill"/><g class="micon" transform="translate(410.9,251.5) scale(0.5000)"><path d="M9.205 8.658v-2.26c0-.19.072-.333.238-.428l4.543-2.616c.619-.357 1.356-.523 2.117-.523 2.854 0 4.662 2.212 4.662 4.566 0 .167 0 .357-.024.547l-4.71-2.759a.797.797 0 00-.856 0l-5.97 3.473zm10.609 8.8V12.06c0-.333-.143-.57-.429-.737l-5.97-3.473 1.95-1.118a.433.433 0 01.476 0l4.543 2.617c1.309.76 2.189 2.378 2.189 3.948 0 1.808-1.07 3.473-2.76 4.163zM7.802 12.703l-1.95-1.142c-.167-.095-.239-.238-.239-.428V5.899c0-2.545 1.95-4.472 4.591-4.472 1 0 1.927.333 2.712.928L8.23 5.067c-.285.166-.428.404-.428.737v6.898zM12 15.128l-2.795-1.57v-3.33L12 8.658l2.795 1.57v3.33L12 15.128zm1.796 7.23c-1 0-1.927-.332-2.712-.927l4.686-2.712c.285-.166.428-.404.428-.737v-6.898l1.974 1.142c.167.095.238.238.238.428v5.233c0 2.545-1.974 4.472-4.614 4.472zm-5.637-5.303l-4.544-2.617c-1.308-.761-2.188-2.378-2.188-3.948A4.482 4.482 0 014.21 6.327v5.423c0 .333.143.571.428.738l5.947 3.449-1.95 1.118a.432.432 0 01-.476 0zm-.262 3.9c-2.688 0-4.662-2.021-4.662-4.519 0-.19.024-.38.047-.57l4.686 2.71c.286.167.571.167.856 0l5.97-3.448v2.26c0 .19-.07.333-.237.428l-4.543 2.616c-.619.357-1.356.523-2.117.523zm5.899 2.83a5.947 5.947 0 005.827-4.756C22.287 18.339 24 15.84 24 13.296c0-1.665-.713-3.282-1.998-4.448.119-.5.19-.999.19-1.498 0-3.401-2.759-5.947-5.946-5.947-.642 0-1.26.095-1.88.31A5.962 5.962 0 0010.205 0a5.947 5.947 0 00-5.827 4.757C1.713 5.447 0 7.945 0 10.49c0 1.666.713 3.283 1.998 4.448-.119.5-.19 1-.19 1.499 0 3.401 2.759 5.946 5.946 5.946.642 0 1.26-.095 1.88-.309a5.96 5.96 0 004.162 1.713z"></path></g><text x="428.9" y="261.5" class="debut">gpt-5.5</text></g>
+    <g class="dbt db3"><rect x="434.4" y="225" width="83.8" height="19" rx="9.5" class="debut-pill"/><g class="micon" transform="translate(441.4,228.5) scale(0.5000)"><path d="M13.827 3.52h3.603L24 20h-3.603l-6.57-16.48zm-7.258 0h3.767L16.906 20h-3.674l-1.343-3.461H5.017l-1.344 3.46H0L6.57 3.522zm4.132 9.959L8.453 7.687 6.205 13.48H10.7z"></path></g><text x="459.4" y="238.5" class="debut">opus-4-7</text></g>
+    <g class="dbt db4"><rect x="533.3" y="248" width="103.6" height="19" rx="9.5" class="debut-pill"/><g class="micon" transform="translate(540.3,251.5) scale(0.5000)"><path d="M9.205 8.658v-2.26c0-.19.072-.333.238-.428l4.543-2.616c.619-.357 1.356-.523 2.117-.523 2.854 0 4.662 2.212 4.662 4.566 0 .167 0 .357-.024.547l-4.71-2.759a.797.797 0 00-.856 0l-5.97 3.473zm10.609 8.8V12.06c0-.333-.143-.57-.429-.737l-5.97-3.473 1.95-1.118a.433.433 0 01.476 0l4.543 2.617c1.309.76 2.189 2.378 2.189 3.948 0 1.808-1.07 3.473-2.76 4.163zM7.802 12.703l-1.95-1.142c-.167-.095-.239-.238-.239-.428V5.899c0-2.545 1.95-4.472 4.591-4.472 1 0 1.927.333 2.712.928L8.23 5.067c-.285.166-.428.404-.428.737v6.898zM12 15.128l-2.795-1.57v-3.33L12 8.658l2.795 1.57v3.33L12 15.128zm1.796 7.23c-1 0-1.927-.332-2.712-.927l4.686-2.712c.285-.166.428-.404.428-.737v-6.898l1.974 1.142c.167.095.238.238.238.428v5.233c0 2.545-1.974 4.472-4.614 4.472zm-5.637-5.303l-4.544-2.617c-1.308-.761-2.188-2.378-2.188-3.948A4.482 4.482 0 014.21 6.327v5.423c0 .333.143.571.428.738l5.947 3.449-1.95 1.118a.432.432 0 01-.476 0zm-.262 3.9c-2.688 0-4.662-2.021-4.662-4.519 0-.19.024-.38.047-.57l4.686 2.71c.286.167.571.167.856 0l5.97-3.448v2.26c0 .19-.07.333-.237.428l-4.543 2.616c-.619.357-1.356.523-2.117.523zm5.899 2.83a5.947 5.947 0 005.827-4.756C22.287 18.339 24 15.84 24 13.296c0-1.665-.713-3.282-1.998-4.448.119-.5.19-.999.19-1.498 0-3.401-2.759-5.947-5.946-5.947-.642 0-1.26.095-1.88.31A5.962 5.962 0 0010.205 0a5.947 5.947 0 00-5.827 4.757C1.713 5.447 0 7.945 0 10.49c0 1.666.713 3.283 1.998 4.448-.119.5-.19 1-.19 1.499 0 3.401 2.759 5.946 5.946 5.946.642 0 1.26-.095 1.88-.309a5.96 5.96 0 004.162 1.713z"></path></g><text x="558.3" y="261.5" class="debut">gpt-5.4-pro</text></g>
+    <g class="dbt db5"><rect x="347.6" y="218.5" width="77.2" height="19" rx="9.5" class="debut-pill"/><g class="micon" transform="translate(354.6,222) scale(0.5000)"><path d="M9.205 8.658v-2.26c0-.19.072-.333.238-.428l4.543-2.616c.619-.357 1.356-.523 2.117-.523 2.854 0 4.662 2.212 4.662 4.566 0 .167 0 .357-.024.547l-4.71-2.759a.797.797 0 00-.856 0l-5.97 3.473zm10.609 8.8V12.06c0-.333-.143-.57-.429-.737l-5.97-3.473 1.95-1.118a.433.433 0 01.476 0l4.543 2.617c1.309.76 2.189 2.378 2.189 3.948 0 1.808-1.07 3.473-2.76 4.163zM7.802 12.703l-1.95-1.142c-.167-.095-.239-.238-.239-.428V5.899c0-2.545 1.95-4.472 4.591-4.472 1 0 1.927.333 2.712.928L8.23 5.067c-.285.166-.428.404-.428.737v6.898zM12 15.128l-2.795-1.57v-3.33L12 8.658l2.795 1.57v3.33L12 15.128zm1.796 7.23c-1 0-1.927-.332-2.712-.927l4.686-2.712c.285-.166.428-.404.428-.737v-6.898l1.974 1.142c.167.095.238.238.238.428v5.233c0 2.545-1.974 4.472-4.614 4.472zm-5.637-5.303l-4.544-2.617c-1.308-.761-2.188-2.378-2.188-3.948A4.482 4.482 0 014.21 6.327v5.423c0 .333.143.571.428.738l5.947 3.449-1.95 1.118a.432.432 0 01-.476 0zm-.262 3.9c-2.688 0-4.662-2.021-4.662-4.519 0-.19.024-.38.047-.57l4.686 2.71c.286.167.571.167.856 0l5.97-3.448v2.26c0 .19-.07.333-.237.428l-4.543 2.616c-.619.357-1.356.523-2.117.523zm5.899 2.83a5.947 5.947 0 005.827-4.756C22.287 18.339 24 15.84 24 13.296c0-1.665-.713-3.282-1.998-4.448.119-.5.19-.999.19-1.498 0-3.401-2.759-5.947-5.946-5.947-.642 0-1.26.095-1.88.31A5.962 5.962 0 0010.205 0a5.947 5.947 0 00-5.827 4.757C1.713 5.447 0 7.945 0 10.49c0 1.666.713 3.283 1.998 4.448-.119.5-.19 1-.19 1.499 0 3.401 2.759 5.946 5.946 5.946.642 0 1.26-.095 1.88-.309a5.96 5.96 0 004.162 1.713z"></path></g><text x="372.6" y="232" class="debut">gpt-5.4</text></g>
+    <g class="dbt db6"><rect x="355.6" y="170.9" width="83.8" height="19" rx="9.5" class="debut-pill"/><g class="micon" transform="translate(362.6,174.4) scale(0.5000)"><path d="M13.827 3.52h3.603L24 20h-3.603l-6.57-16.48zm-7.258 0h3.767L16.906 20h-3.674l-1.343-3.461H5.017l-1.344 3.46H0L6.57 3.522zm4.132 9.959L8.453 7.687 6.205 13.48H10.7z"></path></g><text x="380.6" y="184.4" class="debut">opus-4-6</text></g>
+    <g class="dbt db7"><rect x="254.3" y="130.2" width="83.8" height="19" rx="9.5" class="debut-pill"/><g class="micon" transform="translate(261.3,133.7) scale(0.5000)"><path d="M13.827 3.52h3.603L24 20h-3.603l-6.57-16.48zm-7.258 0h3.767L16.906 20h-3.674l-1.343-3.461H5.017l-1.344 3.46H0L6.57 3.522zm4.132 9.959L8.453 7.687 6.205 13.48H10.7z"></path></g><text x="279.3" y="143.7" class="debut">opus-4-5</text></g>
+    <switch><text x="668" y="439.5" class="axis" text-anchor="end" systemLanguage="zh,zh-CN,zh-Hans,zh-TW,zh-HK,zh-Hant,zh-SG">少</text><text x="668" y="439.5" class="axis" text-anchor="end">Less</text></switch>
+    <rect x="676" y="431.5" width="100" height="8" rx="4" fill="url(#gradeRamp)"/>
+    <switch><text x="784" y="439.5" class="axis" systemLanguage="zh,zh-CN,zh-Hans,zh-TW,zh-HK,zh-Hant,zh-SG">多</text><text x="784" y="439.5" class="axis">More</text></switch>
   </g>
-  <g aria-label="Top models">
-    <text x="24" y="252" class="section">Top Models</text>
-    <text x="24" y="272" class="muted">Model</text>
-    <text x="302" y="272" class="muted" text-anchor="end">Input</text>
-    <text x="438" y="272" class="muted" text-anchor="end">Output</text>
-    <text x="604" y="272" class="muted" text-anchor="end">Cache Ratio</text>
-    <text x="736" y="272" class="muted" text-anchor="end">Cost</text>
-    <text x="24" y="290" class="model-name"><title>claude-opus-4-8: 126.5M input, 98.6M output, 24.8B cache read, 1.2B cache write, 95% cache read ratio, $22.9K</title>claude-opus-4-8</text><text x="302" y="290" class="model-usage" text-anchor="end">126.5M</text><text x="438" y="290" class="model-usage" text-anchor="end">98.6M</text><text x="604" y="290" class="model-usage" text-anchor="end">95%</text><text x="736" y="290" class="model-cost" text-anchor="end">$22.9K</text><text x="24" y="306" class="model-name"><title>claude-opus-4-7: 13.7M input, 18.9M output, 11.7B cache read, 474.6M cache write, 96% cache read ratio, $9.4K</title>claude-opus-4-7</text><text x="302" y="306" class="model-usage" text-anchor="end">13.7M</text><text x="438" y="306" class="model-usage" text-anchor="end">18.9M</text><text x="604" y="306" class="model-usage" text-anchor="end">96%</text><text x="736" y="306" class="model-cost" text-anchor="end">$9.4K</text><text x="24" y="322" class="model-name"><title>gpt-5.5: 646.7M input, 26.1M output, 8.1B cache read, 0 cache write, 92.6% cache read ratio, $8.4K</title>gpt-5.5</text><text x="302" y="322" class="model-usage" text-anchor="end">646.7M</text><text x="438" y="322" class="model-usage" text-anchor="end">26.1M</text><text x="604" y="322" class="model-usage" text-anchor="end">92.6%</text><text x="736" y="322" class="model-cost" text-anchor="end">$8.4K</text><text x="24" y="338" class="model-name"><title>gpt-5.4: 294.8M input, 20.8M output, 7.5B cache read, 0 cache write, 96.2% cache read ratio, $3.1K</title>gpt-5.4</text><text x="302" y="338" class="model-usage" text-anchor="end">294.8M</text><text x="438" y="338" class="model-usage" text-anchor="end">20.8M</text><text x="604" y="338" class="model-usage" text-anchor="end">96.2%</text><text x="736" y="338" class="model-cost" text-anchor="end">$3.1K</text><text x="24" y="354" class="model-name"><title>gpt-5.4-pro: 43.9M input, 432.1K output, 0 cache read, 0 cache write, 0% cache read ratio, $1.5K</title>gpt-5.4-pro</text><text x="302" y="354" class="model-usage" text-anchor="end">43.9M</text><text x="438" y="354" class="model-usage" text-anchor="end">432.1K</text><text x="604" y="354" class="model-usage" text-anchor="end">0%</text><text x="736" y="354" class="model-cost" text-anchor="end">$1.5K</text><text x="24" y="370" class="model-name"><title>claude-opus-4-6: 7.4M input, 1.6M output, 172.7M cache read, 65.1M cache write, 70.5% cache read ratio, $570</title>claude-opus-4-6</text><text x="302" y="370" class="model-usage" text-anchor="end">7.4M</text><text x="438" y="370" class="model-usage" text-anchor="end">1.6M</text><text x="604" y="370" class="model-usage" text-anchor="end">70.5%</text><text x="736" y="370" class="model-cost" text-anchor="end">$570</text><text x="24" y="386" class="model-usage"><title>15 additional models: 37.5M input, 9.4M output, 781M cache read, 43.8M cache write, 90.6% cache read ratio, $695</title>+15 models</text><text x="302" y="386" class="model-usage" text-anchor="end">37.5M</text><text x="438" y="386" class="model-usage" text-anchor="end">9.4M</text><text x="604" y="386" class="model-usage" text-anchor="end">90.6%</text><text x="736" y="386" class="model-cost" text-anchor="end">$695</text>
+  <g class="tile ti0"><rect x="480.5" y="96.5" width="335" height="91" rx="10" class="panel"/><rect x="481.5" y="97.5" width="333" height="89" rx="9" fill="none" stroke="url(#topGlow)" stroke-width="1"/><text x="498" y="136" class="stat-value">$51.2K</text><switch><text x="498" y="158" class="tile-label" systemLanguage="zh,zh-CN,zh-Hans,zh-TW,zh-HK,zh-Hant,zh-SG">总花费</text><text x="498" y="158" class="tile-label">TOTAL COST</text></switch><text x="604" y="136" class="stat-value">176d</text><switch><text x="604" y="158" class="tile-label" systemLanguage="zh,zh-CN,zh-Hans,zh-TW,zh-HK,zh-Hant,zh-SG">活跃天数</text><text x="604" y="158" class="tile-label">ACTIVE DAYS</text></switch><text x="710" y="136" class="stat-value">2,393h</text><switch><text x="710" y="158" class="tile-label" systemLanguage="zh,zh-CN,zh-Hans,zh-TW,zh-HK,zh-Hant,zh-SG">活跃时长</text><text x="710" y="158" class="tile-label">ACTIVE TIME</text></switch></g>
+  <g class="tile ti1"><rect x="24.5" y="350.5" width="315" height="91" rx="10" class="panel"/><rect x="25.5" y="351.5" width="313" height="89" rx="9" fill="none" stroke="url(#topGlow)" stroke-width="1"/><text x="42" y="390" class="stat-value">52d</text><switch><text x="42" y="412" class="tile-label" systemLanguage="zh,zh-CN,zh-Hans,zh-TW,zh-HK,zh-Hant,zh-SG">最长连续</text><text x="42" y="412" class="tile-label">LONGEST STREAK</text></switch><text x="218" y="390" class="stat-value">8,697</text><switch><text x="218" y="412" class="tile-label" systemLanguage="zh,zh-CN,zh-Hans,zh-TW,zh-HK,zh-Hant,zh-SG">会话总数</text><text x="218" y="412" class="tile-label">SESSIONS</text></switch></g>
+
+  <g class="panel-in p-c">
+    <rect x="24.5" y="454.5" width="791" height="139" rx="12" class="panel"/><rect x="25.5" y="455.5" width="789" height="137" rx="11" fill="none" stroke="url(#topGlow)" stroke-width="1"/>
   </g>
-  <text x="24" y="418" class="muted">Since 2025-11-17 · Updated 2026-07-08 21:58 CST · Powered by tokscale</text>
-  <text x="736" y="418" class="signature" text-anchor="end">@PekingSpades</text>
+  <g class="mrow mrh"><switch><text x="40" y="478" class="panel-label" systemLanguage="zh,zh-CN,zh-Hans,zh-TW,zh-HK,zh-Hant,zh-SG">热门模型</text><text x="40" y="478" class="panel-label">TOP MODELS</text></switch><text x="400" y="478" class="axis" text-anchor="end">TOKENS</text><switch><text x="490" y="478" class="axis" text-anchor="end" systemLanguage="zh,zh-CN,zh-Hans,zh-TW,zh-HK,zh-Hant,zh-SG">缓存</text><text x="490" y="478" class="axis" text-anchor="end">CACHE</text></switch><switch><text x="520" y="478" class="axis" systemLanguage="zh,zh-CN,zh-Hans,zh-TW,zh-HK,zh-Hant,zh-SG">花费</text><text x="520" y="478" class="axis">COST</text></switch><switch><text x="800" y="478" class="axis" text-anchor="end" systemLanguage="zh,zh-CN,zh-Hans,zh-TW,zh-HK,zh-Hant,zh-SG">另有 18 个 · $2.3K</text><text x="800" y="478" class="axis" text-anchor="end">+18 more · $2.3K</text></switch></g>
+  <g class="mrow mr0"><g class="micon" transform="translate(36,487) scale(0.6250)"><path d="M13.827 3.52h3.603L24 20h-3.603l-6.57-16.48zm-7.258 0h3.767L16.906 20h-3.674l-1.343-3.461H5.017l-1.344 3.46H0L6.57 3.522zm4.132 9.959L8.453 7.687 6.205 13.48H10.7z"></path></g><text x="60" y="500" class="model-name">claude-opus-4-8</text><text x="400" y="500" class="model-num" text-anchor="end">31B</text><text x="490" y="500" class="model-num" text-anchor="end">95.3%</text><rect x="520" y="490" width="180" height="7" rx="3.5" class="cost-bar cbar0"/><text x="800" y="500" class="model-cost" text-anchor="end">$26.6K</text></g>
+  <g class="mrow mr1"><g class="micon" transform="translate(36,507) scale(0.6250)"><path d="M13.827 3.52h3.603L24 20h-3.603l-6.57-16.48zm-7.258 0h3.767L16.906 20h-3.674l-1.343-3.461H5.017l-1.344 3.46H0L6.57 3.522zm4.132 9.959L8.453 7.687 6.205 13.48H10.7z"></path></g><text x="60" y="520" class="model-name">claude-opus-4-7</text><text x="400" y="520" class="model-num" text-anchor="end">12.2B</text><text x="490" y="520" class="model-num" text-anchor="end">96%</text><rect x="520" y="510" width="63.3" height="7" rx="3.5" class="cost-bar cbar1"/><text x="800" y="520" class="model-cost" text-anchor="end">$9.4K</text></g>
+  <g class="mrow mr2"><g class="micon" transform="translate(36,527) scale(0.6250)"><path d="M9.205 8.658v-2.26c0-.19.072-.333.238-.428l4.543-2.616c.619-.357 1.356-.523 2.117-.523 2.854 0 4.662 2.212 4.662 4.566 0 .167 0 .357-.024.547l-4.71-2.759a.797.797 0 00-.856 0l-5.97 3.473zm10.609 8.8V12.06c0-.333-.143-.57-.429-.737l-5.97-3.473 1.95-1.118a.433.433 0 01.476 0l4.543 2.617c1.309.76 2.189 2.378 2.189 3.948 0 1.808-1.07 3.473-2.76 4.163zM7.802 12.703l-1.95-1.142c-.167-.095-.239-.238-.239-.428V5.899c0-2.545 1.95-4.472 4.591-4.472 1 0 1.927.333 2.712.928L8.23 5.067c-.285.166-.428.404-.428.737v6.898zM12 15.128l-2.795-1.57v-3.33L12 8.658l2.795 1.57v3.33L12 15.128zm1.796 7.23c-1 0-1.927-.332-2.712-.927l4.686-2.712c.285-.166.428-.404.428-.737v-6.898l1.974 1.142c.167.095.238.238.238.428v5.233c0 2.545-1.974 4.472-4.614 4.472zm-5.637-5.303l-4.544-2.617c-1.308-.761-2.188-2.378-2.188-3.948A4.482 4.482 0 014.21 6.327v5.423c0 .333.143.571.428.738l5.947 3.449-1.95 1.118a.432.432 0 01-.476 0zm-.262 3.9c-2.688 0-4.662-2.021-4.662-4.519 0-.19.024-.38.047-.57l4.686 2.71c.286.167.571.167.856 0l5.97-3.448v2.26c0 .19-.07.333-.237.428l-4.543 2.616c-.619.357-1.356.523-2.117.523zm5.899 2.83a5.947 5.947 0 005.827-4.756C22.287 18.339 24 15.84 24 13.296c0-1.665-.713-3.282-1.998-4.448.119-.5.19-.999.19-1.498 0-3.401-2.759-5.947-5.946-5.947-.642 0-1.26.095-1.88.31A5.962 5.962 0 0010.205 0a5.947 5.947 0 00-5.827 4.757C1.713 5.447 0 7.945 0 10.49c0 1.666.713 3.283 1.998 4.448-.119.5-.19 1-.19 1.499 0 3.401 2.759 5.946 5.946 5.946.642 0 1.26-.095 1.88-.309a5.96 5.96 0 004.162 1.713z"></path></g><text x="60" y="540" class="model-name">gpt-5.5</text><text x="400" y="540" class="model-num" text-anchor="end">8.8B</text><text x="490" y="540" class="model-num" text-anchor="end">92.6%</text><rect x="520" y="530" width="56.7" height="7" rx="3.5" class="cost-bar cbar2"/><text x="800" y="540" class="model-cost" text-anchor="end">$8.4K</text></g>
+  <g class="mrow mr3"><g class="micon" transform="translate(36,547) scale(0.6250)"><path d="M9.205 8.658v-2.26c0-.19.072-.333.238-.428l4.543-2.616c.619-.357 1.356-.523 2.117-.523 2.854 0 4.662 2.212 4.662 4.566 0 .167 0 .357-.024.547l-4.71-2.759a.797.797 0 00-.856 0l-5.97 3.473zm10.609 8.8V12.06c0-.333-.143-.57-.429-.737l-5.97-3.473 1.95-1.118a.433.433 0 01.476 0l4.543 2.617c1.309.76 2.189 2.378 2.189 3.948 0 1.808-1.07 3.473-2.76 4.163zM7.802 12.703l-1.95-1.142c-.167-.095-.239-.238-.239-.428V5.899c0-2.545 1.95-4.472 4.591-4.472 1 0 1.927.333 2.712.928L8.23 5.067c-.285.166-.428.404-.428.737v6.898zM12 15.128l-2.795-1.57v-3.33L12 8.658l2.795 1.57v3.33L12 15.128zm1.796 7.23c-1 0-1.927-.332-2.712-.927l4.686-2.712c.285-.166.428-.404.428-.737v-6.898l1.974 1.142c.167.095.238.238.238.428v5.233c0 2.545-1.974 4.472-4.614 4.472zm-5.637-5.303l-4.544-2.617c-1.308-.761-2.188-2.378-2.188-3.948A4.482 4.482 0 014.21 6.327v5.423c0 .333.143.571.428.738l5.947 3.449-1.95 1.118a.432.432 0 01-.476 0zm-.262 3.9c-2.688 0-4.662-2.021-4.662-4.519 0-.19.024-.38.047-.57l4.686 2.71c.286.167.571.167.856 0l5.97-3.448v2.26c0 .19-.07.333-.237.428l-4.543 2.616c-.619.357-1.356.523-2.117.523zm5.899 2.83a5.947 5.947 0 005.827-4.756C22.287 18.339 24 15.84 24 13.296c0-1.665-.713-3.282-1.998-4.448.119-.5.19-.999.19-1.498 0-3.401-2.759-5.947-5.946-5.947-.642 0-1.26.095-1.88.31A5.962 5.962 0 0010.205 0a5.947 5.947 0 00-5.827 4.757C1.713 5.447 0 7.945 0 10.49c0 1.666.713 3.283 1.998 4.448-.119.5-.19 1-.19 1.499 0 3.401 2.759 5.946 5.946 5.946.642 0 1.26-.095 1.88-.309a5.96 5.96 0 004.162 1.713z"></path></g><text x="60" y="560" class="model-name">gpt-5.4</text><text x="400" y="560" class="model-num" text-anchor="end">7.8B</text><text x="490" y="560" class="model-num" text-anchor="end">96.2%</text><rect x="520" y="550" width="20.7" height="7" rx="3.5" class="cost-bar cbar3"/><text x="800" y="560" class="model-cost" text-anchor="end">$3.1K</text></g>
+  <g class="mrow mr4"><g class="micon" transform="translate(36,567) scale(0.6250)"><path d="M9.205 8.658v-2.26c0-.19.072-.333.238-.428l4.543-2.616c.619-.357 1.356-.523 2.117-.523 2.854 0 4.662 2.212 4.662 4.566 0 .167 0 .357-.024.547l-4.71-2.759a.797.797 0 00-.856 0l-5.97 3.473zm10.609 8.8V12.06c0-.333-.143-.57-.429-.737l-5.97-3.473 1.95-1.118a.433.433 0 01.476 0l4.543 2.617c1.309.76 2.189 2.378 2.189 3.948 0 1.808-1.07 3.473-2.76 4.163zM7.802 12.703l-1.95-1.142c-.167-.095-.239-.238-.239-.428V5.899c0-2.545 1.95-4.472 4.591-4.472 1 0 1.927.333 2.712.928L8.23 5.067c-.285.166-.428.404-.428.737v6.898zM12 15.128l-2.795-1.57v-3.33L12 8.658l2.795 1.57v3.33L12 15.128zm1.796 7.23c-1 0-1.927-.332-2.712-.927l4.686-2.712c.285-.166.428-.404.428-.737v-6.898l1.974 1.142c.167.095.238.238.238.428v5.233c0 2.545-1.974 4.472-4.614 4.472zm-5.637-5.303l-4.544-2.617c-1.308-.761-2.188-2.378-2.188-3.948A4.482 4.482 0 014.21 6.327v5.423c0 .333.143.571.428.738l5.947 3.449-1.95 1.118a.432.432 0 01-.476 0zm-.262 3.9c-2.688 0-4.662-2.021-4.662-4.519 0-.19.024-.38.047-.57l4.686 2.71c.286.167.571.167.856 0l5.97-3.448v2.26c0 .19-.07.333-.237.428l-4.543 2.616c-.619.357-1.356.523-2.117.523zm5.899 2.83a5.947 5.947 0 005.827-4.756C22.287 18.339 24 15.84 24 13.296c0-1.665-.713-3.282-1.998-4.448.119-.5.19-.999.19-1.498 0-3.401-2.759-5.947-5.946-5.947-.642 0-1.26.095-1.88.31A5.962 5.962 0 0010.205 0a5.947 5.947 0 00-5.827 4.757C1.713 5.447 0 7.945 0 10.49c0 1.666.713 3.283 1.998 4.448-.119.5-.19 1-.19 1.499 0 3.401 2.759 5.946 5.946 5.946.642 0 1.26-.095 1.88-.309a5.96 5.96 0 004.162 1.713z"></path></g><text x="60" y="580" class="model-name">gpt-5.4-pro</text><text x="400" y="580" class="model-num" text-anchor="end">44.6M</text><text x="490" y="580" class="model-num" text-anchor="end">0%</text><rect x="520" y="570" width="9.9" height="7" rx="3.5" class="cost-bar cbar4"/><text x="800" y="580" class="model-cost" text-anchor="end">$1.5K</text></g>
+
+  <switch><text x="24" y="616" class="footer" systemLanguage="zh,zh-CN,zh-Hans,zh-TW,zh-HK,zh-Hant,zh-SG">2025年11月 → 2026年7月 · <tspan fill="#3FB950">●</tspan> 数据截至 2026-07-13 · 柱高：对数刻度 · Powered by tokscale</text><text x="24" y="616" class="footer">Nov 2025 → Jul 2026 · <tspan fill="#3FB950">●</tspan> data through 2026-07-13 · bar height: log scale · Powered by tokscale</text></switch>
+  <text x="816" y="616" class="signature" text-anchor="end">@PekingSpades</text>
 </svg>
