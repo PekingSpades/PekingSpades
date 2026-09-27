@@ -3,12 +3,14 @@
 Building interesting and meaningful projects.
 
 <!-- oss-contributions:start -->
+## Open Source · 开源贡献
+
 <p align="center">
   <a href="https://github.com/search?q=author%3APekingSpades+-org%3Apkuhpc+-user%3APekingSpades&type=pullrequests">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="./assets/oss-contributions-dark.svg">
       <source media="(prefers-color-scheme: light)" srcset="./assets/oss-contributions-light.svg">
-      <img alt="Open source contributions" src="./assets/oss-contributions-light.svg" width="840">
+      <img alt="Open source contributions" src="./assets/oss-contributions-light.svg" width="100%">
     </picture>
   </a>
 </p>
