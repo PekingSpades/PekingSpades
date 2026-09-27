@@ -23,12 +23,16 @@ Building interesting and meaningful projects.
 <!-- portfolio:end -->
 
 <!-- vibe-coding:start -->
+## Vibe Coding · 氛围编程
+
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/vibe-coding-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="./assets/vibe-coding-light.svg">
-    <img alt="Vibe coding stats" src="./assets/vibe-coding-light.svg">
-  </picture>
+  <a href="https://github.com/PekingSpades/tokscale">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="./assets/vibe-coding-dark.svg">
+      <source media="(prefers-color-scheme: light)" srcset="./assets/vibe-coding-light.svg">
+      <img alt="Vibe coding stats" src="./assets/vibe-coding-light.svg" width="100%">
+    </picture>
+  </a>
 </p>
 <!-- vibe-coding:end -->
 
