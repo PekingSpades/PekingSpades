@@ -8,6 +8,8 @@ Building interesting and meaningful projects.
 <p align="center">
   <a href="https://github.com/search?q=author%3APekingSpades+-org%3Apkuhpc+-user%3APekingSpades&type=pullrequests">
     <picture>
+      <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="./assets/oss-contributions-mobile-dark.svg">
+      <source media="(max-width: 600px)" srcset="./assets/oss-contributions-mobile-light.svg">
       <source media="(prefers-color-scheme: dark)" srcset="./assets/oss-contributions-dark.svg">
       <source media="(prefers-color-scheme: light)" srcset="./assets/oss-contributions-light.svg">
       <img alt="Open source contributions" src="./assets/oss-contributions-light.svg" width="100%">
