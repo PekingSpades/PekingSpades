@@ -30,6 +30,8 @@ Building interesting and meaningful projects.
 <p align="center">
   <a href="https://github.com/PekingSpades/tokscale">
     <picture>
+      <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="./assets/vibe-coding-mobile-dark.svg">
+      <source media="(max-width: 600px)" srcset="./assets/vibe-coding-mobile-light.svg">
       <source media="(prefers-color-scheme: dark)" srcset="./assets/vibe-coding-dark.svg">
       <source media="(prefers-color-scheme: light)" srcset="./assets/vibe-coding-light.svg">
       <img alt="Vibe coding stats" src="./assets/vibe-coding-light.svg" width="100%">
