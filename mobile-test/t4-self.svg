@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="180" viewBox="0 0 840 180">
+<style>
+  rect { fill: #DDF4FF; } text { fill: #0A3069; font-family: -apple-system,'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',sans-serif; }
+  .n { display: none; }
+  @media (max-width: 600px) { .w { display: none; } .n { display: inline; } rect { fill: #FFF1E5; } text { fill: #762C00; } }
+  @media (prefers-color-scheme: dark) { rect { fill: #0C2D6B; } text { fill: #DDF4FF; } }
+  @media (prefers-color-scheme: dark) and (max-width: 600px) { rect { fill: #5C2200; } text { fill: #FFF1E5; } }
+  .s-l { display: inline; } .s-d { display: none; }
+  @media (prefers-color-scheme: dark) { .s-l { display: none; } .s-d { display: inline; } }
+</style>
+<rect width="840" height="180" rx="16"/>
+<text x="40" y="70" font-size="34" font-weight="700" opacity=".6">测试 4 · SVG 自己判断</text>
+<text x="40" y="140" font-size="64" font-weight="800"><tspan class="w">宽 &gt; 600px</tspan><tspan class="n">宽 ≤ 600px</tspan><tspan font-size="40" dx="24"><tspan class="s-l">亮色</tspan><tspan class="s-d">暗色</tspan></tspan></text>
+</svg>

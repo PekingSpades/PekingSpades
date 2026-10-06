@@ -1,54 +1,28 @@
-# Hi, I'm PekingSpades 👋
+# 手机适配测试（临时分支，测完即删）
 
-Building interesting and meaningful projects.
+请用 **手机浏览器**、**GitHub App** 各打开一次本页，再用 **电脑** 打开一次，记下每个测试显示的文字。
+另外告诉我两件事：GitHub 设置里的主题（Settings → Appearance）选的是什么；手机系统当时是不是深色模式。
 
-<!-- oss-contributions:start -->
-## Open Source · 开源贡献
+### 测试 1：宽度 + 深浅色（手机用 max-width 条件）
 
-<p align="center">
-  <a href="https://github.com/search?q=author%3APekingSpades+-org%3Apkuhpc+-user%3APekingSpades&type=pullrequests">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="./assets/oss-contributions-dark.svg">
-      <source media="(prefers-color-scheme: light)" srcset="./assets/oss-contributions-light.svg">
-      <img alt="Open source contributions" src="./assets/oss-contributions-light.svg" width="100%">
-    </picture>
-  </a>
-</p>
-<!-- oss-contributions:end -->
+<p align="center"><picture><source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="./mobile-test/t1-mobile-dark.svg"><source media="(max-width: 600px)" srcset="./mobile-test/t1-mobile-light.svg"><source media="(prefers-color-scheme: dark)" srcset="./mobile-test/t1-desktop-dark.svg"><source media="(prefers-color-scheme: light)" srcset="./mobile-test/t1-desktop-light.svg"><img alt="" src="./mobile-test/t1-desktop-light.svg" width="100%"></picture></p>
 
-<!-- portfolio:start -->
-## Portfolio · 作品集
+预期：手机显示「手机版」，电脑显示「电脑版」；亮色 / 暗色跟随主题。
 
-<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/portfolio/ztag-dark.svg"><source media="(prefers-color-scheme: light)" srcset="./assets/portfolio/ztag-light.svg"><img alt="Project Z — AI 与团队协作的新想象" src="./assets/portfolio/ztag-light.svg" width="49.95%" align="top"></picture><a href="https://autoclaw.z.ai/"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/portfolio/autoclaw-dark.svg"><source media="(prefers-color-scheme: light)" srcset="./assets/portfolio/autoclaw-light.svg"><img alt="AutoClaw — 智谱官方 AI Agent" src="./assets/portfolio/autoclaw-light.svg" width="49.95%" align="top"></picture></a><br><a href="https://autoglm.zhipuai.cn/autotyper/"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/portfolio/autotyper-dark.svg"><source media="(prefers-color-scheme: light)" srcset="./assets/portfolio/autotyper-light.svg"><img alt="AutoTyper — 智谱官方语音输入法" src="./assets/portfolio/autotyper-light.svg" width="49.95%" align="top"></picture></a><a href="https://csjstt.com/shadowdesk/"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/portfolio/shadowdesk-dark.svg"><source media="(prefers-color-scheme: light)" srcset="./assets/portfolio/shadowdesk-light.svg"><img alt="ShadowDesk — 面向 HPC 的高性能远程桌面" src="./assets/portfolio/shadowdesk-light.svg" width="49.95%" align="top"></picture></a><br><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/portfolio/survey-dark.svg"><source media="(prefers-color-scheme: light)" srcset="./assets/portfolio/survey-light.svg"><img alt="问卷宝 — 腾讯问卷全栈复刻" src="./assets/portfolio/survey-light.svg" width="49.95%" align="top"></picture><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/portfolio/taskly-dark.svg"><source media="(prefers-color-scheme: light)" srcset="./assets/portfolio/taskly-light.svg"><img alt="清单 App — 面向大学生的 Android 日程管理" src="./assets/portfolio/taskly-light.svg" width="49.95%" align="top"></picture><br><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/portfolio/moling-more-dark.svg"><source media="(prefers-color-scheme: light)" srcset="./assets/portfolio/moling-more-light.svg"><img alt="墨灵音乐 — 独立开发运营的 Web 音乐播放器 · Synapse — 智谱开源 · 自托管 AI 团队工作空间与数字同事 · 光束实验室 — 演唱会「拐弯」光束的交互 3D 拆解 · Git-Insight — 你的 GitHub 年度编码报告" src="./assets/portfolio/moling-more-light.svg" width="99.9%" align="top"></picture></p>
-<!-- portfolio:end -->
+### 测试 2：只按宽度切换
 
-<!-- vibe-coding:start -->
-## Vibe Coding · 氛围编程
+<p align="center"><picture><source media="(max-width: 600px)" srcset="./mobile-test/t2-mobile-light.svg"><img alt="" src="./mobile-test/t2-desktop-light.svg" width="100%"></picture></p>
 
-<p align="center">
-  <a href="https://github.com/PekingSpades/tokscale">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="./assets/vibe-coding-dark.svg">
-      <source media="(prefers-color-scheme: light)" srcset="./assets/vibe-coding-light.svg">
-      <img alt="Vibe coding stats" src="./assets/vibe-coding-light.svg" width="100%">
-    </picture>
-  </a>
-</p>
-<!-- vibe-coding:end -->
+预期：手机显示「手机版 · 亮色」，电脑显示「电脑版 · 亮色」（这一组不区分深浅色）。
 
----
+### 测试 3：默认图是手机版（电脑用 min-width 条件）
 
-## Tech Stack
+<p align="center"><picture><source media="(min-width: 601px) and (prefers-color-scheme: dark)" srcset="./mobile-test/t3-desktop-dark.svg"><source media="(min-width: 601px)" srcset="./mobile-test/t3-desktop-light.svg"><source media="(prefers-color-scheme: dark)" srcset="./mobile-test/t3-mobile-dark.svg"><img alt="" src="./mobile-test/t3-mobile-light.svg" width="100%"></picture></p>
 
-[![Go](https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white)](https://golang.org/)
-[![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org/)
-[![C](https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=black)](https://en.wikipedia.org/wiki/C_(programming_language))
-[![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white)](https://isocpp.org/)
-[![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat-square&logo=kotlin&logoColor=white)](https://kotlinlang.org/)
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+预期同测试 1。区别在于：如果某个环境不认 `<picture>`，测试 1 会显示「电脑版」，测试 3 会显示「手机版」。
 
----
+### 测试 4：SVG 自己判断自己的显示宽度
 
-<p align="center">
-  <i>Focused on memory safety, cross-platform compatibility, and developer tooling.</i>
-</p>
+<p align="center"><img alt="" src="./mobile-test/t4-self.svg" width="100%"></p>
+
+这是同一张图，靠 SVG 内部的样式判断它被显示成多宽、系统是不是深色。
